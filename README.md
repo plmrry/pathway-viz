@@ -1,0 +1,1 @@
+LaTeX content for the Taxonomy of Biological Pathways paper
