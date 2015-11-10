@@ -1,6 +1,16 @@
 # Taxonomy of Biological Pathways
 
-# Edited notes from Fintan, September 29 2015
+## Papers
+### Taxonomy Papers
+- (Wehrend and Lewis)[http://dl.acm.org/citation.cfm?id=949531.949553]
+- (Pretorius et al)[http://dx.doi.org/10.1007/978-3-319-06793-3_5]
+- (Ahn et al)[http://dx.doi.org/10.1109/TVCG.2013.238]
+
+## Other
+- (Omics Vis Survey)[http://www.nature.com/nmeth/journal/v7/n3s/full/nmeth.1436.html]
+- (Weighted graph comparison techniques for brain connectivity analysis)[http://dl.acm.org/citation.cfm?doid=2470654.2470724]
+
+## Edited notes from Fintan, September 29 2015
 
 > It really does seem to me that there is enough new information and good research there for it to be accepted, it is the structure and organization that is causing it problems.
 
@@ -8,11 +18,11 @@
 
 > I think that you need to read some other taxonomies and structure yours similarly, and cite them in you paper. (Wehrend and Lewis)[http://dl.acm.org/citation.cfm?id=949531.949553] is one of the earliest attempts at this sort of thing for general visualization.
 
-> I like (Pretorius et al's)[http://dx.doi.org/10.1007/978-3-319-06793-3_5]
+> I like (Pretorius et al)[http://dx.doi.org/10.1007/978-3-319-06793-3_5]'s
 recent approach for describing tasks for multivariate graph vis.
 It might help structure yours.
 
-> (Ahn et al's)[http://dx.doi.org/10.1109/TVCG.2013.238] task taxonomy
+> (Ahn et al)[http://dx.doi.org/10.1109/TVCG.2013.238]'s task taxonomy
 for dynamic graphs is also worth having a look at for how he breaks
 up his categorization.
 
