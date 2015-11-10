@@ -1,0 +1,565 @@
+------------------------ Submission 263, Review 1 ------------------------
+
+Title: A Taxonomy of Visualization Tasks and Requirements for the Effective Analysis of Biological Pathways
+
+Reviewer:           primary
+
+Overall Rating
+
+   2.5
+
+Topic Classification
+
+   Type: Theory and model
+   Topic: Visual representation and interaction technique
+
+Best Paper Award
+
+   No
+
+Contribution to the field of Visual Analytics
+
+   Understanding the tasks and techniques which support those tasks, is an
+   important endeavour in visualisation research, and this paper provides an
+   analysis specific to biological pathways data.
+   A minor contribution is made in this paper:
+    A list of commonly encountered tasks relevant to biological pathway
+   analysis, based on interviews with seven biological scientists from
+   which, a set of requirements for effective pathway analysis are extracted
+   A review of visual representations to fulfil the requirements are
+   identified, including those which are not yet implemented in existing
+   tools, but which could potentially be of use however this is surface
+   analysis and justification. This is followed by a review and evaluation
+   of existing tools in terms of their support for the identified
+   requirements which doesn't tie the previous sections together well. The
+   conclusions of further work does not give any real insights.
+
+
+Expertise
+
+   4  (Expert)
+
+The Review
+
+   3. Tasks:
+   The list of tasks was generated through a series of interviews with
+   expert users.  No information is given as to whether or how the resulting
+   list of tasks was evaluated e.g. are all tasks relevant to the different
+   types of data that the experts work with? Was the final list presented to
+   the experts at the end of the interviews (or an additional expert) to be
+   sure that nothing had been missed? This is important as the rest of the
+   paper is based on the premise that these are the tasks involved in
+   pathway analysis; some mention of how we can be confident that this is
+   the case would be reassuring.
+   The structure of the discussion of tasks in this section needs to be
+   addressed. At present, each task appears at the end of the discussion
+   relating to it; from a reader’s perspective these look like headings,
+   which made this section very (and unnecessarily) confusing to read!
+   Please could this be re-ordered so that the tasks are indeed used as
+   headings?
+   Task T4: “examine high-level relationships between modules and
+   pathways” -  what are modules? (*maybe this will be apparent to
+   bio-readers*)
+   Task T7: the use of “analyse” in “analyse high-throughput omics
+   data” is a very vaguely specified task – could do with more info as
+   to what this type of analysis might involve
+
+   4. Requirements
+   I think I would have been more convinced by this section if the
+   discussion had been structured around support for tasks, from which the
+   list of requirements were extracted. As it stands, a list of requirements
+   are presented and then discussed with reference made to the tasks which
+   they might help support. A table showing which requirements map to which
+   tasks would be useful to illustrate how they relate to one another, as
+   this is currently spread throughout the text.  Also, Tasks 9 and 10 are
+   not explicitly referred to during this discussion – which requirements
+   address these tasks? Similarly, the discussions of R1, R2, and R3, do not
+   mention to which tasks they are related (perhaps they are applicable to
+   all tasks?)
+   Also, it could be clearer exactly what kind of requirements these are:
+   some of them refer to visual representation/layouts (e.g. R7 Display
+   hierarchical structures) others to interaction techniques (e.g. R3
+   search, filter, and select), while others refer to analysis which might
+   be carried out (e.g. R6 Simulation), and still others refer to
+   analytics/data support (e.g. R14 Incorporate online databases, R15
+   High-throughput data processing).
+   5. Visual encodings and representations:
+   It is not entirely clear to me how this section fits with the rest of the
+   work.  The discussion of hierarchical techniques could make further
+   reference to work in this area e.g. other types of implicit hierarchy,
+   such as those discussed by Schulz et al. (2011) and also Müller et al.'s
+   (2013) user evaluation.
+   6 Tools and 7 Future work
+   The review of tools with regard to which requirements they currently
+   implement is illustrated in Table 4 which clearly indicates a lack of
+   support for R6, R12, R13, and R15, but the discussion in the future work
+   section does not directly refer to this. I think these two sections could
+   be better tied together. For example, 7.2 discusses web based data
+   integration as important (R14), but Table 4 indicates that 4 of the 7
+   systems reviewed already support this.  Also none of the systems support
+   R13 (pathway curation, creation, and notation), but this doesn’t seem
+   to be considered as future work? It would be much improved if the
+   requirements that had not been addressed had been discussed further and
+   potential solutions proposed.
+
+
+   1. Intro:
+   Figure 1 is too small to read (if space is an issue, I would suggest
+   reducing the size of Table 1)
+   There is useful background work done here but the paper require more of a
+   contribution to be worthy of publication.
+
+   there are several typos.
+
+Main Recommendation
+
+   <b>Unacceptable for presentation</b>
+
+Additional Recommendation about TVCG Publication
+
+
+
+The Summary Review
+
+   Undertaking task analysis of domain specific problems such as biological
+   pathway analysis is an important task, however the work presented in the
+   paper has many weaknesses.
+   Firstly the paper does not present a taxonomy but rather a list of tasks
+   and the list of tasks is not fully covered in the requirement analysis.
+   The following review of visualisation techniques does not tie in well
+   enough with the tasks and requirements to be of much benefit - it is too
+   general. The review of existing tools again does not tie back to the
+   tasks and only on table 4 for the requirements. Finally the conclusions
+   do not discuss potential approaches to deal with the gaps n existing
+   tools. The paper is missing several important references and has several
+   grammatical errors.
+   It is unlikely that all of these issues could be addressed within the
+   timescale.
+
+Second round final review
+
+
+
+Best Paper Award
+
+
+
+Second round comments
+
+
+
+------------------------ Submission 263, Review 2 ------------------------
+
+Title: A Taxonomy of Visualization Tasks and Requirements for the Effective Analysis of Biological Pathways
+
+Reviewer:           external
+
+Overall Rating
+
+   <b>4</b>: Good contribution
+
+Topic Classification
+
+   Type: Others
+   Topic: Others
+
+Best Paper Award
+
+   No
+
+Contribution to the field of Visual Analytics
+
+   There are significant opportunities for visual analytics to really make
+   an impact in this field, although until this point that contribution has
+   been fairly minimal.
+   I believe this paper can incentivise visualization experts to work on
+   this problem more, and have a solid starting point in terms of
+   requirements.
+   This is why I believe it can make a considerable contribution to the
+   visualization community.
+
+Expertise
+
+   3  (Knowledgeable)
+
+The Review
+
+   Biological pathway visualization is a big problem, and there have been
+   relatively few papers by the visualization community so far around this
+   problem.
+   While this paper does not off technological advancements to the state of
+   play, it could still play an important role in how tools are developed in
+   the future to address the requirements of such tools.
+   Having a reference paper for visualization experts to access that has
+   already collected the tasks and requirements of some users (at different
+   seniorities).
+
+   I believe this paper can incentivise visualization experts to work on
+   this problem more, and have a solid starting point in terms of
+   requirements.
+   This is why I believe it can make a considerable contribution to the
+   visualization community.
+
+   It would have been great to hear more objective feedback about existing
+   tools too and where they are going wrong.
+
+   * Minor corrections
+
+   1) Put table 1 before table 2 in the final document.
+
+   2) Tasks 8 and 9 seem to be pretty much the same. Also the descriptions
+   don't really appear to match.
+
+   3) Section 5, first paragraph, you say 'three' groups - there are four.
+
+   4) Add reference to pathprint for Graph visualization approaches, but as
+   an example of an abstract layout.
+
+        Pathline: A Tool For Comparative Functional Genomics. Miriah Meyer, Bang
+   Wong, Mark Styczynski, Tamara Munzner, and Hanspeter Pfister. Computer
+   Graphics Forum (Proc. EuroVis 2010), 29(3):1043-1052.
+
+        Maybe add enRoute too -
+   http://people.seas.harvard.edu/~alex/papers/2012_biovis_enroute.pdf as it
+   complements entourage.
+
+   5) Add some references to set visualization, e.g. OnSet
+   (http://www.cc.gatech.edu/~john.stasko/papers/infovis14-onset.pdf) (I
+   believe this could be used to represent interactions between items in
+   sets for instance, although not mentioned explicitly in the paper), and
+   Upset
+   (http://people.seas.harvard.edu/~alex/papers/2014_infovis_upset.pdf) -
+   see this example where upset is used to visualize protein complex
+   interactions
+   http://vcg.github.io/upset/?dataset=3&duration=1000&orderBy=subsetSize&grouping=groupByIntersectionSize&selection=.
+
+        Also a reference to more general Set visualization survey paper:
+
+        Visualizing Sets and Set-typed Data: State-of-the-Art and Future
+   Challenges. Bilal Alsallakh and Luana Micallef and Aigner, Wolfgang and
+   Hauser, Helwig and Miksch, S. and Peter Rodgers, Eurographics conference
+   on Visualization (EuroVis) - State of The Art Reports, 2014
+
+   6) Add Pathlines, OnSet, and enRoute to list.
+
+   * Spelling/grammar mistakes
+
+    - Section 3
+        'that that' > 'that'
+        'such as [23])approach' > add a space
+
+   - Section 4
+        'Any pathway data' > 'Pathway data'
+        'can be represented in the abstract' > 'can be represented abstractly'
+        'involves that analysis' > 'involves the analysis'
+        'gene producs' > 'gene products'
+
+   - Section 5
+        'that mat' > 'that may'
+        'subdivided in multiple' > 'subdivided in to multiple'
+        'in an attempt to more efficient use of a two-dimensional space' > 'in
+   an attempt to make more efficient use of two-dimensional space'
+        'to to' >  'to'
+
+   - Section 7
+        'compresensive' > 'comprehensive'
+
+
+------------------------ Submission 263, Review 3 ------------------------
+
+Title: A Taxonomy of Visualization Tasks and Requirements for the Effective Analysis of Biological Pathways
+
+Reviewer:           secondary
+
+Overall Rating
+
+   <b>2</b>: Weak contribution
+
+Topic Classification
+
+   Type: Theory and model
+   Topic: Data handling and knowledge representation
+
+Best Paper Award
+
+   No
+
+Contribution to the field of Visual Analytics
+
+   The paper aims at providing a taxonomy for the classification of tasks
+   commonly performed by scientists concerned with the analysis of
+   biological data. The authors focus on the topic of biological processes
+   and consequently on the problem of analysing complex pathways. The topic
+   is an important one and of interest to any visualisation field concerned
+   with analysis of scientific data.
+
+Expertise
+
+   4  (Expert)
+
+The Review
+
+   - What are its strengths and weaknesses?
+   Strengths:
+   The paper topic is very interesting and the author produce a summary of
+   the most important tasks performed by scientist in analysing biological
+   pathways. They also provide a list of requirement to satisfy each task.
+   Table 4 also provide a nice classification of tools used for pathway
+   visualisation with respect to the list of requirements.
+
+   Weaknesses:
+   The authors do not present either a taxonomy of tasks or requirements but
+   just lists.
+   The correlation between the list of requirements is incomplete, the
+   requirements listed in Section 4 seem only  to address Tasks:
+   2,3,4,5,6,7,8,11,12,13. Tasks 1, 9 and 10 are not correlated to any of
+   the requirements.
+
+   Section 5 discusses standard state of the art techniques for the
+   visualization of connected/correlated data layouts of data. While visual
+   layout are an important aspects, since the paper moves on to describe
+   visualisation tools then the authors should have also provided a
+   discussion of aspects such as: interaction, data browsing and annotation.
+   Which are core components in the analysis of any scientific dataset.
+   Aspects that are also core features of the visualisation tools discussed
+   in Section 6 (e.g. isolated vs. multiple pathway views etc.)
+
+
+   Section 5.4 does not provide any example/reference of Matrix based
+   techniques.
+
+   Sections 5.1 and 5.4 do not seem to correlate to any of the requirements
+   listed in Section 4.
+   Section 5.2 and 5.3 answer to requirements 7 and 8 respectively. If none
+   of the visualisation described respond to any of the requirements why are
+   they mentioned? I do believe some of the visualisation techniques do
+   indeed fit some requirements however the authors do not provide any
+   discussion/reflection in this respect.
+
+   There is an overall lack of structure and rather just a presentation of
+   material, which is relevant to the focus of the paper but not complete.
+   A taxonomy is supposed to provide a sound categorization of the topic it
+   refers to, in the present work  such categorisation is hinted but not
+   clearly presented.
+
+   The paper seems to be written in a rush, Figures and tables lack quality
+   (Figure are  not readable, Tables use different styles), Section 3 "can
+   be found in Table" missing table number.
+
+   Finally, and most importantly, I am quite familiar with the work by
+   Saraya et al [citation n. 32] where a very sound categorization is
+   presented on the same topic. The authors list of requirements overlap
+   extensively with the one provided by Saraya et al. the authors do not
+   provide a proper comparison of their approach with this previous work.
+   I could not see a real novelty of what proposed with respect to this
+   previous besides the discussion of visualisation tools presented in
+   Section 6.
+
+   - Will this work inspire others in VAST research? Will it inform VAST
+   practitioners?
+   The work is interesting and builds upon a very interesting contribution
+   from Saraya, North, Duca [32].
+   It has some additions with respect to this previous work which
+   unfortunately are not pursued in enough detail.
+
+   - Is the work important or useful? Does it synthesize otherwise disparate
+   ideas?
+   I can see good ideas but not a well structured synthesis.
+
+   - Is this work novel, incremental, or previously published?
+   The paper builds heavily on previous work, the authors do not make a
+   compelling case in terms of novelty with respect to it.
+
+   - Is related work adequately referenced and if not what citations should
+   be added?
+   Miriah Meyer, Tamara Munzner, and Hanspeter Pfister. 2009. MizBee: A
+   Multiscale Synteny Browser. IEEE Transactions on Visualization and
+   Computer Graphics 15, 6 (November 2009), 897-904.
+   DOI=10.1109/TVCG.2009.167 http://dx.doi.org/10.1109/TVCG.2009.167
+
+   - Are the technical results sound? Are the methods and techniques
+   described in adequate detail?
+   Results are incomplete, proposed categorization is not yet sound enough.
+
+   - Is the exposition clear? How could the structure or style of the
+   presentation be improved?
+   As previously mentioned the paper seems to be written in a rush, Figures
+   and tables lack quality (Figure are  not readable, Tables use different
+   styles), Section 3 "can be found in Table" missing table number.
+
+   - Are the figures informative?
+   Figures need majour revision. Figure 1, 2, 3, 4 and 5 all need to be high
+   resolution, they are not readable.
+   Author should make sure of correct ordering: Figure 5 should come after
+   Figure 4.
+
+
+
+------------------------ Submission 263, Review 4 ------------------------
+
+Title: A Taxonomy of Visualization Tasks and Requirements for the Effective Analysis of Biological Pathways
+
+Reviewer:           external
+
+Overall Rating
+
+   <b>2</b>: Weak contribution
+
+Topic Classification
+
+   Type: Theory and model
+   Topic: Visual representation and interaction technique
+
+Best Paper Award
+
+   No
+
+Contribution to the field of Visual Analytics
+
+   This paper introduces a task taxonomy for pathway analysis based on
+   interviews with multiple domain experts. It continuous with a review of
+   general graph visualization technique and a review and analysis of
+   pathway visualization techniques. While the paper is interesting, the
+   task and requirement analysis could be refined, the selected related work
+   seems sometimes out of place and the future work is not very visionary.
+   This is not a clear visual analytics paper, it could equally go to
+   InfoVis or BioVis, but I don't think that's a bad thing.
+
+Expertise
+
+   4  (Expert)
+
+The Review
+
+   While the tasks and requirements are interesting and informative, they
+   seem a little ad-hoc. First, the paper should discuss related biological
+   network problem analysis, e.g., [1, 2], and should relate the described
+   tasks to general visualization task taxonomies, e.g., [3, 4]. The tasks
+   and requirements themselves are largely good, but some are a little
+   questionable. Task 5 is very related to Task 1, albeit they are on a
+   different level of granularity. What is the difference between task 7 and
+   task 11? It seems like 11 is a slightly generalized version of 7.
+   Requirements 9 and 11 are not really requirements but solutions.
+   Requirement 14 doesn't map to a task. Requirement 15 seems a little out
+   of focus.
+
+   Maybe a hierarchy of tasks might make sense. A top-level classification
+   could be, e.g., topology-based tasks, attribute based tasks and edit
+   tasks.
+
+
+   Section 5 seems rather out-of place in this paper. The node-link section,
+   for example, discusses a couple of techniques but is in no way
+   comprehensive (which it shouldn't be). On the other hand, some techniques
+   are discussed that are rarely used for pathway visualization (circular
+   layouts, fish-eyes, edge bundling, etc.). It might make sense to point to
+   a review (e.g., [5]) and discuss only pathway-specific examples here
+   (e.g., [6, 7]). Section 5.2 and 5.3 have a similar problem: general set
+   visualization / hierarchical techniques are discussed, but their
+   relevance for biological data is unclear. These techniques are sometimes
+   used in pathway visualization, but it might make sense to introduce them
+   when discussing such a technique.
+
+   Section 6, in contrast, is very brief and should be significantly
+   extended. The basic visualization techniques are probably better
+   introduced where necessary in this section.
+
+   The future work seems not very domain-specific. Including
+   edge-bundingling and fish eye lenses, for example, is not something that
+   a pathway task taxonomy paper should recommend. Section 7.3 is very
+   generic.
+
+   The paper does not discuss applications of algorithmic approaches, yet
+   there are several obviously relevant topics: pathway over-representation
+   analysis, for example, should be discussed. An approach to dealing with
+   large networks is aggregation or smart sampling.
+
+   Overall I do think that the paper has some merit, but I don't think it's
+   quite ready for publication yet.
+
+
+
+   Other Comments
+   --------------
+
+   KEGG is not a data format, but the KEGG organization defines a data
+   format - KGML.
+
+   I found it very irritating that the tasks - in bold - are shown at the
+   end of the paragraph that discusses them. The bold tasks look like
+   section headers and should probably be used this way.
+
+   The paper states that automatic tools for node-link layouts mimic the
+   style of hand-drawn pathways. This is true for some, but certainly not
+   for all approaches. It's, for example, not true for the first case given
+   - force directed layouts.
+
+   Section 5.1 should be called Node-Link visualizations, as e.g., matrices
+   are also graph visualizations.
+
+
+   The experimental data analysis capabilities of Entourage are introduced
+   in detail as the enRoute view in a separate publication [8]. This paper
+   also contains a requirement analysis for pathways. enRoute/Entourage do
+   both, visualizing experimental data in a separate view and visualizing
+   aggregate information directly on the nodes.
+
+   Table 4 should list the requirements - it's hard to go back 5 pages to
+   see which requirements is actually referred to. To do this, the table
+   should probably be transposed.
+
+
+   Spelling/Grammar
+   ---------------
+
+   in given diagram -> in a given diagram
+   First paragraph in 1.1 contains the word structure three times.
+   which different -> with different
+   that that -> that
+   a wide variety of relationship type -> types
+   are may be -> either are or may be
+   "the hand-made approach to pathway diagram creation has been replicated
+   digitally in public databases" -> I would suggest something like "is used
+   in many public databases", as replicated digitally implies that they were
+   hand drawn before, but human generated doesn't mean that they are not
+   digital.
+
+
+   [1] M. Albrecht, A. Kerren, K. Klein, O. Kohlbacher, P. Mutzel, W. Paul,
+   F. Schreiber, and M. Wybrow, “On Open Problems in Biological Network
+   Visualization,” in Graph Drawing, vol. 5849, D. Eppstein and E.
+   Gansner, Eds. Springer Berlin Heidelberg, 2010, pp. 256–267.
+
+   [2] O. Kohlbacher, F. Schreiber, and M. O. Ward, “Multivariate Networks
+   in the Life Sciences,” in Multivariate Network Visualization, A.
+   Kerren, H. C. Purchase, and M. O. Ward, Eds. Springer International
+   Publishing, 2014, pp. 61–73.
+
+   [3] M. Brehmer and T. Munzner, “A Multi-Level Typology of Abstract
+   Visualization Tasks,” IEEE Transactions on Visualization and Computer
+   Graphics, vol. 19, no. 12, pp. 2376–2385, 2013.
+
+   [4] H.-J. Schulz, T. Nocke, M. Heitzler, and H. Schumann, “A Design
+   Space of Visualization Tasks,” IEEE Transactions on Visualization and
+   Computer Graphics, vol. 19, no. 12, pp. 2366–2375, 2013.
+
+   [5] T. von Landesberger, A. Kuijper, T. Schreck, J. Kohlhammer, J. J. van
+   Wijk, J.-D. Fekete, and D. W. Fellner, “Visual Analysis of Large
+   Graphs: State-of-the-Art and Future Research Challenges,” Computer
+   Graphics Forum, vol. 30, no. 6, pp. 1719–1749, 2011.
+
+   [6] A. Barsky, T. Munzner, J. Gardy, and R. Kincaid, “Cerebral:
+   Visualizing Multiple Experimental Conditions on a Graph with Biological
+   Context,” IEEE Transactions on Visualization and Computer Graphics
+   (InfoVis ’08), vol. 14, no. 6, pp. 1253–1260, 2008.
+
+   [7] M. Rohrschneider, C. Heine, A. Reichenbach, A. Kerren, and G.
+   Scheuermann, “A Novel Grid-Based Visualization Approach for Metabolic
+   Networks with Advanced Focus&Context View,” in Graph Drawing, vol.
+   5849, D. Eppstein and E. Gansner, Eds. Springer Berlin Heidelberg, 2010,
+   pp. 268–279.
+
+   [8] C. Partl, A. Lex, M. Streit, D. Kalkofen, K. Kashofer, and D.
+   Schmalstieg, “enRoute: Dynamic Path Extraction from Biological Pathway
+   Maps for Exploring Heterogeneous Experimental Datasets,” BMC
+   Bioinformatics, vol. 14, no. Suppl 19, p. S3, 2013.
