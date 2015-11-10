@@ -16,7 +16,7 @@ It might help structure yours.
 for dynamic graphs is also worth having a look at for how he breaks
 up his categorization.
 
-I do have concerns about the review of visualization techniques.
+> I do have concerns about the review of visualization techniques.
 It reads more like a survey of biological visualization tools.  
 There have been many full surveys of bio vis tools in the past,
 often in high impact journals e.g. (here)[http://www.nature.com/nmeth/journal/v7/n3s/full/nmeth.1436.html]
@@ -24,20 +24,20 @@ It may be possible to do a more up to date  review,
 but such a STAR report would end up being
 much longer than your current paper is.
 
-The point is that having a small review doesn't add much to this paper,
+> The point is that having a small review doesn't add much to this paper,
 and there are more in depth reviews available.
 
-I understand that you might have wanted to describe visualization techniques
+> I understand that you might have wanted to describe visualization techniques
 that relate to specific items in you task list your task list,
 but that is not clear.
 
-I think that a proper multi-layer categorization of your task list,
+> I think that a proper multi-layer categorization of your task list,
 and then giving examples of visualization techniques
 (rather than general applications)
 that are applicable for different categories of task
 and their combinations would definitively improve the strength of the paper.
 
-I think that by doing this you will also have an opportunity to identify more
+> I think that by doing this you will also have an opportunity to identify more
 gaps in existing visualization techniques for addressing what you have
 identified as important tasks
 (kind of like you have done with the section on visualizing uncertainty).
