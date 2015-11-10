@@ -6,7 +6,7 @@
 - [Pretorius et al](http://dx.doi.org/10.1007/978-3-319-06793-3_5)
 - [Ahn et al](http://dx.doi.org/10.1109/TVCG.2013.238)
 
-## Other
+### Other
 - [Omics Vis Survey](http://www.nature.com/nmeth/journal/v7/n3s/full/nmeth.1436.html)
 - [Weighted graph comparison techniques for brain connectivity analysis](http://dl.acm.org/citation.cfm?doid=2470654.2470724)
 
