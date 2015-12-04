@@ -106,16 +106,16 @@ A comprehensive understanding of tasks performed by domain researchers in a typi
 
 %\p{Other reviews}
 
-Here we perform a comprehensive analysis of tasks and requirements in an effort to design effective platforms for visual analytics of pathway data.
-Previous reviews of pathway analysis tools~\cite{Gehlenborg2010omics,Suderman2007tools} have surveyed the population of available applications.
-However, the most recent review was published over five years ago, and it includes only a surface-level discussion of tasks, requirements, and visual encoding techniques.
+%Here we perform a comprehensive analysis of tasks and requirements in an effort to design effective platforms for visual analytics of pathway data.
+%Previous reviews of pathway analysis tools~\cite{Gehlenborg2010omics,Suderman2007tools} have surveyed the population of available applications.
+%However, the most recent review was published over five years ago, and it includes only a surface-level discussion of tasks, requirements, and visual encoding techniques.
 
 %\p{In this work}
 
 In this work, we present a description and analysis of tasks and requirements related to biological pathway research.
 Tasks were gathered from several interviews with domain experts who work with biological pathway data.
 After an introduction to the structure and content of pathway data, we describe the tasks that were garnered from our interviews.
-Using these tasks, we then describe the high-level requirements of an effective visual analytics platform for pathway data.
+%Using these tasks, we then describe the high-level requirements of an effective visual analytics platform for pathway data.
 We then review visual representations of pathway data in the context of our requirements.
 We also review existing tools that implement those visual representations.
 Finally, avenues of future research are considered, along with a brief summary of lessons learned from domain experts.
@@ -138,7 +138,7 @@ Importantly, pathways themselves can be entities within other pathways.
 \item \textbf{Relationship}\\
 A relationship involves two or more entities.
 Various kinds of relationships which different biological meanings are present in a pathways.
-Relationships can be directed or undirected, and they can involve more than two entities.
+Relationships can be directed or undirected, and they can involve more than two entities (meaning the resulting network is a hyper-graph).
 \item \textbf{Meta-data}\\
 The complex nature of the information stored in a pathway requires additional data to be stored with each entity and relationship.
 Meta-data can include experimental data, scientific information such as the molecular structure of a chemical compound, as well as links to additional resources or publications related to an entity or relationship.
@@ -149,17 +149,52 @@ Meta-data can include experimental data, scientific information such as the mole
 \subsubsection{Pathway Data Formats}
 
 Pathway data can be stored in one of several file formats.
-In particular \textit{BioPAX}~\cite{demir2010biopax}, \textit{KEGG}~\cite{kanehisa2000kegg} and \textit{SBML} are the most popular standards for storing the complex data structure described in the previous section.
+In particular \textit{BioPAX}~\cite{demir2010biopax}, \textit{KEGG}~\cite{kanehisa2000kegg} and \textit{SBML} \cite{Hucka2003} are the most popular standards for storing the complex data structure described in the previous section.
+
 These formats are XML based and represent data as an ontology. 
 \emph{BioPAX}, in particular, was designed to be a general format for biological pathways across a variety of domain contexts~\cite{demir2010biopax}.
-
+Systems Biology Graph Notation~\cite{Novere2009} is a visual standard often used to visualize \textit{BioPAX} and \textit{SBML} file formats.
 Other formats are employed for the visualization of biological pathways that are not specific to the field of biology.
 For instance \textit{SIF Simple Interaction Format} used by \textit{Cytoscape}~\cite{Shannon2003cytoscape} is used to visualize undirected interactions between participants.
 %-------------------------------------------------------------------------
 \section{Related Work}
+%-------------------------------------------------------------------------
+%\subsection{Biological Pathway Visualization}
+%Biological networks are an important application domain and visualizations are an important tool  to understand complex biological processes.
+%
+%\cite{Gehlenborg2010omics}
 
+%Previous reviews of pathway analysis tools~\cite{Gehlenborg2010omics,Suderman2007tools} have surveyed the population of available applications.
 %-------------------------------------------------------------------------
 \subsection{Task Taxonomies}
+For some time Task taxonomies have been  used as a tool to help better understand the wide range of existing visualizations, as well as design and evaluate new systems.
+Wehrend and Lewis~\cite{Wehrend1990} provide one of the earliest visualization task taxonomies, with the goal of ``accelerating progress in scientific visualization'' by allowing people to easily find the right visualization for a problem. 
+Their task were, like many later taxonomies, were independent of a specific visualization application domain.
+Schneiderman~\cite{Shneiderman1996} defined a task by data type taxonomy for  in formation visualization\textit{``to sort out the prototypes and guide researchers to new opportunities''}. 
+This taxonomy was targeted towards information visualization in general, but later taxonomies focused specifically on different categories of visualization.  
+
+Valiati et al. provide a taxonomy specifically dealing with multidimensional visualizations. The build on~\cite{Wehrend1990}, but focusing on tasks for multidimensional visualizations  (such as parallel coordinates).
+Like previous authors their goal is to guide the choices of visualization and interaction techniques, and also to  help support usability testing.
+Lee at al~\cite{Lee2006} define a graph visualization taxonomy of tasks that are frequently encountered when analyzing graph data.
+The goal of this was to improve the evaluation of graph visualization systems by having common benchmark tasks (which could be used in conjunction with benchmark data sets).
+The taxonomy covers graphs in general, and was inspired by example tasks from many domains as well as previous work.
+The authors built on Amar and Stasko~\cite{Amar2005} low level visual analytic task list, by proposing additional ones of their own and composing higher level complex tasks from low level ones
+
+
+Other more recent taxonomies focus of aspects of graph visualization.
+Ahn et al~\cite{Ahn2014} provide a task taxonomy for analyzing evolving networks, also know as dynamic graphs. The dynamic nature of the graphs means tasks may be specified that are  not covered by the general graph taxonomy of lee et al.
+Pretorius et al~\cite{Pretorius2014} focus on multivariate graph visualization (where graph elements contain multiple attributes) 
+They build on the work  of Lee et al, but also on that of  Valiati et al as multivariate networks can be considered a multidimensional data set.
+
+
+It can be seen from the preceding list that as visualization research has progressed taxonomies have become more focused on specific data types.
+Biological Pathway visualization is a complex application domain. 
+Previous taxonomies have avoided being domain specific, however this domain poses many specific challenges not encountered in the created of the previous taxonomies
+The underlying data sets are dynamic multivariate hyper-graphs, and are more complex than any of those described in previous taxonomies.
+The tasks to be completed by biologists are also highly complex, involving many different entity and relationship types, and are not fully covered by the existing taxonomies.
+\todo[inline]{Need to be 100 percent sure this is true}
+%Amar and stasko do include correlation as one of their tasks
+% pretorius also includes causation...
 
 %-------------------------------------------------------------------------
 
