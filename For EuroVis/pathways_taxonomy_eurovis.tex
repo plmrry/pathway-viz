@@ -117,8 +117,8 @@ We conclude by suggesting future research directions based on our taxonomy and m
 %-------------------------------------------------------------------------
 \section{Introduction}
 
-Understanding complicated networks of biomolecular interactions and chemical components is essential to solving contemporary problems in modern biology, especially in domains such as cancer and systems research~\cite{hanahan2011hallmarks}.
-These biomolecular interactions are represented in the form \emph{pathways}, which are used to describe a chain of interactions between biochemical and biological entities within a cell.
+Understanding complicated networks of bio-molecular interactions and chemical components is essential to solving contemporary problems in modern biology, especially in domains such as cancer and systems research~\cite{hanahan2011hallmarks}.
+These bio-molecular interactions are represented in the form \emph{pathways}, which are used to describe a chain of interactions between biochemical and biological entities within a cell.
 Pathways are small, curated subsets of a much larger, complex graph of interactions between molecules, and a given pathway usually represents a particular biological process that is relevant within some research context.
 % In order to limit the scope of their analyses...
 For example, Figure \ref{fig:kvik} shows a typical representation of a pathway as a human-curated node-link diagram, where nodes are biological entities and edges represent interactions between them.
@@ -238,8 +238,8 @@ In this paper we highlight examples of existing tools and techniques which provi
 
 %-------------------------------------------------------------------------
 \subsection{Task Taxonomies}
-The field of visual analytics has produced a number of \textit{task taxonomies}, which are written in an effort to understand exactly how various analtyics tasks are enabled by different visualization techniques, and vice versa. These taxonomies help clarify the utility of existing techniques while also providing a low-level template for the design and evaluation of new techniques.
-Wehrend and Lewis~\cite{Wehrend1990} provide one of the earliest visualization task taxonomies, with the goal of ``accelerating progress in scientific visualization'' by allowing researchers to easily find the right visualization techinque for a given problem.
+The field of visual analytics has produced a number of \textit{task taxonomies}, which are written in an effort to understand exactly how various analytics tasks are enabled by different visualization techniques, and vice versa. These taxonomies help clarify the utility of existing techniques while also providing a low-level template for the design and evaluation of new techniques.
+Wehrend and Lewis~\cite{Wehrend1990} provide one of the earliest visualization task taxonomies, with the goal of ``accelerating progress in scientific visualization'' by allowing researchers to easily find the right visualization technique for a given problem.
 Schneiderman~\cite{Shneiderman1996} defined a ``task by data type taxonomy'' for in formation visualization in order to \textit{``to sort out the prototypes and guide researchers to new opportunities''}.
 These seminal taxonomies were, like many later taxonomies, independent of a specific visualization application domain --
 their purpose was to provide a low-level description and categorization of the analysis tasks enabled by \textit{any} visualization of data.
@@ -256,7 +256,7 @@ The authors built on Amar and Stasko's~\cite{Amar2005} low level visual analytic
 
 \todo[inline]{When writing about previous work, need to be consistent on present vs. past tense. Which to use?}
 
-Several recent taxonomies haved focused on aspects of graph visualization that extend the work of Lee at al~\cite{Lee2006}.
+Several recent taxonomies have focused on aspects of graph visualization that extend the work of Lee at al~\cite{Lee2006}.
 Ahn et al~\cite{Ahn2014} provide a task taxonomy for analyzing networks that evolve over time, also known as dynamic graphs.
 The dynamic and complex nature of dynamic graph data yields a similarly complex set of analysis tasks, and many of these tasks are not covered by the general graph taxonomy of Lee at al~\cite{Lee2006} -- thus, new tasks need to be specified.
 Pretorius et al~\cite{Pretorius2014} focus on multivariate graph visualization (where graph elements contain multiple attributes).
@@ -285,7 +285,7 @@ The tasks to be completed by biologists are also highly complex, involving many 
 
 \subsection{Taxonomy Overview}
 
-Biological pathways are generally represented as weighted, directed graphs and in some cases include hyperedges and compound nodes.
+Biological pathways are generally represented as weighted, directed graphs and in some cases include hyper-edges and compound nodes.
 Thus, the low-level identification of nodes, vertices, and their attributes is essential.
 Detailed task taxonomies have been created which describe tasks related to particular types of data, including multivariate graphs.
 \hl{why a new taxonomy}
@@ -299,11 +299,11 @@ In particular...
 \subsubsection{Task: Identify Edge Attributes}
 \todo[inline]{todo}
 \subsubsection{Task: Identify Uncertainty}
-Several of the researchers mentioned certain tasks related to the curation, maintenance, and understanding of pathway data. RG mentioned the importance of being able to \emph{debug} potentially flawed data. NH and FZ both expressed a need to create ``personalized'' pathways that only include a user-determined subset of entities and relationships. Finally, QW and FZ discussed the importance of understanding \emph{uncertainty} within pathway data. For example, each relationship within a BioPAX file is usually associated with a publication that provides evidence for its existence. Thus, some relationships may be subject to scrutiny within the scientific community, while others may have more robust emprical support.
+Several of the researchers mentioned certain tasks related to the curation, maintenance, and understanding of pathway data. RG mentioned the importance of being able to \emph{debug} potentially flawed data. NH and FZ both expressed a need to create ``personalized'' pathways that only include a user-determined subset of entities and relationships. Finally, QW and FZ discussed the importance of understanding \emph{uncertainty} within pathway data. For example, each relationship within a BioPAX file is usually associated with a publication that provides evidence for its existence. Thus, some relationships may be subject to scrutiny within the scientific community, while others may have more robust empirical support.
 
 \subsection{Non-Hierarchical Relationship Tasks}
 
-Understanding how pathway entities are connected was of critical importance to all of the researchers we interviewed, and is essential to most reserach in bioinformatics.
+Understanding how pathway entities are connected was of critical importance to all of the researchers we interviewed, and is essential to most research in bioinformatics.
 
 While some analyses and datasets involve undirected relationships between genes or gene products, studies of metabolic networks and other inter-cellular processes rely on directed relationships, and several researchers that we interviewed stressed the importance of understanding directed relationships between entities.
 
@@ -322,17 +322,18 @@ Given an entity, find the entities that it is connected to via incoming edges.
 \subsection{Hierarchical Relationship Tasks}
 
 Pathway data is inherently hierarchical.
-These hierarchial relationships describe relationships of containment that are either abstract or based on real biochemical interactions within a cell.
+These hierarchical relationships describe relationships of containment that are either abstract or based on real biochemical interactions within a cell.
 For example, a pathway (itself an abstraction) can be nested within other pathways.
 These nested pathways generally encapsulate some commonly-understood hierarchy of biological processes that take place within a cell, such as cellular replication.
 Other representations include the more general notion of a ``module'' of connected components, such as gene products.
 Hierarchical relationships can also represent physical interactions between biochemical participants.
-A common of example of this is in biomolecular complexes, which are themselves composed of other complexes or biomolecules.
+A common of example of this is in bio-molecular complexes, which are themselves composed of other complexes or biomolecules.
 
 While in a strict sense, a hierarchical relationship between nodes can be seen as one particular type of edge, we instead explicitly distinguish between between hierarchical and non-hierarchical relationships.
 This distinction is motivated by the observation that in most cases, pathway data includes relationships of hierarchy (i.e., when one vertex is contained within another) \textit{in parallel} with other, non-hierarchial relationships, such as the relationship between one gene product that activates or inhibits another.
 
 A vertex that contains other entities can be represented as a \texit{compound node}, which is equivalent to a ``parent'' vertex or in some contexts a ``module.''
+
 Also, note that while non-hierarchical relationships can take a variety of forms, the only form of hierarchical relationship is one of \texit{containment}, from parent to child, and is undirected.
 
 \todo[inline]{We need to be consistent about how we talk about compound nodes aka parent nodes aka modules}
@@ -349,6 +350,11 @@ These relationships occur frequently in biological pathway data.
 
 \todo[inline]{examples}
 
+It is important to note that a one-to-one relationship between an entity and a parent is \textit{not} the same as a one-to-many relationship between an entity and all of that parents children.
+For instance, BioPax data contains the abstract ``NextStep'' relationship, which defines, as the name suggests, an arbitrary notion of the ``next step'' of some biological process.
+A biochemical reaction could be connected, via a \textit{single} ``NextStep'' relationship, to an entire pathway, which could potentially contain thousands of nodes.
+This relationship is clearly not the same as a biochemical reaction being connected to every entity within a pathway.
+
 \subsubsection{Task: Identify Adjacency, parent-to-parent, one-to-one}
 \todo[inline]{todo}
 \subsubsection{Task: Identify Adjacency, entity-to-parent, one-to-one}
@@ -360,7 +366,7 @@ These relationships occur frequently in biological pathway data.
 \todo[inline]{Should we further sub-divide into directed and undirected?}
 
 \subsection{Cause and Effect Tasks}
-A category of tasks inherent to a variety of work in bioinformatics is the identification of \textit{causal relationships} that exist between biomolecular entities.
+A category of tasks inherent to a variety of work in bioinformatics is the identification of \textit{causal relationships} that exist between bio-molecular entities.
 When discussing directed paths between entities, one entity is said to be \emph{upstream} or \emph{downstream} of another.
 
 Understanding these upstream and downstream relationships is particularly important to domains such as cancer drug research, where a drug may affect a small subset of genes or gene products, which in turn will affect various downstream processes.
@@ -372,7 +378,7 @@ Thus, an upstream entity may be connected to a downstream entity through a chain
 In the most basic sense, the ``entities'' mentioned above are genes, gene products (such as proteins or complexes), or other small molecules within a cell.
 A researcher may be interested in understanding the path of reactions (or other relationships) that connects two entities.
 
-\todo[inline]{More on Activation and Inhibition? Activation and inhibition vs upregulation and downregulation?}
+\todo[inline]{More on Activation and Inhibition? Activation and inhibition vs up-regulation and down-regulation?}
 
 \subsubsection{Task: Identify Cascading Effects, one-to-one}
 \todo[inline]{todo, i.e. finding paths}
@@ -406,7 +412,7 @@ A researcher may be interested in understanding the path of reactions (or other 
 
 \subsection{Visualizing Uncertainty}
 
-Especially considering our feedback from domain experts, tools generally do not attempt to visualize the ``uncertainty'' behind a connection in a pathway, as expressed by the first domain expert. This is a challenging task, as even the definition of ``uncertainty'' may be difficult to operationalize. However, data formats such as \emph{BioPAX} do have robust support for citations, allowing published references to be connected to entities and relationships within a pathway. A tool that could effectively encode ``uncertainty data'' into a visualization may be very valuable to systems researchers who work with the results of hundereds or thousands of separate publications.
+Especially considering our feedback from domain experts, tools generally do not attempt to visualize the ``uncertainty'' behind a connection in a pathway, as expressed by the first domain expert. This is a challenging task, as even the definition of ``uncertainty'' may be difficult to operationalize. However, data formats such as \emph{BioPAX} do have robust support for citations, allowing published references to be connected to entities and relationships within a pathway. A tool that could effectively encode ``uncertainty data'' into a visualization may be very valuable to systems researchers who work with the results of hundreds or thousands of separate publications.
 
 \section{Conclusions}
 
