@@ -156,7 +156,8 @@ In a separate domain, stem-cell researchers work with pathways that will precipi
 
 %\p{Static representations are not enough}
 
-In the last decade, analyses that involve hundreds or thousands of genes and gene products have become common. When analyzing such large and complex data, visual representations can be essential.
+In the last decade, analyses that involve hundreds or thousands of genes and gene products have become common.
+When analyzing such large and complex data, visual representations can be essential.
 Often, static representations are inadequate.
 The complexity and amount of information that needs to be incorporated in given diagram can make static representations cluttered and difficult to interpret.
 Thus, modern tools make careful use of user interactions and visualization techniques to allow a user to effectively explore and analyze pathway data.
@@ -259,7 +260,8 @@ The dynamic and complex nature of dynamic graph data yields a similarly complex 
 Pretorius et al~\cite{Pretorius2014} focus on multivariate graph visualization (where graph elements contain multiple attributes).
 Their work builds on the work of both Lee at al~\cite{Lee2006} and of Valiati et al.~\cite{Valiati2006}, as multivariate networks can be considered a multidimensional data set.
 
-The earliest visualization taxonomies were written as very general classifications of low level analytic tasks related to any data visualization. In more recent publications, and as visualization research has progressed, task taxonomies have increasingly focused on more constrained subsets of tasks related to particular types of data structures.
+The earliest visualization taxonomies were written as very general classifications of low level analytic tasks related to any data visualization.
+In more recent publications, and as visualization research has progressed, task taxonomies have increasingly focused on more constrained subsets of tasks related to particular types of data structures.
 
 While recently-published task taxonomies have focused on particular data structures (or for datasets with particular characteristics), to our knowledge this is the first written in the context of the domain of biological pathway analysis.
 
@@ -296,6 +298,8 @@ In particular...
 \todo[inline]{todo}
 \subsubsection{Task: Identify Uncertainty}
 Several of the researchers mentioned certain tasks related to the curation, maintenance, and understanding of pathway data. RG mentioned the importance of being able to \emph{debug} potentially flawed data. NH and FZ both expressed a need to create ``personalized'' pathways that only include a user-determined subset of entities and relationships. Finally, QW and FZ discussed the importance of understanding \emph{uncertainty} within pathway data. For example, each relationship within a BioPAX file is usually associated with a publication that provides evidence for its existence. Thus, some relationships may be subject to scrutiny within the scientific community, while others may have more robust empirical support.
+
+\todo[inline, author=FMG]{The notion of data provenance  (which publications it comes form) was very important to researchers i have talked to. It clearly relates to uncertainty visualization but maybe it could form a task in eits own right. Identify Entity provenance??}
 
 \subsection{Non-Hierarchical Relationship Tasks}
 
@@ -409,7 +413,6 @@ A researcher may be interested in understanding the path of reactions (or other 
 \subsection{Visualizing Uncertainty}
 
 Especially considering our feedback from domain experts, tools generally do not attempt to visualize the ``uncertainty'' behind a connection in a pathway, as expressed by the first domain expert. This is a challenging task, as even the definition of ``uncertainty'' may be difficult to operationalize. However, data formats such as \emph{BioPAX} do have robust support for citations, allowing published references to be connected to entities and relationships within a pathway. A tool that could effectively encode ``uncertainty data'' into a visualization may be very valuable to systems researchers who work with the results of hundreds or thousands of separate publications.
-\todo[inline, author=FMG]{The notion of data provenance  (which publications it comes form) was very important to researchers i have talked to. It clearly relates to uncertainty visualization here but also should be part of the attribute visualization task or form a task in its own right}
 
 \section{Conclusions}
 
