@@ -285,6 +285,8 @@ The tasks to be completed by biologists are also highly complex, involving many 
 
 \subsection{Taxonomy Overview}
 
+Biological pathways are generally represented as weighted, directed graphs and in some cases include hyperedges and compound nodes.
+Thus, the low-level identification of nodes, vertices, and their attributes is essential.
 Detailed task taxonomies have been created which describe tasks related to particular types of data, including multivariate graphs.
 \hl{why a new taxonomy}
 
@@ -292,92 +294,119 @@ In particular...
 \hl{importance of understanding both hierarchy and connectivity at the same time}
 
 \subsection{Attribute Tasks}
-\subsubsection{Vertices}
-\subsubsection{Edges}
-\subsubsection{Uncertainty}
+\subsubsection{Task: Identify Vertex Attributes}
+\todo[inline]{todo}
+\subsubsection{Task: Identify Edge Attributes}
+\todo[inline]{todo}
+\subsubsection{Task: Identify Uncertainty}
+Several of the researchers mentioned certain tasks related to the curation, maintenance, and understanding of pathway data. RG mentioned the importance of being able to \emph{debug} potentially flawed data. NH and FZ both expressed a need to create ``personalized'' pathways that only include a user-determined subset of entities and relationships. Finally, QW and FZ discussed the importance of understanding \emph{uncertainty} within pathway data. For example, each relationship within a BioPAX file is usually associated with a publication that provides evidence for its existence. Thus, some relationships may be subject to scrutiny within the scientific community, while others may have more robust emprical support.
 
-\subsection{Low Level Relationship Tasks}
-Biological pathways are represented as weighted, directed graphs which in some cases include hyperedges and compound nodes.
+\subsection{Non-Hierarchical Relationship Tasks}
+
 Understanding how pathway entities are connected was of critical importance to all of the researchers we interviewed, and is essential to most reserach in bioinformatics.
-Thus, the low-level identification of nodes, vertices, and their attributes is essential.
-\subsubsection{Adjacency, one-to-many}
+
+While some analyses and datasets involve undirected relationships between genes or gene products, studies of metabolic networks and other inter-cellular processes rely on directed relationships, and several researchers that we interviewed stressed the importance of understanding directed relationships between entities.
+
+\subsubsection{Task: Identify Adjacency, one-to-many}
 Given an entity, find the entities that it is connected to.
-\subsubsection{Adjacency, many-to-many}
+
+\subsubsection{Task: Identify Adjacency, many-to-many}
 Given a set of entities, find all other entities that are connected to that set.
 
-
-
-\subsubsection{Adjacency, one-to-many, outgoing}
+\subsubsection{Task: Identify Adjacency, one-to-many, outgoing}
 Given an entity, find the entities that it is connected to via outgoing edges.
-\subsubsection{Adjacency, one-to-many, incoming}
+
+\subsubsection{Task: Identify Adjacency, one-to-many, incoming}
 Given an entity, find the entities that it is connected to via incoming edges.
-\subsubsection{Vertices}
-While some analyses involve undirected relationships between genes or gene products, studies of metabolic networks and other inter-cellular processes rely on directed relationships, and several researchers that we interviewed stressed the importance of understanding directed relationships between entities.
 
-\subsection{Identifying Hierarchical Relationships}
-Common pathway data formats such as BioPAX are inherently hierarchical.
+\subsection{Hierarchical Relationship Tasks}
+
+Pathway data is inherently hierarchical.
 These hierarchial relationships describe relationships of containment that are either abstract or based on real biochemical interactions within a cell.
-In the abstract, a pathway (itself an abstraction) can contain many ``sub-pathways.''
-These sub-pathways generally encapsulate some commonly-understood biological process within a cell, such as mitosis.
+For example, a pathway (itself an abstraction) can be nested within other pathways.
+These nested pathways generally encapsulate some commonly-understood hierarchy of biological processes that take place within a cell, such as cellular replication.
 Other representations include the more general notion of a ``module'' of connected components, such as gene products.
-
 Hierarchical relationships can also represent physical interactions between biochemical participants.
 A common of example of this is in biomolecular complexes, which are themselves composed of other complexes or biomolecules.
 
-\subsection{Low Level Relationship Tasks}
-\subsection{Non-Hierarchical Relationships}
-\subsubsection{One to Many Relationships}
+While in a strict sense, a hierarchical relationship between nodes can be seen as one particular type of edge, we instead explicitly distinguish between between hierarchical and non-hierarchical relationships.
+This distinction is motivated by the observation that in most cases, pathway data includes relationships of hierarchy (i.e., when one vertex is contained within another) \textit{in parallel} with other, non-hierarchial relationships, such as the relationship between one gene product that activates or inhibits another.
 
-\hl{or containment or structure?}
-\hl{note not always an edge}
+A vertex that contains other entities can be represented as a \texit{compound node}, which is equivalent to a ``parent'' vertex or in some contexts a ``module.''
+Also, note that while non-hierarchical relationships can take a variety of forms, the only form of hierarchical relationship is one of \texit{containment}, from parent to child, and is undirected.
 
-\subsection{Cause and Effect}
-\subsubsection{Cascading Effects}
-\subsubsection{Feedback Loops}
-\hl{or cycles}
+\todo[inline]{We need to be consistent about how we talk about compound nodes aka parent nodes aka modules}
 
-\subsection{Curating Annotating Debugging}
+\subsubsection{Task: Identify Containment, parent-to-parent}
+\todo[inline]{todo}
+\subsubsection{Task: Identify Containment, parent-to-leaf}
+\todo[inline]{todo}
 
-\subsection{Search Filter}
+\subsection{Compositions of Adjacency Tasks and Hierarchy Tasks}
+Given our distinction between hierarchical and non-hierarchical relationships, we can characterize compositions of tasks related to the identification of relationships between entities and hierarchies.
 
-\subsection{Multiple Datasets}
+These relationships occur frequently in biological pathway data.
 
+\todo[inline]{examples}
 
+\subsubsection{Task: Identify Adjacency, parent-to-parent, one-to-one}
+\todo[inline]{todo}
+\subsubsection{Task: Identify Adjacency, entity-to-parent, one-to-one}
+\todo[inline]{todo}
+\subsubsection{Task: Identify Adjacency, parent-to-parent, one-to-many}
+\todo[inline]{todo}
+\subsubsection{Task: Identify Adjacency, entity-to-parent, one-to-many}
+\todo[inline]{todo}
+\todo[inline]{Should we further sub-divide into directed and undirected?}
 
+\subsection{Cause and Effect Tasks}
+A category of tasks inherent to a variety of work in bioinformatics is the identification of \textit{causal relationships} that exist between biomolecular entities.
+When discussing directed paths between entities, one entity is said to be \emph{upstream} or \emph{downstream} of another.
 
-\subsection{Identifying Hierarchical Relationships}
+Understanding these upstream and downstream relationships is particularly important to domains such as cancer drug research, where a drug may affect a small subset of genes or gene products, which in turn will affect various downstream processes.
+\emph{Causal networks} are also particularly essential to the analysis of large-scale gene expression data.
+For instance, a causal network could reveal the likely regulators of a set of genes that are observed to be up-regulated or down-regulated in a particular setting~\cite{felciano2013predictive, Kramer2013ipa-causal}.
 
-For example, pathways can be nested within other pathways, representing a biological hierarchy of low-level processes that act as components in high-level processes such as cellular replication.
+In most cases, a directed relationship is meant to represent a biochemical reaction, where one entity is consumed as a reactant and another is produced as a product.
+Thus, an upstream entity may be connected to a downstream entity through a chain of several directed links.
+In the most basic sense, the ``entities'' mentioned above are genes, gene products (such as proteins or complexes), or other small molecules within a cell.
+A researcher may be interested in understanding the path of reactions (or other relationships) that connects two entities.
 
-\hl{nested complexes}
-\hl{pathway modules within pathways}
+\todo[inline]{More on Activation and Inhibition? Activation and inhibition vs upregulation and downregulation?}
 
-\h1{Compund Connectivity}
+\subsubsection{Task: Identify Cascading Effects, one-to-one}
+\todo[inline]{todo, i.e. finding paths}
+\subsubsection{Task: Identify Cascading Effects, one-to-many}
+\todo[inline]{todo}
+\subsubsection{Task: Identify Cascading Effects, many-to-many}
+\todo[inline]{todo}
+\subsubsection{Task: Identify Cascading Effects, many-to-one}
+\todo[inline]{todo}
 
-Many entities (e.g. proteins within a complex) are may be collectively connected to other entities (or other compound groupings). Representing these compound connections is not trivial. As mentioned earlier, the relationships themselves may be abstract, such as when entities and pathways are connected via the \emph{nextStep} property in BioPAX data.
+\todo[inline]{we could keep going, as in: ``cascading effects, entity-to-parent, one-to-many, directed''...}
 
-a pathway often contains compound nodes and relationships that group many entities. A biochemical reaction can be characterized as a \emph{hyperedge}, usually connecting two or more inputs to two or more outputs.
+\subsubsection{Task: Identify Feedback Loops}
+\todo[inline]{todo}
 
-A pathway often contains compound nodes and relationships that group many entities. A biochemical reaction can be characterized as a \emph{hyperedge}, usually connecting two or more inputs to two or more outputs.
+\subsection{Pathway Modification and Curation}
+\todo[inline]{todo}
+\todo[inline]{curating, annotating, debugging}
 
-\subsection{Cascading Changes}
-\subsection{Cause and Effect}
-\subsection{Activation and Inhibition}
-\subsubsection{Cascading Changes From One to One}
-\subsubsection{Cascading Changes From One to Many}
-\subsubsection{Cascading Changes From Many to Many}
+\subsection{Search, Filter}
+\todo[inline]{todo}
 
-\subsection{Feedback Loops}
-
-
-
-
+\subsection{View Multiple Datasets}
+\todo[inline]{todo}
 
 
 %-------------------------------------------------------------------------
 \section{Discussion}
 
 \subsection{Future Research Directions}
+
+\subsection{Visualizing Uncertainty}
+
+Especially considering our feedback from domain experts, tools generally do not attempt to visualize the ``uncertainty'' behind a connection in a pathway, as expressed by the first domain expert. This is a challenging task, as even the definition of ``uncertainty'' may be difficult to operationalize. However, data formats such as \emph{BioPAX} do have robust support for citations, allowing published references to be connected to entities and relationships within a pathway. A tool that could effectively encode ``uncertainty data'' into a visualization may be very valuable to systems researchers who work with the results of hundereds or thousands of separate publications.
 
 \section{Conclusions}
 
