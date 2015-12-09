@@ -100,7 +100,7 @@ Visual representations can help researchers understand and interact with complex
 Biological data sets offer unique challenges for visualization, due to their complexity and heterogeneity.
 
 Here, we present taxonomy of tasks -- generated from interviews with several domain experts -- that are regularly performed by researchers who work with biological pathway data.
-These tasks require further classification this is provided by existing taxonomies.
+These tasks require further classification than is provided by existing taxonomies.
 
 \todo[inline]{more here about how these tasks are different from previous work}
 
@@ -261,12 +261,11 @@ Their work builds on the work of both Lee at al~\cite{Lee2006} and of Valiati et
 
 The earliest visualization taxonomies were written as very general classifications of low level analytic tasks related to any data visualization. In more recent publications, and as visualization research has progressed, task taxonomies have increasingly focused on more constrained subsets of tasks related to particular types of data structures.
 
-While recently-published task taxonomies have focused on particular data structures (or for datasets with particular characteristics), there have been few \hl{or none?} written in the context of a particular application domain.
+While recently-published task taxonomies have focused on particular data structures (or for datasets with particular characteristics), to our knowledge this is the first written in the context of the domain of biological pathway analysis.
 
 \todo[inline]{One could argue that the whole point of a taxonomy is to be general, and to ignore domain. We should highlight the benefits of writing a taxonomy based on domain-specific tasks. Or how this interesting... etc.}
 
-Biological Pathway visualization is a complex application domain.
-Previous taxonomies have avoided being domain specific, however this domain poses many specific challenges not encountered in the created of the previous taxonomies
+Biological Pathway visualization is a complex application domain that poses many specific challenges not encountered in the created of the previous taxonomies
 The underlying data sets are dynamic multivariate hyper-graphs, and are more complex than any of those described in previous taxonomies.
 The tasks to be completed by biologists are also highly complex, involving many different entity and relationship types, and are not fully covered by the existing taxonomies.
 \todo[inline]{Need to be 100 percent sure this is true}
@@ -410,6 +409,7 @@ A researcher may be interested in understanding the path of reactions (or other 
 \subsection{Visualizing Uncertainty}
 
 Especially considering our feedback from domain experts, tools generally do not attempt to visualize the ``uncertainty'' behind a connection in a pathway, as expressed by the first domain expert. This is a challenging task, as even the definition of ``uncertainty'' may be difficult to operationalize. However, data formats such as \emph{BioPAX} do have robust support for citations, allowing published references to be connected to entities and relationships within a pathway. A tool that could effectively encode ``uncertainty data'' into a visualization may be very valuable to systems researchers who work with the results of hundreds or thousands of separate publications.
+\todo[inline, author=FMG]{The notion of data provenance  (which publications it comes form) was very important to researchers i have talked to. It clearly relates to uncertainty visualization here but also should be part of the attribute visualization task or form a task in its own right}
 
 \section{Conclusions}
 
