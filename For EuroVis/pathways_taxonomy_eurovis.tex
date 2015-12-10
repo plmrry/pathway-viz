@@ -280,6 +280,11 @@ The tasks to be completed by biologists are also highly complex, involving many 
 
 \section{Interviews}
 
+Interviews were conducted with seven biological scientists, each of whom works with pathway data in some form.
+Those interviewed included one tenured professor, three assistant professors, one researcher at a cancer research institution, one postdoctoral research associate, and one masters student in bioinformatics.
+Interviews were loosely structured, but interview questions were designed to elicit a detailed understanding of the tasks performed by the researcher in a typical analysis, as well as an understanding of the type and structure of data that each researcher worked with.
+Each researcher also presented their views on the utility of pathway data and pathway diagrams in general.
+
 %-------------------------------------------------------------------------
 \section{Task Taxonomy}
 
@@ -288,40 +293,24 @@ The tasks to be completed by biologists are also highly complex, involving many 
 Biological pathways are generally represented as weighted, directed graphs and in some cases include hyper-edges and compound nodes.
 Thus, the low-level identification of nodes, vertices, and their attributes is essential.
 Detailed task taxonomies have been created which describe tasks related to particular types of data, including multivariate graphs.
-\hl{why a new taxonomy}
-
 In particular...
-\hl{importance of understanding both hierarchy and connectivity at the same time}
+\hl{importance of understanding relationships between compound nodes}
 
 \subsection{Attribute Tasks}
 \subsubsection{Task: Identify Vertex Attributes}
-\todo[inline]{todo}
 \subsubsection{Task: Identify Edge Attributes}
-\todo[inline]{todo}
-\subsubsection{Task: Identify Uncertainty}
+\subsubsection{Task: Uncertainty and Provenance}
 Several of the researchers mentioned certain tasks related to the curation, maintenance, and understanding of pathway data. RG mentioned the importance of being able to \emph{debug} potentially flawed data. NH and FZ both expressed a need to create ``personalized'' pathways that only include a user-determined subset of entities and relationships. Finally, QW and FZ discussed the importance of understanding \emph{uncertainty} within pathway data. For example, each relationship within a BioPAX file is usually associated with a publication that provides evidence for its existence. Thus, some relationships may be subject to scrutiny within the scientific community, while others may have more robust empirical support.
 
-\subsection{Non-Hierarchical Relationship Tasks}
+\subsection{Relationship Tasks}
 
 Understanding how pathway entities are connected was of critical importance to all of the researchers we interviewed, and is essential to most research in bioinformatics.
 
 While some analyses and datasets involve undirected relationships between genes or gene products, studies of metabolic networks and other inter-cellular processes rely on directed relationships, and several researchers that we interviewed stressed the importance of understanding directed relationships between entities.
 
-\subsubsection{Task: Identify Adjacency, one-to-many}
-Given an entity, find the entities that it is connected to.
+\hl{merge with hierarchical tasks}
 
-\subsubsection{Task: Identify Adjacency, many-to-many}
-Given a set of entities, find all other entities that are connected to that set.
-
-\subsubsection{Task: Identify Adjacency, one-to-many, outgoing}
-Given an entity, find the entities that it is connected to via outgoing edges.
-
-\subsubsection{Task: Identify Adjacency, one-to-many, incoming}
-Given an entity, find the entities that it is connected to via incoming edges.
-
-\subsection{Hierarchical Relationship Tasks}
-
-Pathway data is inherently hierarchical.
+Pathway data is also inherently hierarchical.
 These hierarchical relationships describe relationships of containment that are either abstract or based on real biochemical interactions within a cell.
 For example, a pathway (itself an abstraction) can be nested within other pathways.
 These nested pathways generally encapsulate some commonly-understood hierarchy of biological processes that take place within a cell, such as cellular replication.
@@ -338,17 +327,42 @@ Also, note that while non-hierarchical relationships can take a variety of forms
 
 \todo[inline]{We need to be consistent about how we talk about compound nodes aka parent nodes aka modules}
 
+\subsection{Relationship Tasks}
+
+identification of:
+\\
+\\
+relationship type: adjacency, hierarchy
+\\ $\times$
+node type: simple, compound
+\\ $\times$
+from: one, many
+\\ $\times$
+to: one, many
+\\ $\times$
+directed, undirected
+
+% \subsubsection{Task: Identify Adjacency, one-to-many}
+% Given an entity, find the entities that it is connected to.
+%
+% \subsubsection{Task: Identify Adjacency, many-to-many}
+% Given a set of entities, find all other entities that are connected to that set.
+%
+% \subsubsection{Task: Identify Adjacency, one-to-many, outgoing}
+% Given an entity, find the entities that it is connected to via outgoing edges.
+%
+% \subsubsection{Task: Identify Adjacency, one-to-many, incoming}
+% Given an entity, find the entities that it is connected to via incoming edges.
+
 \subsubsection{Task: Identify Containment, parent-to-parent}
-\todo[inline]{todo}
 \subsubsection{Task: Identify Containment, parent-to-leaf}
-\todo[inline]{todo}
 
 \subsection{Compositions of Adjacency Tasks and Hierarchy Tasks}
-Given our distinction between hierarchical and non-hierarchical relationships, we can characterize compositions of tasks related to the identification of relationships between entities and hierarchies.
-
-These relationships occur frequently in biological pathway data.
-
-\todo[inline]{examples}
+% Given our distinction between hierarchical and non-hierarchical relationships, we can characterize compositions of tasks related to the identification of relationships between entities and hierarchies.
+%
+% These relationships occur frequently in biological pathway data.
+%
+% \todo[inline]{examples}
 
 It is important to note that a one-to-one relationship between an entity and a parent is \textit{not} the same as a one-to-many relationship between an entity and all of that parents children.
 For instance, BioPax data contains the abstract ``NextStep'' relationship, which defines, as the name suggests, an arbitrary notion of the ``next step'' of some biological process.
@@ -356,13 +370,9 @@ A biochemical reaction could be connected, via a \textit{single} ``NextStep'' re
 This relationship is clearly not the same as a biochemical reaction being connected to every entity within a pathway.
 
 \subsubsection{Task: Identify Adjacency, parent-to-parent, one-to-one}
-\todo[inline]{todo}
 \subsubsection{Task: Identify Adjacency, entity-to-parent, one-to-one}
-\todo[inline]{todo}
 \subsubsection{Task: Identify Adjacency, parent-to-parent, one-to-many}
-\todo[inline]{todo}
 \subsubsection{Task: Identify Adjacency, entity-to-parent, one-to-many}
-\todo[inline]{todo}
 \todo[inline]{Should we further sub-divide into directed and undirected?}
 
 \subsection{Cause and Effect Tasks}
@@ -381,28 +391,20 @@ A researcher may be interested in understanding the path of reactions (or other 
 \todo[inline]{More on Activation and Inhibition? Activation and inhibition vs up-regulation and down-regulation?}
 
 \subsubsection{Task: Identify Cascading Effects, one-to-one}
-\todo[inline]{todo, i.e. finding paths}
 \subsubsection{Task: Identify Cascading Effects, one-to-many}
-\todo[inline]{todo}
 \subsubsection{Task: Identify Cascading Effects, many-to-many}
-\todo[inline]{todo}
 \subsubsection{Task: Identify Cascading Effects, many-to-one}
-\todo[inline]{todo}
 
-\todo[inline]{we could keep going, as in: ``cascading effects, entity-to-parent, one-to-many, directed''...}
 
 \subsubsection{Task: Identify Feedback Loops}
+
+\subsection{Compound Relationships and Multiple Datasets}
 \todo[inline]{todo}
 
 \subsection{Pathway Modification and Curation}
 \todo[inline]{todo}
 \todo[inline]{curating, annotating, debugging}
 
-\subsection{Search, Filter}
-\todo[inline]{todo}
-
-\subsection{View Multiple Datasets}
-\todo[inline]{todo}
 
 
 %-------------------------------------------------------------------------
