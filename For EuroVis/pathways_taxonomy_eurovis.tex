@@ -100,7 +100,7 @@ Visual representations can help researchers understand and interact with complex
 Biological data sets offer unique challenges for visualization, due to their complexity and heterogeneity.
 
 Here, we present taxonomy of tasks -- generated from interviews with several domain experts -- that are regularly performed by researchers who work with biological pathway data.
-These tasks require further classification this is provided by existing taxonomies.
+These tasks require further classification than is provided by existing taxonomies.
 
 \todo[inline]{more here about how these tasks are different from previous work}
 
@@ -156,7 +156,8 @@ In a separate domain, stem-cell researchers work with pathways that will precipi
 
 %\p{Static representations are not enough}
 
-In the last decade, analyses that involve hundreds or thousands of genes and gene products have become common. When analyzing such large and complex data, visual representations can be essential.
+In the last decade, analyses that involve hundreds or thousands of genes and gene products have become common.
+When analyzing such large and complex data, visual representations can be essential.
 Often, static representations are inadequate.
 The complexity and amount of information that needs to be incorporated in given diagram can make static representations cluttered and difficult to interpret.
 Thus, modern tools make careful use of user interactions and visualization techniques to allow a user to effectively explore and analyze pathway data.
@@ -191,6 +192,7 @@ In order to aid an understanding of pathway visualization tools, an understandin
 In this section we briefly explain the structure of typical pathway data files.
 
 \subsubsection{Pathway Data Model}
+\todo[inline, author=FMG, color=green]{Is it ok if i condense this subsubsection into a line or two and then move it with the pathway formats subsection , to the related work section?}
 
 Information stored in any pathway data file can generally be broken down into three components:
 
@@ -238,38 +240,35 @@ In this paper we highlight examples of existing tools and techniques which provi
 
 %-------------------------------------------------------------------------
 \subsection{Task Taxonomies}
-The field of visual analytics has produced a number of \textit{task taxonomies}, which are written in an effort to understand exactly how various analytics tasks are enabled by different visualization techniques, and vice versa. These taxonomies help clarify the utility of existing techniques while also providing a low-level template for the design and evaluation of new techniques.
+The field of visual analytics has produced a number of \textit{task taxonomies}, which are written in an effort to understand exactly how various analytics tasks are enabled by different visualization techniques, and vice-versa.
+These taxonomies help clarify the utility of existing techniques while also providing a low level template for the design and evaluation of new techniques.
 Wehrend and Lewis~\cite{Wehrend1990} provide one of the earliest visualization task taxonomies, with the goal of ``accelerating progress in scientific visualization'' by allowing researchers to easily find the right visualization technique for a given problem.
-Schneiderman~\cite{Shneiderman1996} defined a ``task by data type taxonomy'' for in formation visualization in order to \textit{``to sort out the prototypes and guide researchers to new opportunities''}.
-These seminal taxonomies were, like many later taxonomies, independent of a specific visualization application domain --
-their purpose was to provide a low-level description and categorization of the analysis tasks enabled by \textit{any} visualization of data.
+Schneiderman~\cite{Shneiderman1996} define a ``task by data type taxonomy'' for information visualization in order to \textit{``to sort out the prototypes and guide researchers to new opportunities''}.
+These seminal taxonomies were, like many later taxonomies, independent of a specific visualization application domain, their purpose was to provide a low level description and categorization of the analysis tasks enabled by \textit{any} visualization of data.
 
-Later taxonomies focused specifically on more narrow categories of visualization.
+Later taxonomies focus specifically on more narrow categories of visualization.
 For instance, Valiati et al.~\cite{Valiati2006} provide a taxonomy focused specifically on multidimensional visualizations. They build on~\cite{Wehrend1990}, but focus on tasks uniquely related to multidimensional visualizations (such as parallel coordinates).
 Like previous authors, their goal is to guide the choices of visualization and interaction techniques, and also to  help support usability testing.
 Lee at al~\cite{Lee2006} define a graph visualization taxonomy of tasks that are frequently encountered when analyzing graph data.
 The stated goal of this work was to improve the evaluation of graph visualization systems by creating a set of common benchmark tasks (which could be used in conjunction with benchmark data sets).
 Their taxonomy covers tasks for the analysis of graphs in general, and was inspired by example tasks from many domains that make regular use of graph data.
-The authors built on Amar and Stasko's~\cite{Amar2005} low level visual analytic task list by composing existing low-level tasks into higher level complex tasks while also proposing additional tasks that are not captured by low-level tasks presented in existing taxonomies.
+The authors build on Amar and Stasko's~\cite{Amar2005} low level visual analytic task list by composing existing low level tasks into higher level complex tasks while also proposing additional tasks that are not captured by low level tasks presented in existing taxonomies.
 
-\todo[inline]{Consistent hypenation: ``low-level'' or ``low level''? }
 
-\todo[inline]{When writing about previous work, need to be consistent on present vs. past tense. Which to use?}
-
-Several recent taxonomies have focused on aspects of graph visualization that extend the work of Lee at al~\cite{Lee2006}.
+Several recent taxonomies focus on aspects of graph visualization that extend the work of Lee at al~\cite{Lee2006}.
 Ahn et al~\cite{Ahn2014} provide a task taxonomy for analyzing networks that evolve over time, also known as dynamic graphs.
 The dynamic and complex nature of dynamic graph data yields a similarly complex set of analysis tasks, and many of these tasks are not covered by the general graph taxonomy of Lee at al~\cite{Lee2006} -- thus, new tasks need to be specified.
 Pretorius et al~\cite{Pretorius2014} focus on multivariate graph visualization (where graph elements contain multiple attributes).
 Their work builds on the work of both Lee at al~\cite{Lee2006} and of Valiati et al.~\cite{Valiati2006}, as multivariate networks can be considered a multidimensional data set.
 
-The earliest visualization taxonomies were written as very general classifications of low-level analytic tasks related to any data visualization. In more recent publications, and as visualization research has progressed, task taxonomies have increasingly focused on more constrained subsets of tasks related to particular types of data structures.
+The earliest visualization taxonomies were written as very general classifications of low level analytic tasks related to any data visualization.
+In more recent publications, and as visualization research has progressed, task taxonomies have increasingly focused on more constrained subsets of tasks related to particular types of data structures.
 
-While recently-published task taxonomies have focused on particular data structures (or for datasets with particular characteristics), there have been few \hl{or none?} written in the context of a particular application domain.
+While recently-published task taxonomies have focused on particular data structures (or for datasets with particular characteristics), to our knowledge this is the first written in the context of the domain of biological pathway analysis.
 
 \todo[inline]{One could argue that the whole point of a taxonomy is to be general, and to ignore domain. We should highlight the benefits of writing a taxonomy based on domain-specific tasks. Or how this interesting... etc.}
 
-Biological Pathway visualization is a complex application domain.
-Previous taxonomies have avoided being domain specific, however this domain poses many specific challenges not encountered in the created of the previous taxonomies
+Biological Pathway visualization is a complex application domain that poses many specific challenges not encountered in the created of the previous taxonomies
 The underlying data sets are dynamic multivariate hyper-graphs, and are more complex than any of those described in previous taxonomies.
 The tasks to be completed by biologists are also highly complex, involving many different entity and relationship types, and are not fully covered by the existing taxonomies.
 \todo[inline]{Need to be 100 percent sure this is true}
@@ -300,12 +299,17 @@ In particular...
 \subsection{Attribute Tasks}
 \subsubsection{Task: Identify Vertex Attributes}
 \subsubsection{Task: Identify Edge Attributes}
-\subsubsection{Task: Uncertainty and Provenance}
+\subsubsection{Task: Entity Provenance and Uncertainty}
+
+Especially important to researchers in the field of bioinformatics is the concept of \textit{data provenance}, which refers to the history and original sources tied to a particular entity. Much of the data in the field of bioinformatics is gathered and integrated from a wide range of publications, data stores, and other products of research.
+
 Several of the researchers mentioned certain tasks related to the curation, maintenance, and understanding of pathway data. RG mentioned the importance of being able to \emph{debug} potentially flawed data. NH and FZ both expressed a need to create ``personalized'' pathways that only include a user-determined subset of entities and relationships. Finally, QW and FZ discussed the importance of understanding \emph{uncertainty} within pathway data. For example, each relationship within a BioPAX file is usually associated with a publication that provides evidence for its existence. Thus, some relationships may be subject to scrutiny within the scientific community, while others may have more robust empirical support.
 
-In interviews, researchers discussed the importance of understanding \emph{uncertainty} within pathway data. For example, each relationship within a BioPAX file is usually associated with a publication that provides evidence for its existence. Thus, some relationships may be subject to scrutiny within the scientific community, while others may have more robust emprical support.
+In interviews, researchers discussed the importance of understanding \emph{uncertainty} within pathway data. For example, each relationship within a BioPAX file is usually associated with a publication that provides evidence for its existence. Thus, some relationships may be subject to scrutiny within the scientific community, while others may have more robust empirical support.
 
 \subsection{Relationship Tasks}
+
+\todo[inline, author=FMG]{The notion of data provenance  (which publications it comes form) was very important to researchers i have talked to. It clearly relates to uncertainty visualization but maybe it could form a task in eits own right. Identify Entity provenance??}
 
 Understanding how pathway entities are connected was of critical importance to all of the researchers we interviewed, and is essential to most research in bioinformatics.
 
@@ -322,11 +326,11 @@ Hierarchical relationships can also represent physical interactions between bioc
 A common of example of this is in bio-molecular complexes, which are themselves composed of other complexes or biomolecules.
 
 While in a strict sense, a hierarchical relationship between nodes can be seen as one particular type of edge, we instead explicitly distinguish between between hierarchical and non-hierarchical relationships.
-This distinction is motivated by the observation that in most cases, pathway data includes relationships of hierarchy (i.e., when one vertex is contained within another) \textit{in parallel} with other, non-hierarchial relationships, such as the relationship between one gene product that activates or inhibits another.
+This distinction is motivated by the observation that in most cases, pathway data includes relationships of hierarchy (i.e., when one vertex is contained within another) \textit{in parallel} with other, non-hierarchical relationships, such as the relationship between one gene product that activates or inhibits another.
 
-A vertex that contains other entities can be represented as a \texit{compound node}, which is equivalent to a ``parent'' vertex or in some contexts a ``module.''
+A vertex that contains other entities can be represented as a \textit{compound node}, which is equivalent to a ``parent'' vertex or in some contexts a ``module.''
 
-Also, note that while non-hierarchical relationships can take a variety of forms, the only form of hierarchical relationship is one of \texit{containment}, from parent to child, and is undirected.
+Also, note that while non-hierarchical relationships can take a variety of forms, the only form of hierarchical relationship is one of \textit{containment}, from parent to child, and is undirected.
 
 \todo[inline]{need to be consistent about how we talk about compound nodes aka parent nodes aka modules}
 
@@ -379,6 +383,8 @@ directed, undirected
 % \todo[inline]{Should we further sub-divide into directed and undirected?}
 
 \subsection{Cause and Effect Tasks}
+\todo[inline, author=FMG]{I think it would be a good idea to differentiate this taxonomy from ahn's taxonomy in this section. He does look at causal tasks and reptioon, which arer related to feedback loops , but not the same....}
+
 A category of tasks inherent to a variety of work in bioinformatics is the identification of \textit{causal relationships} that exist between bio-molecular entities.
 When discussing directed paths between entities, one entity is said to be \emph{upstream} or \emph{downstream} of another.
 
@@ -418,6 +424,9 @@ directed, undirected
 Feedback loops are common within metabolic activation networks, and they play a key role in processes related to uncontrolled cellular growth in cancerous cells.
 
 \subsection{Compound Relationships and Multiple Datasets}
+
+\subsection{View Multiple Datasets}
+\todo[inline, author=FMG]{Could this be considered a comparison task? ( where viewing multiple data sets is the solution}
 
 \subsection{Pathway Modification and Curation}
 
