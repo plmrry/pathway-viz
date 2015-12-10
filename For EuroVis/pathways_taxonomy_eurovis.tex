@@ -230,11 +230,19 @@ Finally, avenues of future research are considered, along with a brief summary o
 Pathways models are an important concept with biological research~\cite{cairns2011regulation, luo2003targeting,reya2001stem}.
 The complexity of the data and the benefits offered to researchers by visualization tools make biological pathways an important application domain for visualization.
 
+
 There are a large number of tools available and many existing surveys describe them \cite{Suderman2007tools,pavlopoulos2008survey,Gehlenborg2010omics}.
-In this paper we highlight examples of existing tools and techniques which provide strong support for the tasks described in our taxonomy, however it is not intended as a complete survey of biological visualization applications.
+In this paper we highlight examples of prominent existing tools and techniques which provide support for the tasks described in our taxonomy, however it is not intended as a complete survey of biological visualization applications.
+We have included the following: \textit{ChiBe}~\cite{Babur2010chibe}, \textit{Entourage}~\cite{Lex2013entourage}, \textit{Reactome Pathway Browser}~\cite{croft2014reactome}, \textit{VisAnt}~\cite{hu2004visant}, \textit{MetaViz}~\cite{bourqui2007metabolic}, \textit{VitaPad}~\cite{holford2005vitapad}, and \textit{BioFabric}~\cite{Longabaugh2012biofabric}. 
+It is clear from the relationship structure of pathway data that graphs are a suitable visualization choice, and each of these applications visualizes pathway data as node-link graph representations (or a slight variant in the case of Biofabric~\cite{Longabaugh2012biofabric}.
+However, there are alternative visualization techniques which could be applied to pathway data.
+Research has shown that matrix visualization techniques outperform node-link diagrams for higher level group based tasks\cite{Ghoniem2004,Henry2007}.
+While matrix tasks are not as effective for path-tracing tasks, a juxtaposition of both types or a hybrid visualization hybrid, such as NodeTrix~\cite{NodeTrix2007}, could prove effective.
+Set visualisation
+
+
 
  
-
 \subsubsection{Pathway Data Formats}
 Pathway data can be stored in one of several file formats.
 In particular, \textit{BioPAX}~\cite{demir2010biopax}, \textit{KEGG}~\cite{kanehisa2000kegg} and \textit{SBML} \cite{Hucka2003} are the most popular standards for storing the complex data structures described in the previous section.
@@ -282,7 +290,7 @@ While recently-published task taxonomies have focused on particular data structu
 Biological Pathway visualization is a complex application domain that poses many specific challenges not encountered in the created of the previous taxonomies
 The underlying data sets are dynamic multivariate hyper-graphs, and are more complex than any of those described in previous taxonomies.
 The tasks to be completed by biologists are also highly complex, involving many different entity and relationship types, and are not fully covered by the existing taxonomies.
-\todo[inline]{Need to be 100 percent sure this is true}
+\todo[inline]{Need to demonstrate 100 percent that this is true in the rest of the paper}
 %Amar and stasko do include correlation as one of their tasks
 % pretorius also includes causation...
 
@@ -317,6 +325,7 @@ Especially important to researchers in the field of bioinformatics is the concep
 Several of the researchers mentioned certain tasks related to the curation, maintenance, and understanding of pathway data. RG mentioned the importance of being able to \emph{debug} potentially flawed data. NH and FZ both expressed a need to create ``personalized'' pathways that only include a user-determined subset of entities and relationships. Finally, QW and FZ discussed the importance of understanding \emph{uncertainty} within pathway data. For example, each relationship within a BioPAX file is usually associated with a publication that provides evidence for its existence. Thus, some relationships may be subject to scrutiny within the scientific community, while others may have more robust empirical support.
 
 In interviews, researchers discussed the importance of understanding \emph{uncertainty} within pathway data. For example, each relationship within a BioPAX file is usually associated with a publication that provides evidence for its existence. Thus, some relationships may be subject to scrutiny within the scientific community, while others may have more robust empirical support.
+
 
 \subsection{Relationship Tasks}
 
