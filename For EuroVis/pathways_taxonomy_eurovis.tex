@@ -233,7 +233,7 @@ The complexity of the data and the benefits offered to researchers by visualizat
 
 There are a large number of tools available and many existing surveys describe them \cite{Suderman2007tools,pavlopoulos2008survey,Gehlenborg2010omics}.
 In this paper we highlight examples of prominent existing tools and techniques which provide support for the tasks described in our taxonomy, however it is not intended as a complete survey of biological visualization applications.
-We have included the following: \textit{ChiBe}~\cite{Babur2010chibe}, \textit{Entourage}~\cite{Lex2013entourage}, \textit{Reactome Pathway Browser}~\cite{croft2014reactome}, \textit{VisAnt}~\cite{hu2004visant}, \textit{MetaViz}~\cite{bourqui2007metabolic}, \textit{VitaPad}~\cite{holford2005vitapad}, and \textit{BioFabric}~\cite{Longabaugh2012biofabric}. 
+We have included the following: \textit{ChiBe}~\cite{Babur2010chibe}, \textit{Entourage}~\cite{Lex2013entourage}, \textit{Reactome Pathway Browser}~\cite{croft2014reactome}, \textit{VisAnt}~\cite{hu2004visant}, \textit{MetaViz}~\cite{bourqui2007metabolic}, \textit{VitaPad}~\cite{holford2005vitapad}, and \textit{BioFabric}~\cite{Longabaugh2012biofabric}.
 It is clear from the relationship structure of pathway data that graphs are a suitable visualization choice, and each of these applications visualizes pathway data as node-link graph representations (or a slight variant in the case of Biofabric~\cite{Longabaugh2012biofabric}.
 However, there are alternative visualization techniques which could be applied to pathway data.
 Research has shown that matrix visualization techniques outperform node-link diagrams for higher level group based tasks\cite{Ghoniem2004,Henry2007}.
@@ -242,7 +242,7 @@ Set visualisation
 
 
 
- 
+
 \subsubsection{Pathway Data Formats}
 Pathway data can be stored in one of several file formats.
 In particular, \textit{BioPAX}~\cite{demir2010biopax}, \textit{KEGG}~\cite{kanehisa2000kegg} and \textit{SBML} \cite{Hucka2003} are the most popular standards for storing the complex data structures described in the previous section.
@@ -309,50 +309,81 @@ Each researcher also presented their views on the utility of pathway data and pa
 \subsection{Taxonomy Overview}
 
 Biological pathways are generally represented as weighted, directed graphs and in some cases include hyper-edges and compound nodes.
-Thus, the low-level identification of nodes, vertices, and their attributes is essential.
-Detailed task taxonomies have been created which describe tasks related to particular types of data, including multivariate graphs.
-In particular...
+Task taxonomies have been created which describe tasks related to graphs in general. However, the analysis of biomolecular interaction networks includes a unique set of tasks that refine and extend the tasks associated with the visual analysis of networks in general.
 
-\todo[inline]{importance of understanding relationships between compound nodes}
+\subsection{Attributes}
 
-\subsection{Attribute Tasks}
-\subsubsection{Task: Identify Vertex Attributes}
-\subsubsection{Task: Identify Edge Attributes}
-\subsubsection{Task: Entity Provenance and Uncertainty}
+The low-level identification of nodes, vertices, and their attributes is an essential component in the visual analysis of any graph representation.
 
-Especially important to researchers in the field of bioinformatics is the concept of \textit{data provenance}, which refers to the history and original sources tied to a particular entity. Much of the data in the field of bioinformatics is gathered and integrated from a wide range of publications, data stores, and other products of research.
+\subsubsection{Provenance}
 
-Several of the researchers mentioned certain tasks related to the curation, maintenance, and understanding of pathway data. RG mentioned the importance of being able to \emph{debug} potentially flawed data. NH and FZ both expressed a need to create ``personalized'' pathways that only include a user-determined subset of entities and relationships. Finally, QW and FZ discussed the importance of understanding \emph{uncertainty} within pathway data. For example, each relationship within a BioPAX file is usually associated with a publication that provides evidence for its existence. Thus, some relationships may be subject to scrutiny within the scientific community, while others may have more robust empirical support.
+Especially important to researchers in the field of bioinformatics is the concept of \textit{data provenance}, which refers to the history of original sources tied to a particular entity. Much of the data in the field of bioinformatics is gathered and integrated from a wide range of publications, data stores, and other products of research.
+
+\subsubsection{Uncertainty}
+
+Related to the task of identifying data provenance is the task of being able to view and identify information related to the \texit{uncertainty} of the data underlying relationships between entities.
 
 In interviews, researchers discussed the importance of understanding \emph{uncertainty} within pathway data. For example, each relationship within a BioPAX file is usually associated with a publication that provides evidence for its existence. Thus, some relationships may be subject to scrutiny within the scientific community, while others may have more robust empirical support.
 
-
-\subsection{Relationship Tasks}
-
-\todo[inline, author=FMG]{The notion of data provenance  (which publications it comes form) was very important to researchers i have talked to. It clearly relates to uncertainty visualization but maybe it could form a task in eits own right. Identify Entity provenance??}
+\subsection{Relationships}
 
 Understanding how pathway entities are connected was of critical importance to all of the researchers we interviewed, and is essential to most research in bioinformatics.
 
+\subsubsection{Directed Relationships}
+
 While some analyses and datasets involve undirected relationships between genes or gene products, studies of metabolic networks and other inter-cellular processes rely on directed relationships, and several researchers that we interviewed stressed the importance of understanding directed relationships between entities.
 
-\todo[inline]{merge with hierarchical tasks}
+\subsubsection{Cause and Effect AND? Cascading Effects}
 
-Pathway data is also inherently hierarchical.
-These hierarchical relationships describe relationships of containment that are either abstract or based on real biochemical interactions within a cell.
+\todo[inline, author=PM]{Should we separate discussion of cause and effect from discussion of cascading effects?}
+
+\todo[inline, author=FMG]{I think it would be a good idea to differentiate this taxonomy from ahn's taxonomy in this section. He does look at causal tasks and repetition, which are related to feedback loops , but not the same....}
+
+A category of tasks inherent to a variety of work in bioinformatics is the identification of \textit{causal relationships} that exist between bio-molecular entities.
+When discussing directed paths between entities, one entity is said to be \emph{upstream} or \emph{downstream} of another.
+
+Understanding these upstream and downstream relationships is particularly important to domains such as cancer drug research, where a drug may affect a small subset of genes or gene products, which in turn will affect various downstream processes.
+\emph{Causal networks} are also particularly essential to the analysis of large-scale gene expression data.
+For instance, a causal network could reveal the likely regulators of a set of genes that are observed to be up-regulated or down-regulated in a particular setting~\cite{felciano2013predictive, Kramer2013ipa-causal}.
+
+In most cases, a directed relationship is meant to represent a biochemical reaction, where one entity is consumed as a reactant and another is produced as a product.
+Thus, an upstream entity may be connected to a downstream entity through a chain of several directed links.
+In the most basic sense, the ``entities'' mentioned above are genes, gene products (such as proteins or complexes), or other small molecules within a cell.
+A researcher may be interested in understanding the path of reactions (or other relationships) that connects two entities.
+
+\subsubsection{Compound Relationships}
+
+A vertex that contains other entities can be represented as a \textit{compound node}, which is equivalent to a ``parent'' vertex or in some contexts a ``module.''
+
+It is important to note that a one-to-one relationship between an entity and a parent is \textit{not} the same as a one-to-many relationship between an entity and all of that parents children.
+For instance, BioPax data contains the abstract ``NextStep'' relationship, which defines, as the name suggests, an arbitrary notion of the ``next step'' of some biological process.
+A biochemical reaction could be connected, via a \textit{single} ``NextStep'' relationship, to an entire pathway, which could potentially contain thousands of nodes.
+This relationship is clearly not the same as a biochemical reaction being connected to every entity within a pathway.
+
+\subsubsection{Hierarchical AND/OR Structural Relationships}
+
+Pathway data is inherently hierarchical.
+Hierarchical relationships describe relationships of containment, and these relationships can be abstract or based on real biochemical interactions within a cell.
 For example, a pathway (itself an abstraction) can be nested within other pathways.
 These nested pathways generally encapsulate some commonly-understood hierarchy of biological processes that take place within a cell, such as cellular replication.
 Other representations include the more general notion of a ``module'' of connected components, such as gene products.
 Hierarchical relationships can also represent physical interactions between biochemical participants.
 A common of example of this is in bio-molecular complexes, which are themselves composed of other complexes or biomolecules.
 
-While in a strict sense, a hierarchical relationship between nodes can be seen as one particular type of edge, we instead explicitly distinguish between between hierarchical and non-hierarchical relationships.
-This distinction is motivated by the observation that in most cases, pathway data includes relationships of hierarchy (i.e., when one vertex is contained within another) \textit{in parallel} with other, non-hierarchical relationships, such as the relationship between one gene product that activates or inhibits another.
+It is important to note that hierarchy and ``structure'' often co-exists with other types of relationships. In most cases, pathway data includes relationships of hierarchy (i.e., when one vertex is contained within another) \textit{in parallel} with other, non-hierarchical relationships, such as the relationship between one gene product that activates or inhibits another. Also, note that while non-hierarchical relationships can take a variety of forms, the only form of hierarchical relationship is one of \textit{containment}, from parent to child, and is undirected.
 
-A vertex that contains other entities can be represented as a \textit{compound node}, which is equivalent to a ``parent'' vertex or in some contexts a ``module.''
+\subsubsection{Feedback Loops}
 
-Also, note that while non-hierarchical relationships can take a variety of forms, the only form of hierarchical relationship is one of \textit{containment}, from parent to child, and is undirected.
+Feedback loops are common within metabolic activation networks, and they play a key role in processes related to uncontrolled cellular growth in cancerous cells.
 
-\todo[inline]{need to be consistent about how we talk about compound nodes aka parent nodes aka modules}
+%-------------------------------------------------------------------------
+
+% \todo[inline, author=FMG]{The notion of data provenance  (which publications it comes form) was very important to researchers i have talked to. It clearly relates to uncertainty visualization but maybe it could form a task in eits own right. Identify Entity provenance??}
+
+% While in a strict sense, a hierarchical relationship between nodes can be seen as one particular type of edge, we instead explicitly distinguish between between hierarchical and non-hierarchical relationships.
+% This distinction is motivated by the observation that
+
+% \todo[inline]{need to be consistent about how we talk about compound nodes aka parent nodes aka modules}
 
 % \subsubsection{Task: Identify Adjacency, one-to-many}
 % Given an entity, find the entities that it is connected to.
@@ -376,25 +407,20 @@ Also, note that while non-hierarchical relationships can take a variety of forms
 %
 % \todo[inline]{examples}
 
-It is important to note that a one-to-one relationship between an entity and a parent is \textit{not} the same as a one-to-many relationship between an entity and all of that parents children.
-For instance, BioPax data contains the abstract ``NextStep'' relationship, which defines, as the name suggests, an arbitrary notion of the ``next step'' of some biological process.
-A biochemical reaction could be connected, via a \textit{single} ``NextStep'' relationship, to an entire pathway, which could potentially contain thousands of nodes.
-This relationship is clearly not the same as a biochemical reaction being connected to every entity within a pathway.
-
-\subsection{Relationship Task Compositions}
-
-identification of:
-\\
-\\
-relationship type: adjacency, hierarchy
-\\ $\times$
-node type: simple, compound
-\\ $\times$
-from: one, many
-\\ $\times$
-to: one, many
-\\ $\times$
-directed, undirected
+% \subsection{Relationship Task Compositions}
+%
+% identification of:
+% \\
+% \\
+% relationship type: adjacency, hierarchy
+% \\ $\times$
+% node type: simple, compound
+% \\ $\times$
+% from: one, many
+% \\ $\times$
+% to: one, many
+% \\ $\times$
+% directed, undirected
 
 % \subsubsection{Task: Identify Adjacency, parent-to-parent, one-to-one}
 % \subsubsection{Task: Identify Adjacency, entity-to-parent, one-to-one}
@@ -402,46 +428,33 @@ directed, undirected
 % \subsubsection{Task: Identify Adjacency, entity-to-parent, one-to-many}
 % \todo[inline]{Should we further sub-divide into directed and undirected?}
 
-\subsection{Cause and Effect Tasks}
-\todo[inline, author=FMG]{I think it would be a good idea to differentiate this taxonomy from ahn's taxonomy in this section. He does look at causal tasks and repetition, which are related to feedback loops , but not the same....}
 
-A category of tasks inherent to a variety of work in bioinformatics is the identification of \textit{causal relationships} that exist between bio-molecular entities.
-When discussing directed paths between entities, one entity is said to be \emph{upstream} or \emph{downstream} of another.
-
-Understanding these upstream and downstream relationships is particularly important to domains such as cancer drug research, where a drug may affect a small subset of genes or gene products, which in turn will affect various downstream processes.
-\emph{Causal networks} are also particularly essential to the analysis of large-scale gene expression data.
-For instance, a causal network could reveal the likely regulators of a set of genes that are observed to be up-regulated or down-regulated in a particular setting~\cite{felciano2013predictive, Kramer2013ipa-causal}.
-
-In most cases, a directed relationship is meant to represent a biochemical reaction, where one entity is consumed as a reactant and another is produced as a product.
-Thus, an upstream entity may be connected to a downstream entity through a chain of several directed links.
-In the most basic sense, the ``entities'' mentioned above are genes, gene products (such as proteins or complexes), or other small molecules within a cell.
-A researcher may be interested in understanding the path of reactions (or other relationships) that connects two entities.
 
 % \todo[inline]{More on Activation and Inhibition? Activation and inhibition vs up-regulation and down-regulation?}
 
-\subsection{Cause and Effect Task Compositions}
-
-identification of:
-\\
-\\
-relationship type: increasing, decreasing, other modification
-\\ $\times$
-node type: simple, compound
-\\ $\times$
-from: one, many
-\\ $\times$
-to: one, many
-\\ $\times$
-directed, undirected
+% \subsection{Cause and Effect Task Compositions}
+%
+% identification of:
+% \\
+% \\
+% relationship type: increasing, decreasing, other modification
+% \\ $\times$
+% node type: simple, compound
+% \\ $\times$
+% from: one, many
+% \\ $\times$
+% to: one, many
+% \\ $\times$
+% directed, undirected
 
 % \subsubsection{Task: Identify Cascading Effects, one-to-one}
 % \subsubsection{Task: Identify Cascading Effects, one-to-many}
 % \subsubsection{Task: Identify Cascading Effects, many-to-many}
 % \subsubsection{Task: Identify Cascading Effects, many-to-one}
 
-\subsubsection{Task: Identify Feedback Loops}
+% \subsubsection{Task: Identify Feedback Loops}
 
-Feedback loops are common within metabolic activation networks, and they play a key role in processes related to uncontrolled cellular growth in cancerous cells.
+
 
 \subsection{Compound Relationships and Multiple Datasets}
 
@@ -449,6 +462,10 @@ Feedback loops are common within metabolic activation networks, and they play a 
 \todo[inline, author=FMG]{Could this be considered a comparison task? ( where viewing multiple data sets is the solution}
 
 \subsection{Pathway Modification and Curation}
+
+Several of the researchers mentioned certain tasks related to the curation, maintenance, and understanding of pathway data.
+
+RG mentioned the importance of being able to \emph{debug} potentially flawed data. NH and FZ both expressed a need to create ``personalized'' pathways that only include a user-determined subset of entities and relationships.
 
 Several of the researchers mentioned certain tasks related to the curation, maintenance, and understanding of pathway data. For instance, one researcher mentioned the importance of being able to \emph{debug} potentially flawed data. Two others expressed a need to create ``personalized'' pathways that only include a user-determined subset of entities and relationships.
 
