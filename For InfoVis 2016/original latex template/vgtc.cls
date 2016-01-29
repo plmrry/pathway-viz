@@ -1,5 +1,7 @@
 % `vgtc' LaTeX class.
-% - modifications by Steven Bergner on 2009/13/28
+% - modifications by Meghan Haley on 2011/03/10
+%   - manuscript received dates changed for 2011 journal style
+% - modifications by Steven Bergner on 2009/03/28
 %   - revived teaser feature
 %   - added captionmargin to align teaser caption with abstract width
 % - modifications by Meghan Haley on 2006/07/20
@@ -114,16 +116,19 @@
    %\ExecuteOptions{tvcgpapersize}
 }
 
-%% the following code has partly been adapted from egpubl.cls
-\newif\ifpdf  % determine if we are running PDFLaTeX or not
-\ifx\pdfoutput\undefined \pdffalse % we are not running PDFLaTeX 
-\else 
- %\pdfoutput=1 % we are running PDFLaTeX 
- \pdftrue 
-\fi 
+
+
+%%% the following code has partly been adapted from egpubl.cls
+%\newif\ifpdf  % determine if we are running PDFLaTeX or not
+%\ifx\pdfoutput\undefined \pdffalse % we are not running PDFLaTeX 
+%\else 
+% %\pdfoutput=1 % we are running PDFLaTeX 
+% \pdftrue 
+%\fi 
 
 \newcommand{\vgtcinsertpkg}{}
 \DeclareOption{electronic}{%
+\RequirePackage{ifpdf}
 \ifpdf 
  \renewcommand{\vgtcinsertpkg}{%
   \usepackage[pdftex,
@@ -243,17 +248,20 @@
 \newcommand{\shortauthortitletext}{}
 \newcommand{\shortauthortitle}[1]{\renewcommand{\shortauthortitletext}{#1}}
 %\newcommand{\journalidtxt}{IEEE TRANSACTIONS ON VISUALIZATION AND
-%COMPUTER GRAPHICS, VOL. 12, NO. 5, SEPTEMBER/OCTOBER 2006}
+%COMPUTER GRAPHICS, VOL. xx, NO. x, XXXXXXXXX 201x}
 %\newcommand{\journalid}[1]{\renewcommand{\journalidtxt}{#1}}
 
-%%MEGHAN Comment from here
+%%Comment from here
 \newcommand{\manuscriptnotetxt}{
-Manuscript received 31 March 2009; accepted 27 July 2009; posted online 11 October 2009; mailed on 5 October 2009.\par
-For information on obtaining reprints of this article, please send email~to:~tvcg@computer.org~.
+Manuscript received xx xxx. 201x; accepted xx xxx. 201x. Date of \par
+Publication xx xxx. 201x; date of current version xx xxx. 201x.\par
+For information on obtaining reprints of this article, please send \par 
+e-mail to: reprints@ieee.org.\par
+Digital Object Identifier: xx.xxxx/TVCG.201x.xxxxxxx/
 }
 %% to here to not use the blank
 
-%% MEGHAN NOTE FOR BLANK SPACING
+%% NOTE FOR BLANK SPACING
 %% uncomment from here
 %\newcommand{\manuscriptnotetxt}{\vspace{.25in}}
 %%  to here
