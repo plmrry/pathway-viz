@@ -54,6 +54,7 @@
   linktocpage
 }
 
+ \usepackage{epstopdf}
 %% If you are submitting a paper to a conference for review with a double
 %% blind reviewing process, please replace the value ``0'' below with your
 %% OnlineID. Otherwise, you may safely leave it at ``0''.
@@ -145,13 +146,13 @@ We conclude by suggesting future research directions based on our taxonomy and m
 %% ``\begin{document}'' command. It prepares and prints the title block.
 
 %% the only exception to this rule is the \firstsection command
-\firstsection{Introduction}
+%%\firstsection{Introduction}
 
 \maketitle
 
 %% \section{Introduction} %for journal use above \firstsection{..} instead
 
-%\section{Introduction}
+\section{Introduction}
 
 Understanding complicated networks of bio-molecular interactions and chemical components is essential to solving contemporary problems in modern biology, especially in domains such as cancer and systems research~\cite{hanahan2011hallmarks}.
 These bio-molecular interactions are represented in the form \emph{pathways}, which are used to describe a chain of interactions between biochemical and biological entities within a cell.
@@ -274,7 +275,7 @@ It is clear from the relationship structure of pathway data that graphs are a su
 However, there are alternative visualization techniques which could be applied to pathway data.
 Research has shown that matrix visualization techniques outperform node-link diagrams for higher level group based tasks\cite{Ghoniem2004,Henry2007}.
 While matrix tasks are not as effective for path-tracing tasks, a juxtaposition of both types or a hybrid visualization hybrid, such as NodeTrix~\cite{NodeTrix2007}, could prove effective.
-Set visualisation
+Set visualization
 
 
 
@@ -285,7 +286,8 @@ In particular, \textit{BioPAX}~\cite{demir2010biopax}, \textit{KEGG}~\cite{kaneh
 
 These formats are XML-based and represent data as an ontology.
 \emph{BioPAX}, in particular, was designed to be a general format for biological pathways across a variety of domain contexts~\cite{demir2010biopax}.
-Systems Biology Graph Notation~\cite{Novere2009} is a visual standard often used to visualize \textit{BioPAX} and \textit{SBML} file formats.
+Systems Biology Graph Notation (SBGN)~\cite{Novere2009} is a visual standard often used to visualize \textit{BioPAX} and \textit{SBML} file formats. 
+This standard defines multiple edge and node types, as well as allowing edges to connect to more than 2 nodes, resulting in a hypergraph visualization. 
 Other formats are employed for the visualization of biological pathways that are not specific to the field of biology.
 For instance \textit{SIF Simple Interaction Format} used by \textit{Cytoscape}~\cite{Shannon2003cytoscape} is used to visualize undirected interactions between participants.
 
@@ -349,6 +351,7 @@ Task taxonomies have been created which describe tasks related to graphs in gene
 
 \subsection{Attributes}
 
+Most applications provide access to the attributes through simple interactions ( e.g. mouseover and click). In many cases the attribute information is simply read from an input file, however more recent tools such as \textit{SBGNViz}~\cite{SBGNViz2015} query online database to provide a range of important attribute information.
 The low-level identification of nodes, vertices, and their attributes is an essential component in the visual analysis of any graph representation.
 
 \subsubsection{Provenance}
@@ -360,6 +363,9 @@ Especially important to researchers in the field of bioinformatics is the concep
 Related to the task of identifying data provenance is the task of being able to view and identify information related to the \textit{uncertainty} of the data underlying relationships between entities.
 
 In interviews, researchers discussed the importance of understanding \emph{uncertainty} within pathway data. For example, each relationship within a BioPAX file is usually associated with a publication that provides evidence for its existence. Thus, some relationships may be subject to scrutiny within the scientific community, while others may have more robust empirical support.
+
+Some databases such as STRING~\cite{STRING2005} , a protein interaction database, provide quality scores with their results. This quality score can be seen as a form of uncertainty based on the provenance of the data.
+The higher the score, the more evidence there is for an interaction.
 
 \subsection{Relationships}
 
