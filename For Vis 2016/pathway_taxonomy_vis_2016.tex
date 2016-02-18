@@ -286,8 +286,8 @@ In particular, \textit{BioPAX}~\cite{demir2010biopax}, \textit{KEGG}~\cite{kaneh
 
 These formats are XML-based and represent data as an ontology.
 \emph{BioPAX}, in particular, was designed to be a general format for biological pathways across a variety of domain contexts~\cite{demir2010biopax}.
-Systems Biology Graph Notation (SBGN)~\cite{Novere2009} is a visual standard often used to visualize \textit{BioPAX} and \textit{SBML} file formats. 
-This standard defines multiple edge and node types, as well as allowing edges to connect to more than 2 nodes, resulting in a hypergraph visualization. 
+Systems Biology Graph Notation (SBGN)~\cite{Novere2009} is a visual standard often used to visualize \textit{BioPAX} and \textit{SBML} file formats.
+This standard defines multiple edge and node types, as well as allowing edges to connect to more than 2 nodes, resulting in a hypergraph visualization.
 Other formats are employed for the visualization of biological pathways that are not specific to the field of biology.
 For instance \textit{SIF Simple Interaction Format} used by \textit{Cytoscape}~\cite{Shannon2003cytoscape} is used to visualize undirected interactions between participants.
 
@@ -375,7 +375,28 @@ Understanding how pathway entities are connected was of critical importance to a
 
 While some analyses and datasets involve undirected relationships between genes or gene products, studies of metabolic networks and other inter-cellular processes rely on directed relationships, and several researchers that we interviewed stressed the importance of understanding directed relationships between entities.
 
-\subsubsection{Cause and Effect AND? Cascading Effects}
+\subsubsection{Hierarchical Relationships}
+
+Pathway data is inherently hierarchical.
+Hierarchical relationships describe relationships of containment, and these relationships can be abstract or based on real biochemical interactions within a cell.
+For example, a pathway (itself an abstraction) can be nested within other pathways.
+These nested pathways generally encapsulate some commonly-understood hierarchy of biological processes that take place within a cell, such as cellular replication.
+Other representations include the more general notion of a ``module'' of connected components, such as gene products.
+Hierarchical relationships can also represent physical interactions between biochemical participants.
+A common of example of this is in bio-molecular complexes, which are themselves composed of other complexes or biomolecules.
+
+It is important to note that hierarchy and ``structure'' often co-exists with other types of relationships. In most cases, pathway data includes relationships of hierarchy (i.e., when one vertex is contained within another) \textit{in parallel} with other, non-hierarchical relationships, such as the relationship between one gene product that activates or inhibits another. Also, note that while non-hierarchical relationships can take a variety of forms, the only form of hierarchical relationship is one of \textit{containment}, from parent to child, and is undirected.
+
+\subsubsection{Compound Relationships}
+
+A vertex that contains other entities can be represented as a \textit{compound node}, which is equivalent to a ``parent'' vertex or in some contexts a ``module.''
+
+It is important to note that a one-to-one relationship between an entity and a parent is \textit{not} the same as a one-to-many relationship between an entity and all of that parents children.
+For instance, BioPax data contains the abstract ``NextStep'' relationship, which defines, as the name suggests, an arbitrary notion of the ``next step'' of some biological process.
+A biochemical reaction could be connected, via a \textit{single} ``NextStep'' relationship, to an entire pathway, which could potentially contain thousands of nodes.
+This relationship is clearly not the same as a biochemical reaction being connected to every entity within a pathway.
+
+\subsubsection{Causality and Cascading Effects}
 
 \todo[inline, author=PM]{Should we separate discussion of cause and effect from discussion of cascading effects?}
 
@@ -393,26 +414,11 @@ Thus, an upstream entity may be connected to a downstream entity through a chain
 In the most basic sense, the ``entities'' mentioned above are genes, gene products (such as proteins or complexes), or other small molecules within a cell.
 A researcher may be interested in understanding the path of reactions (or other relationships) that connects two entities.
 
-\subsubsection{Compound Relationships}
+\subsubsection{Many-to-Many Cascading Effects}
 
-A vertex that contains other entities can be represented as a \textit{compound node}, which is equivalent to a ``parent'' vertex or in some contexts a ``module.''
+A causal effect may be modeled as a simple directed edge.
 
-It is important to note that a one-to-one relationship between an entity and a parent is \textit{not} the same as a one-to-many relationship between an entity and all of that parents children.
-For instance, BioPax data contains the abstract ``NextStep'' relationship, which defines, as the name suggests, an arbitrary notion of the ``next step'' of some biological process.
-A biochemical reaction could be connected, via a \textit{single} ``NextStep'' relationship, to an entire pathway, which could potentially contain thousands of nodes.
-This relationship is clearly not the same as a biochemical reaction being connected to every entity within a pathway.
-
-\subsubsection{Hierarchical AND/OR Structural Relationships}
-
-Pathway data is inherently hierarchical.
-Hierarchical relationships describe relationships of containment, and these relationships can be abstract or based on real biochemical interactions within a cell.
-For example, a pathway (itself an abstraction) can be nested within other pathways.
-These nested pathways generally encapsulate some commonly-understood hierarchy of biological processes that take place within a cell, such as cellular replication.
-Other representations include the more general notion of a ``module'' of connected components, such as gene products.
-Hierarchical relationships can also represent physical interactions between biochemical participants.
-A common of example of this is in bio-molecular complexes, which are themselves composed of other complexes or biomolecules.
-
-It is important to note that hierarchy and ``structure'' often co-exists with other types of relationships. In most cases, pathway data includes relationships of hierarchy (i.e., when one vertex is contained within another) \textit{in parallel} with other, non-hierarchical relationships, such as the relationship between one gene product that activates or inhibits another. Also, note that while non-hierarchical relationships can take a variety of forms, the only form of hierarchical relationship is one of \textit{containment}, from parent to child, and is undirected.
+\todo[inline, author=PM]{What really matters in biology is determining cause and effect relationships between many sources and many sinks, separated by many other sets of connections}
 
 \subsubsection{Feedback Loops}
 
@@ -420,10 +426,7 @@ Feedback loops are common within metabolic activation networks, and they play a 
 
 \subsection{Comparisons}
 
-\subsection{View Multiple Datasets}
 \todo[inline, author=FMG]{Could this be considered a comparison task? ( where viewing multiple data sets is the solution}
-
-\subsection{Rename: Comparing Networks to each other}
 
 \subsection{Modification and Curation}
 
