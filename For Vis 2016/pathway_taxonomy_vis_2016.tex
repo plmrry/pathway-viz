@@ -365,12 +365,26 @@ Task taxonomies have been created which describe tasks related to graphs in gene
 
 \subsection{Attributes}
 
-Most applications provide access to the attributes through simple interactions ( e.g. mouseover and click). In many cases the attribute information is simply read from an input file, however more recent tools such as \textit{SBGNViz}~\cite{SBGNViz2015} query online database to provide a range of important attribute information.
-The low-level identification of nodes, vertices, and their attributes is an essential component in the visual analysis of any graph representation.
+
+Most applications provide access to the attributes through simple interactions ( e.g. mouseover and click). In many cases the attribute information is simply read from an input file, however more recent tools such as \textit{SBGNViz}~\cite{SBGNViz2015} and \textit{ChiBE}\cite{Babur2010chibe} query online database to provide a range of important attribute information.
+The low-level identification of nodes, edges, and their attributes is an essential component in the visual analysis of any graph representation. For biological pathqway visualization in particular, integration of attribute data from external data source is very important.
+
+\subsubsection{Attribute Updates and Changes} % need better title for subsection
+Biological pathways  contain many different attributes that affect the state of a a biological entity. 
+For example a gene may be up regulated or down regulated under different experimental conditions. 
+This change in attributes may be time based (meaning the graph is dynamic) or it may be as a result of the context in which a pathway is being analyzed (e.g. as part of a cancer research study).
+
+CHiBE \textit{ChiBE}\cite{Babur2010chibe} provides the ability to load in biological interaction data sets form an external source and apply them to a pathway visualization.
+
+The most prominent data format for supporting this is the SIF format defined as part of the Cytoscape application \cite{Shannon2003cytoscape}. 
+%To Be Completed
 
 \subsubsection{Provenance}
 
 Especially important to researchers in the field of bioinformatics is the concept of \textit{data provenance}, which refers to the history of original sources tied to a particular entity. Much of the data in the field of bioinformatics is gathered and integrated from a wide range of publications, data stores, and other products of research.
+While \textit{SBGNViz}~\cite{SBGNViz2015} and \textit{ChiBE}\cite{Babur2010chibe} and other applications allow connectivity to external sources, such as UNitProt or TBA, provenance information is not visualized directly.
+% Does it need to be
+\todo[inline] {Discuss Visualization of provenance}
 
 \subsubsection{Uncertainty}
 
