@@ -229,6 +229,8 @@ We then review visual representations of pathway data in the context of our requ
 We also review existing tools that implement those visual representations.
 Finally, avenues of future research are considered, along with a brief summary of lessons learned from domain experts.
 
+
+
 %\subsection{Pathway data}
 %
 %In order to aid an understanding of pathway visualization tools, an understanding of the structure of pathway data structures is necessary.
@@ -276,7 +278,7 @@ It is clear from the relationship structure of pathway data that graphs are a su
 However, there are alternative visualization techniques which could be applied to pathway data.
 Research has shown that matrix visualization techniques outperform node-link diagrams for higher level group based tasks\cite{Ghoniem2004,Henry2007}.
 While matrix tasks are not as effective for path-tracing tasks, a juxtaposition of both types or a hybrid visualization hybrid, such as NodeTrix~\cite{NodeTrix2007}, could prove effective.
-Set visualization
+% mention Set visualization
 
 
 
@@ -366,24 +368,33 @@ Task taxonomies have been created which describe tasks related to graphs in gene
 \subsection{Attributes}
 
 
-Most applications provide access to the attributes through simple interactions ( e.g. mouseover and click). In many cases the attribute information is simply read from an input file, however more recent tools such as \textit{SBGNViz}~\cite{SBGNViz2015} and \textit{ChiBE}\cite{Babur2010chibe} query online database to provide a range of important attribute information.
+Most applications provide access to the attributes through simple interactions (e.g. mouseover and click). In many cases the attribute information is simply read from an input file, however more recent tools such as \textit{SBGNViz}~\cite{SBGNViz2015} and \textit{ChiBE}\cite{Babur2010chibe} query online database to provide a range of important attribute information.
 The low-level identification of nodes, edges, and their attributes is an essential component in the visual analysis of any graph representation. For biological pathqway visualization in particular, integration of attribute data from external data source is very important.
 
-\subsubsection{Attribute Updates and Changes} % need better title for subsection
-Biological pathways  contain many different attributes that affect the state of a a biological entity. 
+\subsubsection{Multivariate data visualization} % need better title for subsection
+Biological pathways  contain many different attributes that affect the state of a biological entity. 
 For example a gene may be up regulated or down regulated under different experimental conditions. 
-
 This change in attributes may be time based (meaning the graph is dynamic) or it may be as a result of the context in which a pathway is being analyzed (e.g. as part of a cancer research study).
+Data entities containing multiple attributes are often referred to as multivariate.
+
+ 
+Multivariate network visualization is a highly active field of visualization, in which the life sciences in general are frequent application domain, see \cite{kerren2014multivariate} for a recent state of the art survey. 
+Many more recent  biological network visualizations include attribute information.
 CHiBE \textit{ChiBE}\cite{Babur2010chibe} provides the ability to load in biological entity regulation data mappings from an external source and apply them to a pathway visualization.
-
-
 The most prominent data format for supporting this is the SIF format defined as part of the Cytoscape application \cite{Shannon2003cytoscape}. 
+The \textit{RenDoI} application \cite{Vehlow2015}, a plug-in for \textit{Cytoscape} that is used to visualize  biological data knowledge networks uses Degree of Interest functions to highlight nodes based on attribute values.
+Such functionality could easily be extend to biological pathway visualizations.
+The general purpose visualization system , \textit{Candid} \cite{Shadoan2013}, also uses attribute information as part of hyper graph query system which allows users to perform complex queries on entities of different types.
+Node and edge attributes are also used for graph querying and filtering as came be seen in , what is termed \textit{facet} based visualization. This approach allows for graphs to be filtered by subsets of attributes.
+
+
 %To Be Completed
 
 \subsubsection{Provenance}
 
 Especially important to researchers in the field of bioinformatics is the concept of \textit{data provenance}, which refers to the history of original sources tied to a particular entity. Much of the data in the field of bioinformatics is gathered and integrated from a wide range of publications, data stores, and other products of research.
 While \textit{SBGNViz}~\cite{SBGNViz2015} and \textit{ChiBE}\cite{Babur2010chibe} and other applications allow connectivity to external sources, such as UNitProt or TBA, provenance information is not visualized directly.
+
 % Does it need to be
 \todo[inline] {Discuss Visualization of provenance}
 
@@ -402,7 +413,9 @@ Understanding how pathway entities are connected was of critical importance to a
 
 \subsubsection{Directed Relationships}
 
-While some analyses and datasets involve undirected relationships between genes or gene products, studies of metabolic networks and other inter-cellular processes rely on directed relationships, and several researchers that we interviewed stressed the importance of understanding directed relationships between entities.
+While some analyzes and datasets involve undirected relationships between genes or gene products, studies of metabolic networks and other inter-cellular processes rely on directed relationships, and several researchers that we interviewed stressed the importance of understanding directed relationships between entities.
+
+Many visualization applications use the more traditional approach of arrowheads to indicate edge directions, however work by Holten and van Wijk~\cite{Holten2009} shows that in many cases tapered edges perform more effectively in conveying edge direction.
 
 \subsubsection{Hierarchical Relationships}
 
@@ -429,7 +442,7 @@ This relationship is clearly not the same as a biochemical reaction being connec
 
 \todo[inline, author=PM]{Should we separate discussion of cause and effect from discussion of cascading effects?}
 
-\todo[inline, author=FMG]{I think it would be a good idea to differentiate this taxonomy from ahn's taxonomy in this section. He does look at causal tasks and repetition, which are related to feedback loops , but not the same....}
+\todo[inline, author=FMG]{I think it would be a good idea to differentiate this taxonomy from Ahn's taxonomy in this section. He does look at causal tasks and repetition, which are related to feedback loops , but not the same....}
 
 A category of tasks inherent to a variety of work in bioinformatics is the identification of \textit{causal relationships} that exist between bio-molecular entities.
 When discussing directed paths between entities, one entity is said to be \emph{upstream} or \emph{downstream} of another.
