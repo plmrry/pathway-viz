@@ -477,8 +477,34 @@ Feedback loops are common within metabolic activation networks, and they play a 
 
 \subsection{Comparisons}
 
-\todo[inline, author=FMG]{Could this be considered a comparison task? ( where viewing multiple data sets is the solution}
-superposition, juxtaposition, juxtapoisiotn and superposition combined and differenct encoding.
+\todo[inline, author=FMG]{Need to add in description of comparison tasks}
+
+
+
+In their 2011 survey Gleicher et al. \cite{Gleicher2011} describe three primary types  classifications of comparative visualization. 
+These are  juxtaposition, superposition,  and explicit encoding of differences, and these classifications can also be combined.
+Juxtaposition is when the visualizations being compared are displayed side by side.
+This is functionality is available by default in Cytoscape ( and hence all of the associated plug-ins).
+
+Superposition is when is when data sets are displayed as part of the same visualization.
+The RenDoi plugin also offers superposition , allowing multiple networks to be  visualized in the  one image. Bounding isocountours are used to distinguish graphs differences, and to clearly indicate where the graphs overlap.
+Graph layout is and important aspect of both juxtaposition an^d superposition based comparative visualizations. 
+For juxtaposition, the two graphs being comapred shoiuld have as similar layout in possible , to aid comparison.
+For supposition, the matter is not so simple as we don not want ojne grpah to destroy the other.
+The RenDoi application\cite{Velow2015} initially lays out the largest data set, then adss the addition data sets, adjusting previous layout , without resetting it.
+Nodes which are  included in both data sets only appear once.
+
+Explicit encoding of difference  means that differences between the two datasets are explicitly highlighted, and this approach is often i addition to the previous two.
+Once specific case where implicit encoding is not mixed is when when a graph is dynamic and the changes are between time slices. 
+This can be seen in Rugfiange and McGuffins's DiffAni application \cite{Rufiange2013}.
+
+
+
+Explicit interaction
+
+
+superposition, juxtaposition, juxtaposition and superposition combined and differenct encoding. 
+IN addition to this it is possible to
 
 \subsection{Modification and Curation}
 
