@@ -387,7 +387,7 @@ Such functionality could easily be extend to biological pathway visualizations.
 The general purpose visualization system , \textit{Candid} \cite{Shadoan2013}, also uses attribute information as part of hyper graph query system which allows users to perform complex queries on entities of different types.
 Node and edge attributes are also used for graph querying and filtering as came be seen in , what is termed \textit{facet} based visualization. This approach allows for graphs to be filtered by subsets of attributes.
 
-
+\todo[inline]{need to include Cerebral application here}
 %To Be Completed
 
 \subsubsection{Provenance}
@@ -415,7 +415,13 @@ Understanding how pathway entities are connected was of critical importance to a
 
 While some analyzes and datasets involve undirected relationships between genes or gene products, studies of metabolic networks and other inter-cellular processes rely on directed relationships, and several researchers that we interviewed stressed the importance of understanding directed relationships between entities.
 
-Many visualization applications use the more traditional approach of arrowheads to indicate edge directions, however work by Holten and van Wijk~\cite{Holten2009} shows that tapered edges perform more effectively in conveying edge direction. The graphs used in Holten and van Wijk's were simple directed graphs. Biological pathways are usually modeled as hyper-graphs, with many different types of edge and hyper-edge. Visual encodings such as SBGN and KEGG (see figure \ref{fig:kvik}) contain many different visual representations for edges, so applying the tapered edge visualization style to complex biological pathways is not trivial and would require an empirical evaluation. However, the results of Holten and van Wijk's work suggest that investigating such an approach may be worthwhile.
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=0.5\columnwidth]{figures/tapered_edges}
+  \caption{\label{fig:tapered_edges} The tapered directional edges, taken from~\cite{Holten2009}. Permission to be obtained. The narrow end of the edge indicates the target.}
+\end{figure}
+Many visualization applications use the more traditional approach of arrowheads to indicate edge directions, however work by Holten and van Wijk~\cite{Holten2009} shows that tapered edges (see fig \ref{fig:tapered_edges}) perform more effectively in conveying edge direction. The graphs used in Holten and van Wijk's were simple directed graphs. Biological pathways are usually modeled as hyper-graphs, with many different types of edge and hyper-edge. Visual encodings such as SBGN and KEGG (see figure \ref{fig:kvik}) contain many different visual representations for edges, so applying the tapered edge visualization style to complex biological pathways is not trivial and would require an empirical evaluation. However, the results of Holten and van Wijk's work suggest that investigating such an approach may be worthwhile.
 
 
 \subsubsection{Hierarchical Relationships}
@@ -435,8 +441,20 @@ There are many hierarchical tree based graph layouts that position nodes to emph
 The RenDoI application allows for multiple data sources to be included in a single diagram. 
 This may include data from different pathways and is a containment relationship. Essential the node for each data source forms a set, which may or may not overlap with other sets.  
 This is visualized using by drawing a bounded contour around the nodes in the set. Different border colors indicate different sets.
-This type of encoding of  set membership is the bubblesets~\cite{Collins2009} approach, which was shown to be the most effective way of displaying group information on a node link diagram by Jianu et al. \cite{Jianu2014}.
-\todo[inline]{consider moving this to compound Relationships section}
+This type of encoding of  set membership is the \textit{Bubblesets}~\cite{Collins2009} approach, which was shown to be the most effective way of displaying group information on a node link diagram by Jianu et al.~\cite{Jianu2014}.
+\todo[inline]{consider moving previous paragrap to compound Relationships section}
+
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=0.5\columnwidth]{figures/Hierarchical_edge_bundles}
+  \caption{\label{fig:Hierarchical_edge_bundles} Hierarchical edge bundles, taken from~\cite{Holten2006}. Permission to be obtained. The bundles not only reduce clutter but also more cleary define the hierarchy.}
+\end{figure}
+
+In many cases for pathway visualization the hierarchy is not very deep and edges do not traverse multiple levels of the hierarchy.
+However in cases where edges do traverse  multiple hierarchical levels they may cause clutter.
+Hierarchical Edge Bundling \cite{Holten2006} is a clutter reduction technique, which also emphasizes the hierarchical nature of relationships, see figure\ref{fig:Hierarchical_edge_bundles}. There are many edge bundling techniques in general
+}
 
 \subsubsection{Compound Relationships}
 
