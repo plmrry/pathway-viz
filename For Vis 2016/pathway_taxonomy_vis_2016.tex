@@ -378,7 +378,7 @@ This change in attributes may be time based (meaning the graph is dynamic) or it
 Data entities containing multiple attributes are often referred to as multivariate.
 
  
-Multivariate network visualization is a highly active field of visualization, in which the life sciences in general are frequent application domain, see \cite{kerren2014multivariate} for a recent state of the art survey. 
+Multivariate network visualization is a highly active field of visualization, in which the life sciences in general are frequent application domain, see \cite{} for a recent state of the art survey. 
 Many more recent  biological network visualizations include attribute information.
 CHiBE \textit{ChiBE}\cite{Babur2010chibe} provides the ability to load in biological entity regulation data mappings from an external source and apply them to a pathway visualization.
 The most prominent data format for supporting this is the SIF format defined as part of the Cytoscape application \cite{Shannon2003cytoscape}. 
@@ -415,7 +415,8 @@ Understanding how pathway entities are connected was of critical importance to a
 
 While some analyzes and datasets involve undirected relationships between genes or gene products, studies of metabolic networks and other inter-cellular processes rely on directed relationships, and several researchers that we interviewed stressed the importance of understanding directed relationships between entities.
 
-Many visualization applications use the more traditional approach of arrowheads to indicate edge directions, however work by Holten and van Wijk~\cite{Holten2009} shows that in many cases tapered edges perform more effectively in conveying edge direction.
+Many visualization applications use the more traditional approach of arrowheads to indicate edge directions, however work by Holten and van Wijk~\cite{Holten2009} shows that tapered edges perform more effectively in conveying edge direction. The graphs used in Holten and van Wijk's were simple directed graphs. Biological pathways are usually modeled as hyper-graphs, with many different types of edge and hyper-edge. Visual encodings such as SBGN and KEGG (see figure \ref{fig:kvik}) contain many different visual representations for edges, so applying the tapered edge visualization style to complex biological pathways is not trivial and would require an empirical evaluation. However, the results of Holten and van Wijk's work suggest that investigating such an approach may be worthwhile.
+
 
 \subsubsection{Hierarchical Relationships}
 
@@ -428,6 +429,14 @@ Hierarchical relationships can also represent physical interactions between bioc
 A common of example of this is in bio-molecular complexes, which are themselves composed of other complexes or biomolecules.
 
 It is important to note that hierarchy and ``structure'' often co-exists with other types of relationships. In most cases, pathway data includes relationships of hierarchy (i.e., when one vertex is contained within another) \textit{in parallel} with other, non-hierarchical relationships, such as the relationship between one gene product that activates or inhibits another. Also, note that while non-hierarchical relationships can take a variety of forms, the only form of hierarchical relationship is one of \textit{containment}, from parent to child, and is undirected.
+
+In terms of visualization there are many techniques for showing hierarchical data.
+There are many hierarchical tree based graph layouts that position nodes to emphasis hierarchical nature of data, however these are often not suitable for biological pathway layout as the constrains on position in a layout affect the readability of the lowest level of information.
+The RenDoI application allows for multiple data sources to be included in a single diagram. 
+This may include data from different pathways and is a containment relationship. Essential the node for each data source forms a set, which may or may not overlap with other sets.  
+This is visualized using by drawing a bounded contour around the nodes in the set. Different border colors indicate different sets.
+This type of encoding of  set membership is the bubblesets~\cite{Collins2009} approach, which was shown to be the most effective way of displaying group information on a node link diagram by Jianu et al. \cite{Jianu2014}.
+\todo[inline]{consider moving this to compound Relationships section}
 
 \subsubsection{Compound Relationships}
 
@@ -469,6 +478,7 @@ Feedback loops are common within metabolic activation networks, and they play a 
 \subsection{Comparisons}
 
 \todo[inline, author=FMG]{Could this be considered a comparison task? ( where viewing multiple data sets is the solution}
+superposition, juxtaposition, juxtapoisiotn and superposition combined and differenct encoding.
 
 \subsection{Modification and Curation}
 
