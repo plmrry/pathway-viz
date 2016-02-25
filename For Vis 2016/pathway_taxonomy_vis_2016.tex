@@ -453,8 +453,8 @@ This type of encoding of  set membership is the \textit{Bubblesets}~\cite{Collin
 
 In many cases for pathway visualization the hierarchy is not very deep and edges do not traverse multiple levels of the hierarchy.
 However in cases where edges do traverse  multiple hierarchical levels they may cause clutter.
-Hierarchical Edge Bundling \cite{Holten2006} is a clutter reduction technique, which also emphasizes the hierarchical nature of relationships, see figure\ref{fig:Hierarchical_edge_bundles}. There are many edge bundling techniques in general
-}
+Hierarchical Edge Bundling \cite{Holten2006} is a clutter reduction technique, which also emphasizes the hierarchical nature of relationships, see figure\ref{fig:Hierarchical_edge_bundles}. There are many edge bundling techniques in general, however most do not respect hierarchical information during routing.
+
 
 \subsubsection{Compound Relationships}
 
@@ -468,6 +468,8 @@ This relationship is clearly not the same as a biochemical reaction being connec
 \subsubsection{Causality and Cascading Effects}
 
 \todo[inline, author=PM]{Should we separate discussion of cause and effect from discussion of cascading effects?}
+
+Archambault and Purchase~\cite{Archambault2016} have performed a empirical evaluation of different techniques for showing attribute cascades.
 
 \todo[inline, author=FMG]{I think it would be a good idea to differentiate this taxonomy from Ahn's taxonomy in this section. He does look at causal tasks and repetition, which are related to feedback loops , but not the same....}
 
@@ -515,6 +517,7 @@ Nodes which are  included in both data sets only appear once.
 Explicit encoding of difference  means that differences between the two datasets are explicitly highlighted, and this approach is often i addition to the previous two.
 Once specific case where implicit encoding is not mixed is when when a graph is dynamic and the changes are between time slices. 
 This can be seen in Rugfiange and McGuffins's DiffAni application \cite{Rufiange2013}.
+
 
 \subsection{Modification and Curation}
 
