@@ -425,7 +425,7 @@ We emphasize that the challenge of visualization is not that these different cat
 
 \subsubsection{Multivariate Relationships}
 
-\paragraph{Task Description}
+\paragraph{\textbf{Description}}
 
 As discussed above, one of the most obvious challenges for biological network visualization is the fact that the types of relationship between entities are numerous, and even hierarchical.
 For instance, an interaction between two entities could take many forms, including: the binding of proteins and molecules into complexes, the translocation of an entity from one cellular location to another, a change in gene expression activity, or the modification of existing compounds, to name a few. 
@@ -436,11 +436,18 @@ A translocation event will typically specify \texit{from} and \texit{to} locatio
 Thus, not only are there many different types of relationship (and generally more than can be effectively encoded using color alone), but each relationship type has its own set of potential specifications, some of which can be quite detailed.
 The visual encoding of these complex and multivariate relationships is one of the more prominent challenges in the design of visual analytics platforms for biological pathway analysis.
 
-\paragraph{Existing Approaches and Techniques}
+\paragraph{\textbf{Existing Approaches and Techniques}} \hl{to-do}
 
 \subsubsection{Directed Relationships}
 
-While some analyzes and datasets involve undirected relationships between genes or gene products, studies of metabolic networks and other inter-cellular processes rely on directed relationships, and several researchers that we interviewed stressed the importance of understanding directed relationships between entities.
+\paragraph{\textbf{Description}}
+
+While some analyses and datasets involve undirected relationships between genes or gene products, the majority of studies of metabolic networks and other inter-cellular processes rely on directed relationships. 
+Several researchers that we interviewed stressed the importance of understanding directed relationships between entities.
+Depending on the type of relationship in question, edges may be \textit{bi-directional}, which is distinct from an \textit{undirected} edge.
+A visual coding that indicates direction must also be able to account for cases in which there are two directional edges between the same two nodes.
+
+\paragraph{\textbf{Existing Approaches and Techniques}}
 
 \begin{figure}[htb]
   \centering
@@ -450,8 +457,9 @@ While some analyzes and datasets involve undirected relationships between genes 
 
 Many visualization applications use the more traditional approach of arrowheads to indicate edge directions, however work by Holten and van Wijk~\cite{Holten2009} shows that tapered edges (see fig \ref{fig:tapered_edges}) perform more effectively in conveying edge direction. The graphs used in Holten and van Wijk's were simple directed graphs. Biological pathways are usually modeled as hyper-graphs, with many different types of edge and hyper-edge. Visual encodings such as SBGN and KEGG (see figure \ref{fig:kvik}) contain many different visual representations for edges, so applying the tapered edge visualization style to complex biological pathways is not trivial and would require an empirical evaluation. However, the results of Holten and van Wijk's work suggest that investigating such an approach may be worthwhile.
 
-
 \subsubsection{Hierarchical Relationships}
+
+\paragraph{\textbf{Description}}
 
 Pathway data is inherently hierarchical.
 Hierarchical relationships describe relationships of containment, and these relationships can be abstract or based on real biochemical interactions within a cell.
@@ -462,6 +470,8 @@ Hierarchical relationships can also represent physical interactions between bioc
 A common of example of this is in bio-molecular complexes, which are themselves composed of other complexes or biomolecules.
 
 It is important to note that hierarchy and ``structure'' often co-exists with other types of relationships. In most cases, pathway data includes relationships of hierarchy (i.e., when one vertex is contained within another) \textit{in parallel} with other, non-hierarchical relationships, such as the relationship between one gene product that activates or inhibits another. Also, note that while non-hierarchical relationships can take a variety of forms, the only form of hierarchical relationship is one of \textit{containment}, from parent to child, and is undirected.
+
+\paragraph{\textbf{Existing Approaches and Techniques}}
 
 In terms of visualization there are many techniques for showing hierarchical data.
 There are many hierarchical tree based graph layouts that position nodes to emphasis hierarchical nature of data, however these are often not suitable for biological pathway layout as the constrains on position in a layout affect the readability of the lowest level of information.
@@ -482,19 +492,43 @@ In many cases for pathway visualization the hierarchy is not very deep and edges
 However in cases where edges do traverse  multiple hierarchical levels they may cause clutter.
 Hierarchical Edge Bundling \cite{Holten2006} is a clutter reduction technique, which also emphasizes the hierarchical nature of relationships, see figure\ref{fig:Hierarchical_edge_bundles}. There are many edge bundling techniques in general, however most do not respect hierarchical information during routing.
 
-
 \subsubsection{Compound Relationships}
+
+\paragraph{\textbf{Description}}
 
 A vertex that contains other entities can be represented as a \textit{compound node}, which is equivalent to a ``parent'' vertex or in some contexts a ``module.''
 
-It is important to note that a one-to-one relationship between an entity and a parent is \textit{not} the same as a one-to-many relationship between an entity and all of that parents children.
-For instance, BioPax data contains the abstract ``NextStep'' relationship, which defines, as the name suggests, an arbitrary notion of the ``next step'' of some biological process.
+It is important to note that a one-to-one relationship between an entity and a parent is \textit{not} the same as a one-to-many relationship between an entity and all of that parent's children.
+For instance, the \textit{BioPax} format allows for the abstract ``NextStep'' relationship, which defines, as the name suggests, an arbitrary notion of the ``next step'' of some biological process.
 A biochemical reaction could be connected, via a \textit{single} ``NextStep'' relationship, to an entire pathway, which could potentially contain thousands of nodes.
 This relationship is clearly not the same as a biochemical reaction being connected to every entity within a pathway.
+This example also demonstrates the distinction between a compound relationship and a hierarchical relationship.
+A connection from a node to a compound node does not imply a relationship of ownership or containment.
+
+\paragraph{\textbf{Existing Approaches and Techniques}} 
+
+\hl{to-do}
 
 \subsubsection{Causality and Cascading Effects}
 
-\todo[inline, author=PM]{Should we separate discussion of cause and effect from discussion of cascading effects?}
+\paragraph{\textbf{Description}}
+
+% \todo[inline, author=PM]{Should we separate discussion of cause and effect from discussion of cascading effects?}
+A category of tasks inherent to a variety of work in bioinformatics is the identification of \textit{causal relationships} that exist between bio-molecular entities, and \emph{causal networks} are of particular importance to the analysis of large-scale gene expression data.
+
+When discussing directed paths between entities, one entity is said to be \emph{upstream} or \emph{downstream} of another.
+For example, one gene product can increase the activity of other gene products that are \emph{downstream} of it.
+Understanding these upstream and downstream relationships is particularly important to domains such as cancer drug research, where a drug may affect a small subset of genes or gene products, which in turn will affect various downstream processes.
+In most cases, a directed relationship is meant to represent a biochemical reaction, where one entity is consumed as a reactant and another is produced as a product.
+Thus, an upstream entity may be connected to a downstream entity through a chain of several directed links, and a researcher may be interested in understanding the path of reactions (or other relationships) that connects two entities.
+However, most cellular processes are inherently complex, and involve many competing sets of directed interactions.
+Any given gene is often \textit{mediated} by many different reactants, some which increase activity, and others which decrease activity.
+For instance, a causal network helps reveal the likely regulators of a set of genes that are observed to be up-regulated or down-regulated in a particular setting~\cite{felciano2013predictive, Kramer2013ipa-causal}.
+
+Thus, determining the set of entities that are "responsible" for the increase or decrease in the expression of a particular gene is a challenging task that involves a complex array of directed relationships between many upstream entities.
+We characterize this problem as one of identifying \textit{cascading effects}, where many upstream entities have directed relationships with many mediating entities, which in turn affect the output of many downstream entities.
+
+\paragraph{\textbf{Existing Approaches and Techniques}}
 
 Archambault and Purchase~\cite{Archambault2016} have performed a empirical evaluation of different techniques for showing attribute cascades.
 They found that visually small multiples was the best approach to convey the dynamic attribute changes that cascade through a network.
@@ -503,37 +537,24 @@ This approach has been used by the cerebral application for showing cascades of 
 Archambault and Purchase's work also shows that layout has an impact on the visualization of attribute cascades.
 Experiment participants performed better when a hierarchical layout was used, however it should be noted that the hierarchical layout was consistent with the direction of the layout.
 
-
-
 \todo[inline, author=FMG]{I think it would be a good idea to differentiate this taxonomy from Ahn's taxonomy in this section. He does look at causal tasks and repetition, which are related to feedback loops , but not the same....}
-
-A category of tasks inherent to a variety of work in bioinformatics is the identification of \textit{causal relationships} that exist between bio-molecular entities.
-When discussing directed paths between entities, one entity is said to be \emph{upstream} or \emph{downstream} of another.
-
-Understanding these upstream and downstream relationships is particularly important to domains such as cancer drug research, where a drug may affect a small subset of genes or gene products, which in turn will affect various downstream processes.
-\emph{Causal networks} are also particularly essential to the analysis of large-scale gene expression data.
-For instance, a causal network could reveal the likely regulators of a set of genes that are observed to be up-regulated or down-regulated in a particular setting~\cite{felciano2013predictive, Kramer2013ipa-causal}.
-
-In most cases, a directed relationship is meant to represent a biochemical reaction, where one entity is consumed as a reactant and another is produced as a product.
-Thus, an upstream entity may be connected to a downstream entity through a chain of several directed links.
-In the most basic sense, the ``entities'' mentioned above are genes, gene products (such as proteins or complexes), or other small molecules within a cell.
-A researcher may be interested in understanding the path of reactions (or other relationships) that connects two entities.
-
-\subsubsection{Many-to-Many Cascading Effects}
-
-A causal effect may be modeled as a simple directed edge.
-
-\todo[inline, author=PM]{What really matters in biology is determining cause and effect relationships between many sources and many sinks, separated by many other sets of connections}
 
 \subsubsection{Feedback Loops}
 
+\paragraph{\textbf{Description}}
+
+In tandem with the problem of identifying cascading effects is the problem of reasoning with feedback.
 Feedback loops are common within metabolic activation networks, and they play a key role in processes related to uncontrolled cellular growth in cancerous cells.
+
+\paragraph{\textbf{Existing Approaches and Techniques}}
 
 \subsection{Comparisons}
 
 \todo[inline, author=FMG]{Need to add in description of comparison tasks}
 
+\paragraph{\textbf{Description}}
 
+\paragraph{\textbf{Existing Approaches and Techniques}}
 
 In their 2011 survey Gleicher et al. \cite{Gleicher2011} describe three primary types  classifications of comparative visualization.
 These are  juxtaposition, superposition,  and explicit encoding of differences, and these classifications can also be combined.
@@ -553,7 +574,7 @@ Explicit encoding of difference  means that differences between the two datasets
 Once specific case where implicit encoding is not mixed is when when a graph is dynamic and the changes are between time slices.
 This can be seen in Rugfiange and McGuffins's DiffAni application \cite{Rufiange2013}.
 
-\subsection{Modification and Curation}
+\subsection{Data Modification and Curation}
 
 Several of the researchers mentioned certain tasks related to the curation, maintenance, and understanding of pathway data.
 
@@ -698,3 +719,11 @@ a grant from XYZ.}
 %Meta-data can include experimental data, scientific information such as the molecular structure of a chemical compound, as well as links to additional resources or publications related to an entity or relationship.
 %
 %\end{itemize}
+
+% In the most basic sense, the ``entities'' mentioned above are genes, gene products (such as proteins or complexes), or other small molecules within a cell.
+
+% \subsubsection{Many-to-Many Cascading Effects}
+
+% A causal effect may be modeled as a simple directed edge.
+
+% \todo[inline, author=PM]{What really matters in biology is determining cause and effect relationships between many sources and many sinks, separated by many other sets of connections}
