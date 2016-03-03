@@ -353,7 +353,7 @@ This change in attributes may be time based (meaning the graph is dynamic) or it
 
 % Data entities containing multiple attributes are often referred to as multivariate.
 
-\paragraph{Applications}
+\hl{applications}
 
 Multivariate network visualization is a highly active field of visualization, in which the life sciences in general are frequent application domain, see \cite{} for a recent state of the art survey.
 Many more recent biological network visualizations include attribute information.
@@ -372,22 +372,37 @@ The cerebral application uses attribute information as an aid to layout. The gra
 
 Especially important to researchers in the field of bioinformatics is the concept of \textit{data provenance}, which refers to the history of original sources tied to a particular entity.
 Much of the data in the field of bioinformatics is gathered and integrated from a wide range of publications, data stores, and other products of research.
+Information related to a single entity can be based on potentially dozens of different publications that have been produced across a wide range of time.
+For example, each relationship within a BioPAX file is usually associated with a publication that provides evidence for its existence.
+The task of visually identifying provenance is complicated in two ways.
+First, each piece of research related to a given biological entity may corroborate, extend, or contradict earlier publications.
+Second, the biological context under which a particular entity is studied often varies.
+The individual studies related to a given gene or gene product might have incorporated cells taken from a variety of tissues, organs, and species.
+Thus, the provenance information related to a given biological entity can be seen as a temporal network of provenance data, with each publication being tied to earlier works in a variety of ways.
+
+\hl{applications}
 
 While \textit{SBGNViz}~\cite{SBGNViz2015} and \textit{ChiBE}\cite{Babur2010chibe} and other applications allow connectivity to external sources, such as UNitProt or TBA, provenance information is not visualized directly.
 
 % Does it need to be
-\todo[inline] {Discuss Visualization of provenance}
+% \todo[inline] {Discuss Visualization of provenance}
 
 \subsubsection{Uncertainty}
 
-Related to the task of identifying data provenance is the task of being able to view and identify information related to the \textit{uncertainty} of the data underlying relationships between entities.
+Related to the task of identifying data provenance is the task of being able to view and identify information related to the \textit{uncertainty} of the data underlying entities and the relationships between them.
+The importance of understanding uncertainty was emphasized by several of the researchers we interviewed.
+Uncertainty may relate directly to the provenance history discussed above -- biological entities that are related to more recent research may have a limited set of one or two publications which corroborate their functionality, while other genes and gene products may have a rich history of robust empirical evidence from dozens or hundreds of publications.
+An even more fine-grained approach to uncertainty visualization could somehow incorporate the uncertainty or error tied to individual empirical findings.
+The empirical support behind any individual entity or relationship within a pathway can vary widely, and the question of how these varying levels of confidence can be incorporated into a pathway visualization has been rarely addressed.
 
-In interviews, researchers discussed the importance of understanding \emph{uncertainty} within pathway data. For example, each relationship within a BioPAX file is usually associated with a publication that provides evidence for its existence. Thus, some relationships may be subject to scrutiny within the scientific community, while others may have more robust empirical support.
+\hl{applications}
 
 Some databases such as STRING~\cite{STRING2005} , a protein interaction database, provide quality scores with their results. This quality score can be seen as a form of uncertainty based on the provenance of the data.
 The higher the score, the more evidence there is for an interaction.
 
 \subsection{Integrating External Data}
+
+\hl{where to put this}
 
 For biological pathway visualization in particular, integration of attribute data from external data sources is essential.
 
