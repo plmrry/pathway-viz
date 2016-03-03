@@ -1,5 +1,34 @@
 # Taxonomy of Biological Pathways
 
+Static layouts vs automated
+Comparisons of different species
+
+
+## Researchers at UIC
+
+- [Dr. Qun-Tian Wang](qtwang@uic.edu)
+  - Proteomics, epigenetic maintenance of adult heart function
+- Dr. Nava Segev
+  - Intracellular Trafficking
+  - Probably not really applicable?
+- [Dr. Nissim Hay](nhay@uic.edu)
+- [Dr. Pradip Raychaudhuri](pradip@uic.edu)
+  - DNA damage response, tumorigenesis, metastasis
+  - Directed me to Damiano Fantini
+- Dr. Damiano Fantini
+  - High throughput gene expression analysis
+  - Postdoctoral Research Associate
+
+## Researchers at Arizona
+
+- Dr. Guang Yao
+- Dr. Ryan Gutenkunst
+
+## Researchers Francesco Interviewed
+
+- Federica Zill
+- Ankit Jambusaria
+
 ## Papers
 ### Taxonomy Papers
 - [Wehrend and Lewis](http://dl.acm.org/citation.cfm?id=949531.949553)

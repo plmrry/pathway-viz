@@ -97,15 +97,15 @@
 \abstract{
 Understanding complicated networks of interactions and chemical components is essential to solving contemporary problems in modern biology, especially in domains such as cancer and systems research.
 In these domains, biological pathway data is used to represent chains of interactions that occur within a given biological process.
-Visual representations can help researchers understand and interact with complex pathway data in a number of ways.
-Biological data sets offer unique challenges for visualization, due to their complexity and heterogeneity.
-
-Here, we present taxonomy of tasks -- generated from interviews with several domain experts -- that are regularly performed by researchers who work with biological pathway data.
+Visual representations can help researchers understand, interact with, and reason about these complex pathways in a number of ways.
+At the same time, these datasets offer unique challenges for visualization, due to their complexity and heterogeneity.
+Here, we present taxonomy of tasks that are regularly performed by researchers who work with biological pathway data.
+The generation of these tasks was done in conjunction with interviews with several domain experts in biology.
 These tasks require further classification than is provided by existing taxonomies.
 
 \todo[inline]{more here about how these tasks are different from previous work}
 
-We also examine the existing visualization techniques which support each of the tasks, and we discuss gaps in the existing visualization space revealed by our taxonomy.
+We also examine existing visualization techniques that support each task, and we discuss gaps in the existing visualization space revealed by our taxonomy.
 We conclude by suggesting future research directions based on our taxonomy and motivated by the comments received by our domain experts.
 } % end of abstract
 
@@ -156,15 +156,15 @@ We conclude by suggesting future research directions based on our taxonomy and m
 \section{Introduction}
 
 Understanding complicated networks of bio-molecular interactions and chemical components is essential to solving contemporary problems in modern biology, especially in domains such as cancer and systems research~\cite{hanahan2011hallmarks}.
-These bio-molecular interactions are represented in the form \emph{pathways}, which are used to describe a chain of interactions between biochemical and biological entities within a cell.
-Pathways are small, curated subsets of a much larger, complex graph of interactions between molecules, and a given pathway usually represents a particular biological process that is relevant within some research context.
+These bio-molecular interactions are represented in the form of \emph{pathways}, which are graph models used to describe a chain of interactions between biochemical entities within a cell.
+Pathways are small, curated subsets of a much larger, complex graph of interactions between molecules, and a given pathway usually represents a particular biological process, such as mitosis, that is relevant within some research context.
 
-Pathways are modeled as entities , relationships and meta-data.
-An entity is a component of a pathway such as a gene, a gene product (i.e. a protein), a complex of proteins, a small biomolecule within a cell, or even another pathway.
-Relationships between entities can be directed or undirected, can involve more than two entities, and they can represent many different types of biological relationship.
-Meta-data can include attributes resulting from experimental data, provenance information (links to related publications), and links to additional resources related to the entity or relationship.
-% In order to limit the scope of their analyses...
+Pathways are modeled as labeled graphs of entities, relationships and meta-data.
 For example, Figure \ref{fig:kvik} shows a typical representation of a pathway as a human-curated node-link diagram, where nodes are biological entities and edges represent interactions between them.
+An entity is a component of a pathway such as a gene, a gene product (i.e. a protein), a complex of proteins, a small biomolecule within a cell, or even another pathway.
+Relationships between entities can be directed or undirected, can involve multiple entites in one relationship, and can represent a wide range of biological relationships.
+\hl{Meta-data can consist of experimental data, provenance information related to a particular piece of biological information, or...}
+% In order to limit the scope of their analyses...
 
 \begin{figure}[htb]
   \centering
@@ -175,8 +175,8 @@ For example, Figure \ref{fig:kvik} shows a typical representation of a pathway a
 %\p{Pathways are very complex}
 
 Researchers who work with pathway data are confronted with a number of challenges.
-Pathway files may contain hundreds of proteins and biomolecules that participate in a variety of reactions.
-In an abstract sense, reactions can be seen as state transitions with multiple inputs and outputs.
+Pathway files may contain hundreds or thousands of proteins and biomolecules that participate in a variety of reactions.
+\hl{Mention complexity of BioPax, and about relationships between pathways and reactions, etc.}
 Participants --- genes, proteins, and other molecules within a cell --- can act as inputs or outputs to multiple reactions, and the relationships between reactions inherently include feedback loops.
 Reactions often have an effect on other reactions, inhibiting or promoting their frequency.
 These molecular activation pathways are inherently dynamic, which limits the utility of any static graph representation \cite{kitano2002systems}.
@@ -228,36 +228,6 @@ After an introduction to the structure and content of pathway data, we describe 
 We then review visual representations of pathway data in the context of our requirements.
 We also review existing tools that implement those visual representations.
 Finally, avenues of future research are considered, along with a brief summary of lessons learned from domain experts.
-
-
-
-%\subsection{Pathway data}
-%
-%In order to aid an understanding of pathway visualization tools, an understanding of the structure of pathway data structures is necessary.
-%In this section we briefly explain the structure of typical pathway data files.
-%
-%\subsubsection{Pathway Data Model}
-%\todo[inline, author=FMG, color=green]{Is it ok if i condense this subsubsection into a line or two and then move it with the pathway formats subsection , to the related work section?}
-%
-%Information stored in any pathway data file can generally be broken down into three components:
-%
-%\begin{itemize}
-%
-%\item \textbf{Entity}\\
-%An entity is a component of a pathway such as a gene, a gene product (i.e. a protein), a complex of proteins, or a small biomolecule within a cell.
-%Entities are identified by name and are involved in one or more relationships.
-%Importantly, pathways themselves can be entities within other pathways.
-%\item \textbf{Relationship}\\
-%A relationship involves two or more entities.
-%Various kinds of relationships which different biological meanings are present in a pathways.
-%Relationships can be directed or undirected, and they can involve more than two entities (meaning the resulting network is a hyper-graph).
-%\item \textbf{Meta-data}\\
-%The complex nature of the information stored in a pathway requires additional data to be stored with each entity and relationship.
-%Meta-data can include experimental data, scientific information such as the molecular structure of a chemical compound, as well as links to additional resources or publications related to an entity or relationship.
-%
-%\end{itemize}
-
-
 
 %-------------------------------------------------------------------------
 \section{Related Work}
@@ -363,26 +333,32 @@ Each researcher also presented their views on the utility of pathway data and pa
 
 \subsection{Taxonomy Overview}
 
-Biological pathways are generally represented as weighted, directed graphs and in some cases include hyper-edges and compound nodes.
-Task taxonomies have been created which describe tasks related to graphs in general. However, the analysis of biomolecular interaction networks includes a unique set of tasks that refine and extend the tasks associated with the visual analysis of networks in general.
+Biological pathways are represented as weighted, directed, labeled graphs which can include hyper-edges and compound nodes.
+While task taxonomies exist \hl{citation} which describe tasks related to the visual analysis of graphs in general, the analysis of bio-molecular interaction networks reveals several important graph-analytic tasks that other works have not described in detail. This taxonomy refines and extends the existing set of tasks associated with the visual analysis of network data.
 
-\subsection{Attributes}
+\subsection{Attribute Tasks}
 
+The low-level identification of nodes, edges, and their attributes is an essential component in the visual analysis of any graph representation.
+In the context of biology, this task is complicated by the fact that the attribute of an edge can itself be a complex object.
+Here, we highlight three forms of attribute data that are particularly relevant to biological contexts: multivariate data from experimental results, provenance data, and measures of uncertainty.
+We also discuss the need for the integration of external data sources.
 
-Most applications provide access to the attributes through simple interactions (e.g. mouseover and click). In many cases the attribute information is simply read from an input file, however more recent tools such as \textit{SBGNViz}~\cite{SBGNViz2015} and \textit{ChiBE}\cite{Babur2010chibe} query online database to provide a range of important attribute information.
-The low-level identification of nodes, edges, and their attributes is an essential component in the visual analysis of any graph representation. For biological pathway visualization in particular, integration of attribute data from external data sources is very important.
+\subsubsection{Multivariate Attribute Data}
 
-\subsubsection{Multivariate data visualization} % need better title for subsection
-Biological pathways  contain many different attributes that affect the state of a biological entity. 
-For example a gene may be up regulated or down regulated under different experimental conditions. 
+The entities within a biological pathway can contain many attributes that reflect the state of a biological entity in a given context, experimental condition, and time.
+For example, each biomolecule in a particular pathway can be associated with gene expression levels across several different experimental conditions, and each of these conditions can include an additional temporal dimension~\cite{Barsky2008cerebral}.
+In this case, each node in a graph is associated with at least three additional dimensions of experimental condition, expression level, and time.
+This multivariate data can also apply to relationships between entities, such as when one gene is up-regulated or down-regulated by another gene under different experimental conditions.
 This change in attributes may be time based (meaning the graph is dynamic) or it may be as a result of the context in which a pathway is being analyzed (e.g. as part of a cancer research study).
-Data entities containing multiple attributes are often referred to as multivariate.
 
- 
-Multivariate network visualization is a highly active field of visualization, in which the life sciences in general are frequent application domain, see \cite{} for a recent state of the art survey. 
-Many more recent  biological network visualizations include attribute information.
+% Data entities containing multiple attributes are often referred to as multivariate.
+
+\paragraph{Applications}
+
+Multivariate network visualization is a highly active field of visualization, in which the life sciences in general are frequent application domain, see \cite{} for a recent state of the art survey.
+Many more recent biological network visualizations include attribute information.
 CHiBE \textit{ChiBE}\cite{Babur2010chibe} provides the ability to load in biological entity regulation data mappings from an external source and apply them to a pathway visualization.
-The most prominent data format for supporting this is the SIF format defined as part of the Cytoscape application \cite{Shannon2003cytoscape}. 
+The most prominent data format for supporting this is the SIF format defined as part of the Cytoscape application \cite{Shannon2003cytoscape}.
 The \textit{RenoDoI} application \cite{Vehlow2015}, a plug-in for \textit{Cytoscape}for visualizing biological data knowledge networks, uses Degree of Interest functions to highlight nodes based on attribute values.
 Such functionality could easily be extend to biological pathway visualizations.
 The general purpose visualization system , \textit{Candid} \cite{Shadoan2013}, also uses attribute information as part of hyper graph query system which allows users to perform complex queries on entities of different types.
@@ -394,7 +370,9 @@ The cerebral application uses attribute information as an aid to layout. The gra
 
 \subsubsection{Provenance}
 
-Especially important to researchers in the field of bioinformatics is the concept of \textit{data provenance}, which refers to the history of original sources tied to a particular entity. Much of the data in the field of bioinformatics is gathered and integrated from a wide range of publications, data stores, and other products of research.
+Especially important to researchers in the field of bioinformatics is the concept of \textit{data provenance}, which refers to the history of original sources tied to a particular entity.
+Much of the data in the field of bioinformatics is gathered and integrated from a wide range of publications, data stores, and other products of research.
+
 While \textit{SBGNViz}~\cite{SBGNViz2015} and \textit{ChiBE}\cite{Babur2010chibe} and other applications allow connectivity to external sources, such as UNitProt or TBA, provenance information is not visualized directly.
 
 % Does it need to be
@@ -408,6 +386,13 @@ In interviews, researchers discussed the importance of understanding \emph{uncer
 
 Some databases such as STRING~\cite{STRING2005} , a protein interaction database, provide quality scores with their results. This quality score can be seen as a form of uncertainty based on the provenance of the data.
 The higher the score, the more evidence there is for an interaction.
+
+\subsection{Integrating External Data}
+
+For biological pathway visualization in particular, integration of attribute data from external data sources is essential.
+
+Most applications provide access to the attributes through simple interactions (e.g. mouseover and click).
+In many cases the attribute information is simply read from an input file, however more recent tools such as \textit{SBGNViz}~\cite{SBGNViz2015} and \textit{ChiBE}\cite{Babur2010chibe} query online database to provide a range of important attribute information.
 
 \subsection{Relationships}
 
@@ -440,8 +425,8 @@ It is important to note that hierarchy and ``structure'' often co-exists with ot
 
 In terms of visualization there are many techniques for showing hierarchical data.
 There are many hierarchical tree based graph layouts that position nodes to emphasis hierarchical nature of data, however these are often not suitable for biological pathway layout as the constrains on position in a layout affect the readability of the lowest level of information.
-The RenoDoI application allows for multiple data sources to be included in a single diagram. 
-This may include data from different pathways and is a containment relationship. Essential the node for each data source forms a set, which may or may not overlap with other sets.  
+The RenoDoI application allows for multiple data sources to be included in a single diagram.
+This may include data from different pathways and is a containment relationship. Essential the node for each data source forms a set, which may or may not overlap with other sets.
 This is visualized using by drawing a bounded contour around the nodes in the set. Different border colors indicate different sets.
 This type of encoding of  set membership is the \textit{Bubblesets}~\cite{Collins2009} approach, which was shown to be the most effective way of displaying group information on a node link diagram by Jianu et al.~\cite{Jianu2014}.
 \todo[inline]{consider moving previous paragrap to compound Relationships section}
@@ -510,7 +495,7 @@ Feedback loops are common within metabolic activation networks, and they play a 
 
 
 
-In their 2011 survey Gleicher et al. \cite{Gleicher2011} describe three primary types  classifications of comparative visualization. 
+In their 2011 survey Gleicher et al. \cite{Gleicher2011} describe three primary types  classifications of comparative visualization.
 These are  juxtaposition, superposition,  and explicit encoding of differences, and these classifications can also be combined.
 Juxtaposition is when the visualizations being compared are displayed side by side.
 This is functionality is available by default in Cytoscape ( and hence all of the associated plug-ins).
@@ -518,22 +503,43 @@ Cerebral uses a juxtaposition approach to display cahnges in attributes associat
 
 Superposition is when is when data sets are displayed as part of the same visualization.
 The RenoDoI plugin also offers superposition , allowing multiple networks to be  visualized in the  one image. Bounding isocountours are used to distinguish graphs differences, and to clearly indicate where the graphs overlap.
-Graph layout is and important aspect of both juxtaposition and superposition based comparative visualizations. 
+Graph layout is and important aspect of both juxtaposition and superposition based comparative visualizations.
 For juxtaposition, the two graphs being compared should have as similar layout in possible , to aid comparison.
 For supposition, the matter is not so simple as the addition of a new graph may destroy the existing layout.
 The RenoDoI application\cite{Vehlow2015} initially lays out the largest data set, then adds the addition data sets, adjusting previous layout , without resetting it.
 Nodes which are  included in both data sets only appear once.
 
 Explicit encoding of difference  means that differences between the two datasets are explicitly highlighted, and this approach is often i addition to the previous two.
-Once specific case where implicit encoding is not mixed is when when a graph is dynamic and the changes are between time slices. 
+Once specific case where implicit encoding is not mixed is when when a graph is dynamic and the changes are between time slices.
 This can be seen in Rugfiange and McGuffins's DiffAni application \cite{Rufiange2013}.
-
 
 \subsection{Modification and Curation}
 
 Several of the researchers mentioned certain tasks related to the curation, maintenance, and understanding of pathway data.
 
 Several of the researchers mentioned certain tasks related to the curation, maintenance, and understanding of pathway data. For instance, one researcher mentioned the importance of being able to \emph{debug} potentially flawed data. Two others expressed a need to create ``personalized'' pathways that only include a user-determined subset of entities and relationships.
+
+
+\section{Discussion}
+
+\subsection{Future Research Directions}
+
+\subsection{Visualizing Uncertainty}
+
+Especially considering our feedback from domain experts, tools generally do not attempt to visualize the ``uncertainty'' behind a connection in a pathway, as expressed by the first domain expert. This is a challenging task, as even the definition of ``uncertainty'' may be difficult to operationalize. However, data formats such as \emph{BioPAX} do have robust support for citations, allowing published references to be connected to entities and relationships within a pathway. A tool that could effectively encode ``uncertainty data'' into a visualization may be very valuable to systems researchers who work with the results of hundreds or thousands of separate publications.
+
+\section{Conclusions}
+
+%% if specified like this the section will be committed in review mode
+\acknowledgments{
+The authors wish to thank A, B, C. This work was supported in part by
+a grant from XYZ.}
+
+\bibliographystyle{abbrv}
+%%use following if all content of bibtex file should be shown
+%\nocite{*}
+\bibliography{references}
+\end{document}
 
 %-------------------------------------------------------------------------
 
@@ -626,23 +632,29 @@ Several of the researchers mentioned certain tasks related to the curation, main
 
 
 %-------------------------------------------------------------------------
-\section{Discussion}
 
-\subsection{Future Research Directions}
-
-\subsection{Visualizing Uncertainty}
-
-Especially considering our feedback from domain experts, tools generally do not attempt to visualize the ``uncertainty'' behind a connection in a pathway, as expressed by the first domain expert. This is a challenging task, as even the definition of ``uncertainty'' may be difficult to operationalize. However, data formats such as \emph{BioPAX} do have robust support for citations, allowing published references to be connected to entities and relationships within a pathway. A tool that could effectively encode ``uncertainty data'' into a visualization may be very valuable to systems researchers who work with the results of hundreds or thousands of separate publications.
-
-\section{Conclusions}
-
-%% if specified like this the section will be committed in review mode
-\acknowledgments{
-The authors wish to thank A, B, C. This work was supported in part by
-a grant from XYZ.}
-
-\bibliographystyle{abbrv}
-%%use following if all content of bibtex file should be shown
-%\nocite{*}
-\bibliography{references}
-\end{document}
+%\subsection{Pathway data}
+%
+%In order to aid an understanding of pathway visualization tools, an understanding of the structure of pathway data structures is necessary.
+%In this section we briefly explain the structure of typical pathway data files.
+%
+%\subsubsection{Pathway Data Model}
+%\todo[inline, author=FMG, color=green]{Is it ok if i condense this subsubsection into a line or two and then move it with the pathway formats subsection , to the related work section?}
+%
+%Information stored in any pathway data file can generally be broken down into three components:
+%
+%\begin{itemize}
+%
+%\item \textbf{Entity}\\
+%An entity is a component of a pathway such as a gene, a gene product (i.e. a protein), a complex of proteins, or a small biomolecule within a cell.
+%Entities are identified by name and are involved in one or more relationships.
+%Importantly, pathways themselves can be entities within other pathways.
+%\item \textbf{Relationship}\\
+%A relationship involves two or more entities.
+%Various kinds of relationships which different biological meanings are present in a pathways.
+%Relationships can be directed or undirected, and they can involve more than two entities (meaning the resulting network is a hyper-graph).
+%\item \textbf{Meta-data}\\
+%The complex nature of the information stored in a pathway requires additional data to be stored with each entity and relationship.
+%Meta-data can include experimental data, scientific information such as the molecular structure of a chemical compound, as well as links to additional resources or publications related to an entity or relationship.
+%
+%\end{itemize}
