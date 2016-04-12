@@ -436,7 +436,11 @@ The visual encoding of these complex and multivariate relationships is one of th
 Pretorius and van Wijk's~\cite{pretorius2008} system for visual inspection of multivariate graphs places relationship type (referred to as edge labels) at the core of their system.
 They do not use traditional graph layout techniques. 
 The edges are grouped by label in the center of the display, nodes are duplicated on either side, with the attributes reflected by an icicle plot (see figure \ref{fig:MultivariateViz}).
-\hl{to-do}
+This approach can handle a large number of edge types, and cases where a node is involved in multiple relationships of different types.
+
+Ghani et al~\cite{Ghani2013} developed a techniques called Parallel Node-Link Bands (PNLBs) for exploring graphs with multiple edge types. In their examples edge types are inferred based on their endpoint node types. Nodes are listed in vertical columns with  the edges connecting only between neighboring columns.
+Is is similar to Pretorious and van Wijk's approach except there are multiple columns of nodes and there is only ever one type of edge between two columns. It is an effective visualization, but is generally limited to smaller data sets and  those in which the relationship types are multiple bimodal relationships (as there are no edges drawn between non-adjacent columns).
+\hl{to-do Create stonger relationship between this paragrap and the previous}
 
 \subsubsection{Directed Relationships}
 
