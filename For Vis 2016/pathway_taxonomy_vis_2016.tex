@@ -425,10 +425,17 @@ A modification can take many forms, such as \textit{ubiquitination} or \textit{p
 Changes in gene expression are directional -- one compound can either \textit{increase} or \textit{decrease} the activity of another.
 A translocation event will typically specify \textit{from} and \textit{to} locations.
 Thus, not only are there many different types of relationship (and generally more than can be effectively encoded using color alone), but each relationship type has its own set of potential specifications, some of which can be quite detailed.
-The visual encoding of these complex and multivariate relationships is one of the more prominent challenges in the design of visual analytics platforms for biological pathway analysis.
+The visual encoding of these complex and multivariate relationships is one of the more prominent challenges in the design of visual analytic platforms for biological pathway analysis.
 
 \paragraph{Existing Approaches and Techniques}
-
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=0.8\columnwidth]{figures/MultivariateViz}
+  \caption{\label{fig:MultivariateViz} Screen shot taken form Pretorius and Van Wijk's~\cite{pretorius2008} multivariate graph visualization application. Permission to be obtained. }
+\end{figure}
+Pretorius and van Wijk's~\cite{pretorius2008} system for visual inspection of multivariate graphs places relationship type (referred to as edge labels) at the core of their system.
+They do not use traditional graph layout techniques. 
+The edges are grouped by label in the center of the display, nodes are duplicated on either side, with the attributes reflected by an icicle plot (see figure \ref{fig:MultivariateViz}).
 \hl{to-do}
 
 \subsubsection{Directed Relationships}
