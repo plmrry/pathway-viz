@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "dependencies": {
+    "pdc": "^0.2.2",
+    "rx": "^4.1.0"
+  }
+}
