@@ -9,8 +9,13 @@ var stream = Rx.Observable;
 var parse = stream.fromNodeCallback(pdc);
 var write = stream.fromNodeCallback(fs.writeFile);
 
-stream.fromNodeCallback(fs.readFile)('source/paper.md')
+const options = [
+  '--wrap=preserve',
+  '--template=template.tex'
+];
+
+stream.fromNodeCallback(fs.readFile)('source/test.md')
   .map(b => b.toString())
-  .flatMap(string => parse(string, 'markdown', 'latex', [ '--wrap=preserve' ]))
-  .flatMap(latex => write('build/output.tex', latex))
+  .flatMap(string => parse(string, 'markdown', 'latex', options))
+  .flatMap(latex => write('latex/test.tex', latex))
   .subscribe(() => console.log("Done"));

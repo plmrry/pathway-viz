@@ -26,7 +26,7 @@
 
 %%% loading packages, author definitions
 
-\documentclass[twocolumn]{bmcart}% uncomment this for twocolumn layout 
+\documentclass[twocolumn]{bmcart}% uncomment this for twocolumn layout
 
 
 
@@ -419,7 +419,7 @@ Interviews were conducted with seven biological scientists, each of whom works w
 Those interviewed included one tenured professor, three assistant professors, one researcher at a cancer research institution, one postdoctoral research associate, and one masters student in bioinformatics.
 Interviews were loosely structured, but interview questions were designed to elicit a detailed understanding of the tasks performed by the researcher in a typical analysis, as well as an understanding of the type and structure of data that each researcher worked with.
 Each researcher also presented their views on the utility of pathway data and pathway diagrams in general.
-We have develop a full task taxonomy based on these interviews. 
+We have develop a full task taxonomy based on these interviews.
 In addition to this, we describe examples of how tasks are handled by current biological visualisation applications, we shown how the tasks could be address using contemporary grpah and information visualization techniques.
 
 
@@ -529,8 +529,8 @@ We emphasize that the challenge of visualization is not that these different cat
 
 \paragraph*{Description}
 As discussed above, one of the most obvious challenges for biological network visualization is the fact that the types of relationship between entities are numerous, and even hierarchical.
-For instance, an interaction between two entities could take many forms, including: the binding of proteins and molecules into complexes, the translocation of an entity from one cellular location to another, a change in gene expression activity, or the modification of existing compounds, to name a few. 
-Each of these events can be further specified. 
+For instance, an interaction between two entities could take many forms, including: the binding of proteins and molecules into complexes, the translocation of an entity from one cellular location to another, a change in gene expression activity, or the modification of existing compounds, to name a few.
+Each of these events can be further specified.
 A modification can take many forms, such as \textit{ubiquitination} or \textit{phosphorylation}, and the \textit{site} at which these modifications occur can also be specified.
 Changes in gene expression are directional -- one compound can either \textit{increase} or \textit{decrease} the activity of another.
 A translocation event will typically specify \textit{from} and \textit{to} locations.
@@ -544,7 +544,7 @@ The visual encoding of these complex and multivariate relationships is one of th
 
 \paragraph*{Existing Approaches and Techniques}
 Pretorius and van Wijk's~\cite{pretorius2008} system for visual inspection of multivariate graphs places relationship type (referred to as edge labels) at the core of their system.
-They do not use traditional graph layout techniques. 
+They do not use traditional graph layout techniques.
 The edges are grouped by label in the center of the display, nodes are duplicated on either side, with the attributes reflected by an icicle plot (see figure \ref{fig:MultivariateViz}).
 This approach can handle a large number of edge types, and cases where a node is involved in multiple relationships of different types.
 
@@ -555,7 +555,7 @@ Is is similar to Pretorious and van Wijk's approach except there are multiple co
 \subsubsection*{Directed Relationships}
 
 \paragraph*{Description}
-While some analyses and datasets involve undirected relationships between genes or gene products, the majority of studies of metabolic networks and other inter-cellular processes rely on directed relationships. 
+While some analyses and datasets involve undirected relationships between genes or gene products, the majority of studies of metabolic networks and other inter-cellular processes rely on directed relationships.
 Several researchers that we interviewed stressed the importance of understanding directed relationships between entities.
 Depending on the type of relationship in question, edges may be \textit{bi-directional}, which is distinct from an \textit{undirected} edge.
 A visual coding that indicates direction must also be able to account for cases in which there are two directional edges between the same two nodes.
@@ -580,7 +580,7 @@ Other representations include the more general notion of a ``module'' of connect
 Hierarchical relationships can also represent physical interactions between biochemical participants.
 A common of example of this is in bio-molecular complexes, which are themselves composed of other complexes or biomolecules.
 
-It is important to note that hierarchy and ``structure'' often co-exists with other types of relationships. In most cases, pathway data includes relationships of hierarchy (i.e., when one vertex is contained within another) \textit{in parallel} with other, non-hierarchical relationships, such as the relationship between one gene product that activates or inhibits another. Also, note that while non-hierarchical relationships can take a variety of forms, the only form of hierarchical relationship is one of \textit{containment}, from parent to child, and is undirected.
+It is important to note that hierarchy and ``structure'' often co-exist with other types of relationships. In most cases, pathway data includes relationships of hierarchy (i.e., when one vertex is contained within another) \textit{in parallel} with other, non-hierarchical relationships, such as the relationship between one gene product that activates or inhibits another. Also, note that while non-hierarchical relationships can take a variety of forms, the only form of hierarchical relationship is one of \textit{containment}, from parent to child, and is undirected.
 \begin{figure}[htb]
   \centering
   \includegraphics[width=0.5\columnwidth]{figures/Hierarchical_edge_bundles}
@@ -595,9 +595,6 @@ This may include data from different pathways and is a containment relationship.
 This is visualized using by drawing a bounded contour around the nodes in the set. Different border colors indicate different sets.
 This type of encoding of  set membership is the \textit{Bubblesets}~\cite{Collins2009} approach, which was shown to be the most effective way of displaying group information on a node link diagram by Jianu et al.~\cite{Jianu2014}.
 \todo[inline]{consider moving previous paragrap to compound Relationships section}
-
-
-
 
 In many cases for pathway visualization the hierarchy is not very deep and edges do not traverse multiple levels of the hierarchy.
 However in cases where edges do traverse  multiple hierarchical levels they may cause clutter.
@@ -615,10 +612,6 @@ A biochemical reaction could be connected, via a \textit{single} ``NextStep'' re
 This relationship is clearly not the same as a biochemical reaction being connected to every entity within a pathway.
 This example also demonstrates the distinction between a compound relationship and a hierarchical relationship.
 A connection from a node to a compound node does not imply a relationship of ownership or containment.
-
-\paragraph*{Existing Approaches and Techniques}
-
-\hl{to-do}
 
 \subsubsection*{Causality and Cascading Effects}
 
@@ -695,7 +688,7 @@ This can be seen in Rugfiange and McGuffins's DiffAni application \cite{Rufiange
 
 While most of the tasks in this taxonomy are directly related to visual analysis, the size and complexity of biological datasets makes data curation an essential part of modern research platforms.
 Several of the researchers we interviewed mentioned certain tasks related to the curation, maintenance, and understanding of pathway data.
-For instance, one researcher mentioned the importance of being able to \emph{debug} potentially flawed data. 
+For instance, one researcher mentioned the importance of being able to \emph{debug} potentially flawed data.
 Two others expressed a need to create ``personalized'' pathways that only include a user-determined subset of entities and relationships.
 
 Ideally, visualization tools will seamlessly integrate these curation and maintenance needs.
@@ -728,7 +721,7 @@ Especially considering our feedback from domain experts, tools generally do not 
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                                          %%
 %% Backmatter begins here                   %%
 %%                                          %%

@@ -18,6 +18,8 @@ We conclude by suggesting several avenues of future research based on our taxono
 
 \end{abstract}
 
+\end{abstractbox}
+
 \section*{Background}
 
 Understanding complicated networks of biomolecular entities and interactions is essential to solving contemporary problems in modern biology, especially in computational domains such as systems biology~\cite{hanahan2011hallmarks}.
@@ -67,3 +69,46 @@ Developing and designing effective visual analytics applications requires a deta
 User tasks can thus be designed and understood best through a in-depth understanding of the nature of information needed by the researcher in the course of their analyses.
 Some of these tasks may not be known *a priori* and may be exploratory in nature, where an ideal visualization of pathway data could reveal important new insights to a researcher.
 A comprehensive understanding of tasks performed by domain researchers in a typical analysis is essential to the design and implementation of an effective visual analytics application.
+
+In this work, we present a description and analysis of tasks and requirements related to the analysis of biological pathway data.
+Tasks were derived from interviews with several domain experts in biology.
+After an introduction to the structure and content of pathway data, we describe the task taxonomy that was constructed from these interviews.
+We also review visual representations of pathway data in the context of our requirements, along with a brief discussion of existing tools which implement those visual representations.
+Finally, avenues of future research are considered, along with a brief summary of lessons learned from domain experts.
+
+MORE TO DO HERE
+
+\section*{Methods}
+
+\subsection*{Interviews}
+Interviews were conducted with seven domain experts in biology, each of whom works with pathway data in some form.
+Those interviewed included one tenured professor, three assistant professors, one researcher at a cancer research institution, one postdoctoral research associate, and one masters student in bioinformatics.
+Interviews were loosely structured, but interview questions were designed to elicit a detailed understanding of the tasks performed by the researcher in the course of a typical analysis, as well as an understanding of the type and structure of data that each researcher worked with.
+Each researcher also presented their views on the utility of pathway data and of pathway diagrams in general.
+We have developed a taxonomy based on these interviews.
+In addition, we describe examples of how each task category is addressed by current biological visualization applications and techniques.
+
+\section*{Results and Discussion}
+
+Biological pathways are represented as weighted, directed, labeled graphs which can include hyper-edges and compound nodes.
+While existing task taxonomies describe tasks related to the visual analysis of graphs in general~\cite{Ahn2014, Pretorius2014}, the analysis of pathways in the context of biology reveals several important graph-analytic tasks that other works have not described in detail.
+This taxonomy refines and extends the existing set of tasks associated with the visual analysis of network data in general
+
+\subsection*{Attributes}
+
+The low-level identification of nodes, edges, and their attributes is an essential component of the visual analysis of any graph representation.
+In the context of biology, the attributes of a node or edge can itself be a complex object.
+Here, we highlight three forms of attribute data that are particularly relevant to biological contexts: multivariate data from experimental results, provenance data, and measures of uncertainty.
+We also discuss the need for the integration of external data sources.
+
+\subsubsection*{Multivariate Attributes}
+
+\paragraph*{Description}
+
+The entities within a biological pathway can contain many attributes that reflect the state of that entity in a given context, such as an experimental condition.
+In interviews, researchers stressed the importance of being able to visualize potentially complex experimental data while viewing a pathway.
+For example, each member of a particular pathway can be associated with gene expression levels across several different experimental conditions, and each of these conditions can include an additional temporal dimension~\cite{Barsky2008cerebral}.
+In this example, each node would be associated with at least three additional dimensions (experimental condition, expression level, and time).
+This multivariate data can also apply to relationships between entities, such as when one gene is up-regulated or down-regulated by another gene under different experimental conditions.
+
+\paragraph*{Existing Approaches and Techniques}
