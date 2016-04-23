@@ -76,6 +76,15 @@ After an introduction to the structure and content of pathway data, we describe 
 We also review visual representations of pathway data in the context of our requirements, along with a brief discussion of existing tools which implement those visual representations.
 Finally, avenues of future research are considered, along with a brief summary of lessons learned from domain experts.
 
+\subsection*{Biological Pathway Visualization}
+
+Pathway models are an important concept in biological research~\cite{cairns2011regulation, luo2003targeting, reya2001stem}.
+Visualization techniques and applications are important tools for researchers who work with complex data, and biological pathways are an active area of visualization research.
+
+A number of surveys exist that describe the large number of existing tools for biological network visualization \cite{Suderman2007tools,pavlopoulos2008survey,Gehlenborg2010omics}.
+In this paper we highlight some of the more prominent existing tools and techniques that provide support for the tasks described in our taxonomy.
+However, this paper is not intended to be a complete survey of biological visualization techniques and applications.
+
 MORE TO DO HERE
 
 \section*{Methods}
