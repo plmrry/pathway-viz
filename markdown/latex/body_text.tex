@@ -72,10 +72,47 @@ While these matrix techniques are not as effective for certain tasks (such as pa
 
 \subsubsection*{Pathway Data Formats}
 
-Pathway data can be stored in a varitey of file formats which capture the underlying structure of pathway data.
+Pathway data can be stored in a variety of file formats which capture the underlying structure of pathway data.
 In particular, \textit{BioPAX}\textasciitilde{}\cite{demir2010biopax}, \textit{KEGG}\textasciitilde{}\cite{kanehisa2000kegg} and \textit{SBML} \cite{Hucka2003} are the most popular file standards for storing the complex graph data structures inherent in pathway data.
 
-MORE TO DO HERE
+All three of these popular formats are XML-based and represent data as an ontology.
+\emph{BioPAX}, in particular, was designed to be a general format for biological pathway data across a variety of domain contexts\textasciitilde{}\cite{demir2010biopax}.
+Systems Biology Graph Notation (SBGN)\textasciitilde{}\cite{Novere2009} is a visual standard often used to visualize \textit{BioPAX} and \textit{SBML} file formats.
+Features particular to SBGN include the definition of multiple edge and node types, as well as allowing edges to connect to more than two nodes, resulting in a hypergraph.
+Other formats are used for the visualization of biological pathways that are not specific to the field of biology.
+For instance, the \textit{SIF Simple Interaction Format} is used by \textit{Cytoscape}\textasciitilde{}\cite{Shannon2003cytoscape} to represent undirected interactions between participants.
+
+\subsection*{Task Taxonomies}
+
+The field of visual analytics has produced a number of \emph{task taxonomies}, which are written in an effort to understand how the various tasks performed by an analyst and user are related to (and enabled by) different visualization tools and techniques, and, conversely, how visualization tools might inform analytic tasks.
+These taxonomies help to clarify the utility of existing techniques while also providing a low-level template for the design and evaluation of new techniques.
+Wehrend and Lewis\textasciitilde{}\cite{Wehrend1990} provide one of the earliest visualization task taxonomies, with the goal of ``accelerating progress in scientific visualization'' by allowing researchers to easily find the right visualization technique for a given problem.
+Schneiderman\textasciitilde{}\cite{Shneiderman1996} defines a ``task by data type taxonomy'' for information visualization in order to ``to sort out the prototypes and guide researchers to new opportunities.''
+
+These seminal taxonomies were, like many later taxonomies, independent of a specific visualization application domain, and their purpose was to provide a low level description and categorization of the analysis tasks enabled by \textit{any} visualization of data.
+These early taxonomies were written as very general classifications of low level analytic tasks related to any data visualization.
+In more recent publications, and as visualization research has progressed, task taxonomies have increasingly focused on more constrained subsets of tasks related to particular types of data structures and analytic domains.
+
+More recent taxonomies tend to focus on more narrow categories and domains relevant to visualization.
+For instance, Valiati et al.\textasciitilde{}\cite{Valiati2006} provide a taxonomy focused specifically on multidimensional visualizations.
+They build on\textasciitilde{}\cite{Wehrend1990}, but focus on tasks uniquely related to multidimensional visualizations (such as parallel coordinates).
+Like previous authors, their goal is to guide the choices of visualization and interaction techniques, and also to help support usability testing.
+Lee at al\textasciitilde{}\cite{Lee2006} define a taxonomy of graph visualization tasks that are frequently encountered when analyzing graph data.
+The stated goal of this work was to improve the evaluation of graph visualization systems by creating a set of common benchmark tasks (which could be used in conjunction with benchmark data sets).
+Their taxonomy covers tasks for the analysis of graphs in general, and was inspired by example tasks from several different domains that make regular use of graph data.
+The authors build on Amar and Stasko's\textasciitilde{}\cite{Amar2005} list of visual analytic tasks by composing existing low-level tasks into higher-level task compositions, while also proposing additional tasks that are not captured by low-level tasks presented in existing taxonomies.
+
+Several recent taxonomies focus on aspects of graph visualization that extend the work of Lee at al\textasciitilde{}\cite{Lee2006}.
+For instance, Ahn et al\textasciitilde{}\cite{Ahn2014} provide a task taxonomy for the analysis of networks that evolve over time, also known as dynamic graphs.
+The complex nature of dynamic graph data yields a similarly complex set of analysis tasks, and many of these tasks were not covered by the general graph taxonomy of Lee at al\textasciitilde{}\cite{Lee2006} -- thus, new tasks needed to be specified.
+Pretorius et al\textasciitilde{}\cite{Pretorius2014} focus on multivariate graph visualization (where graph elements contain multiple attributes).
+Their work builds on the work of both Lee at al\textasciitilde{}\cite{Lee2006} and of Valiati et al.\textasciitilde{}\cite{Valiati2006}, as multivariate networks can be considered a multidimensional dataset.
+
+While these recently-published task taxonomies have focused on particular data structures (or datasets with particular characteristics), to our knowledge the present work is the first taxonomy of tasks written in the context of the domain of biological pathway analysis.
+
+Biological Pathway visualization is a complex application domain that poses many specific analytic challenges that are not encountered in pre-existing task taxonomies.
+The data structures underlying biological pathways are dynamic multivariate hyper-graphs, and are more complex than any of those described in previous taxonomies.
+The tasks to be completed by biologists are also highly complex, involving many different entity and relationship types, and are not fully covered by the existing taxonomies.
 
 \section*{Methods}
 
@@ -110,5 +147,3 @@ In interviews, researchers stressed the importance of being able to visualize po
 For example, each member of a particular pathway can be associated with gene expression levels across several different experimental conditions, and each of these conditions can include an additional temporal dimension\textasciitilde{}\cite{Barsky2008cerebral}.
 In this example, each node would be associated with at least three additional dimensions (experimental condition, expression level, and time).
 This multivariate data can also apply to relationships between entities, such as when one gene is up-regulated or down-regulated by another gene under different experimental conditions.
-
-\paragraph*{Existing Approaches and Techniques}
