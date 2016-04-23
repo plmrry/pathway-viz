@@ -70,6 +70,11 @@ However, node-link representations are one of several ways to visualize graph da
 For instance, research has shown that matrix visualization techniques outperform node-link diagrams for higher level group based tasks\cite{Ghoniem2004,Henry2007}.
 While these matrix techniques are not as effective for certain tasks (such as path-tracing), linked views and hybrid techniques exist, such as NodeTrix~\cite{NodeTrix2007}, which combine node-link and matrix representations.
 
+\subsubsection*{Pathway Data Formats}
+
+Pathway data can be stored in a varitey of file formats which capture the underlying structure of pathway data.
+In particular, \textit{BioPAX}~\cite{demir2010biopax}, \textit{KEGG}~\cite{kanehisa2000kegg} and \textit{SBML} \cite{Hucka2003} are the most popular file standards for storing the complex graph data structures inherent in pathway data.
+
 MORE TO DO HERE
 
 \section*{Methods}
