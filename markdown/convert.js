@@ -10,12 +10,23 @@ var parse = stream.fromNodeCallback(pdc);
 var write = stream.fromNodeCallback(fs.writeFile);
 
 const options = [
-  '--wrap=preserve',
-  '--template=template.tex'
+  '--wrap=preserve'
 ];
 
-stream.fromNodeCallback(fs.readFile)('source/test.md')
+stream.fromNodeCallback(fs.readFile)('source/paper.md')
   .map(b => b.toString())
   .flatMap(string => parse(string, 'markdown', 'latex', options))
   .flatMap(latex => write('latex/test.tex', latex))
   .subscribe(() => console.log("Done"));
+
+
+// const options = [
+//   '--wrap=preserve',
+//   '--template=template.tex'
+// ];
+//
+// stream.fromNodeCallback(fs.readFile)('source/test.md')
+//   .map(b => b.toString())
+//   .flatMap(string => parse(string, 'markdown', 'latex', options))
+//   .flatMap(latex => write('latex/test.tex', latex))
+//   .subscribe(() => console.log("Done"));
