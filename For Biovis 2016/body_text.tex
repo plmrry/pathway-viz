@@ -129,7 +129,37 @@ In addition, we describe examples of how each task category is addressed by curr
 
 Biological pathways are represented as weighted, directed, labeled graphs which can include hyper-edges and compound nodes.
 While existing task taxonomies describe tasks related to the visual analysis of graphs in general \cite{Ahn2014, Pretorius2014}, the analysis of pathways in the context of biology reveals several important graph-analytic tasks that other works have not described in detail.
-This taxonomy refines and extends the existing set of tasks associated with the visual analysis of network data in general
+This taxonomy refines and extends the existing set of tasks associated with the visual analysis of network data in general.
+A summary of the taxonomy can be seen in table \ref{tab:taxonomy}.
+
+\renewcommand{\arraystretch}{1.5}
+\setlength\abovecaptionskip{5pt}
+\begin{table*}
+
+\centering
+\begin{tabular} { |l|l|p{7cm}| }
+\hline
+\textbf{Grouping} & \textbf{Category} & \textbf{Example Task}\\
+\hline
+\hline
+\multirow{3}{*} {Attributes} &Multivariate & Find all up-regulated genes in a biological pathway.\\ \cline{2-3}
+& Provenance & Determine which studies provides the evidence for a link between two genes.\\ \cline{2-3}
+& Uncertainty & Understand which pathway components have the strongest empirical evidence relationships\\ \hline
+\multirow{5}{*} {Relationships} &Multivariate &	Find all translocations of entities in a given biological pathway \\ \cline{2-3}
+&Direction & ***NEED A BIOLOGICAL EXAMPLE OF A DIRECTED TASK  \\ \cline{2-3}
+&Hierarchical &Expand a module entity to include all child-entities in the visualization \\ \cline{2-3}
+&Causality and Cascading effects & Find all genes downstream of the currently selected entity, which may be affected by a change in regulation \\  \cline{2-3}
+&Feedback & Identify potential feedback loops in gene regulation\\ \hline
+\multirow{2}{*} {Comparison and Contextualization} &Compare Data Sets  & Compare a biological pathway to a pathway with the same functionality in a reference species \\ \cline{2-3}
+&Integrate Existing Knowledge & Integrate results of a laboratory experiment into existing protein-protein interaction networks, extracted from StringDB. \\ \hline
+\multirow{2}{*} {Data Modification and Curation} & Annotate Existing Data  & Biological example required \\ \cline{2-3}
+&TBC& To be decided \\ \hline
+\end{tabular}
+\centering
+\\
+\caption{A summary of the biological pathway visualization task taxonomy}
+\label{tab:taxonomy}
+\end{table*}
 
 \subsection*{Attributes}
 
@@ -288,7 +318,7 @@ A connection from a node to a compound node does not imply a relationship of own
 \begin{figure}[htb]
   \centering
   \includegraphics[width=0.5\columnwidth]{figures/Hierarchical_edge_bundles}
-  \caption{\label{fig:Hierarchical_edge_bundles} Hierarchical edge bundles, taken from \cite{Holten2006}. Permission to be obtained. The bundles not only reduce clutter but also more cleary define the hierarchy.}
+  \caption{\label{fig:Hierarchical_edge_bundles} Hierarchical edge bundles, taken from \cite{Holten2006}. Permission to be obtained. The bundles not only reduce clutter but also more clearly define the hierarchy.}
 \end{figure}
 
 \paragraph*{Existing Approaches and Techniques}
@@ -299,7 +329,7 @@ The RenoDoI application allows for multiple data sources to be included in a sin
 This may include data from different pathways and is a containment relationship. Essential the node for each data source forms a set, which may or may not overlap with other sets.
 This is visualized using by drawing a bounded contour around the nodes in the set. Different border colors indicate different sets.
 This type of encoding of set membership is the \textit{Bubblesets} \cite{Collins2009} approach, which was shown to be the most effective way of displaying group information on a node link diagram by Jianu et al. \cite{Jianu2014}.
-\todo[inline]{consider moving previous paragrap to compound Relationships section}
+\todo[inline]{consider moving previous paragraph to compound Relationships section}
 
 In many cases for pathway visualization the hierarchy is not very deep and edges do not traverse multiple levels of the hierarchy.
 However in cases where edges do traverse multiple hierarchical levels they may cause clutter.
