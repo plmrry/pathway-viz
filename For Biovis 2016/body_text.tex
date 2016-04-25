@@ -190,10 +190,23 @@ An even more fine-grained approach to uncertainty visualization could somehow in
 The empirical support behind any individual entity or relationship within a pathway can vary widely, and the question of how these varying levels of confidence can be incorporated into a pathway visualization has been rarely addressed.
 
 \paragraph*{Existing Approaches and Techniques}
-
+Biology is different from many other application domains of visualization, as the data is often ambiguous or not certain\cite{kohlbacher2014multivariate}. 
+The uncertainty can be related to the values of specific attributes or to the existence of a relationship.
 Some databases such as STRING \cite{STRING2005}, a protein interaction database, provide quality scores with their results.
 This quality score can be seen as a form of uncertainty based on the provenance of the data.
 The higher the score, the more evidence there is for an interaction.
+Visualizing uncertainty and ambiguity is still a challenge in visualization in general.
+There are many different types of uncertainty\cite{skeels2010uncertainty}. In biological visualization uncertainty may be caused by measurement errors, missing data, algorithms providing multiple solutions (only one of which is used in the resulting data set) and ambiguous mapping between elements in different domains~\cite{kohlbacher2014multivariate}.
+
+One characteristic of uncertainty within an analysis is that it can build over time. 
+As an researcher filters and adds external data to a biological pathway visualization the amount of uncertainty present in the visualization as a whole will change. 
+An approach similar the the uncertainty flows of Wu et al.\cite{wu2012uncertainty} could be used to help researcher comprehend the impact of their decisions on overall uncertainty levels when creatings a biological pathway visualization. 
+%The uncertainty flows of Wu et al. visualize the flow of uncertainty  through out analytical processes. 
+%Such an approach could also be used to help researcher comprehend the impact of their decisions in visualizing a biological pathway.
+
+Visualizing uncertainty within a graph visualization is a still a difficulty challenge, with few practical examples available. 
+Wang et al.~\cite{wang2016ambiguityvis} use a variant of a heat map visualization to show where visual ambiguity occurs in a graph visualization.
+While their approach visualizes potential ambiguity in visual interpretation rather than the underlying data set, a similar approach could be taken to visualize uncertainty in biological networks.
 
 \subsection*{Relationship Tasks}
 
