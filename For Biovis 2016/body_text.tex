@@ -207,7 +207,7 @@ Thus, the provenance information related to a given biological entity can be see
 
 \paragraph*{Existing Approaches and Techniques}
 
-While \textit{SBGNViz} \cite{SBGNViz2015} and \textit{ChiBE}\cite{Babur2010chibe} and other applications allow connectivity to external sources, such as UNitProt or TBA, provenance information is not visualized directly.
+While \textit{SBGNViz} \cite{SBGNViz2015} and \textit{ChiBE}\cite{Babur2010chibe} and other applications allow connectivity to external sources, such as UNitProt or TBA, provenance information is not visualized directly.STRING \cite{STRING2005}, a protein interaction database, provide provenance information,  The provenance is described s with respect to source ( i.e. experiment results, a curated database) is encoded by color within the databases visualization component.
 
 \subsubsection*{Uncertainty}
 
@@ -223,7 +223,8 @@ The empirical support behind any individual entity or relationship within a path
 Biology is different from many other application domains of visualization, as the data is often ambiguous or not certain\cite{kohlbacher2014multivariate}. 
 The uncertainty can be related to the values of specific attributes or to the existence of a relationship.
 Some databases such as STRING \cite{STRING2005}, a protein interaction database, provide quality scores with their results.
-This quality score can be seen as a form of uncertainty based on the provenance of the data.
+This quality score can be seen as a form of uncertainty as it relates to the amount of information available concerning a relationship or entity. 
+
 The higher the score, the more evidence there is for an interaction.
 Visualizing uncertainty and ambiguity is still a challenge in visualization in general.
 There are many different types of uncertainty\cite{skeels2010uncertainty}. In biological visualization uncertainty may be caused by measurement errors, missing data, algorithms providing multiple solutions (only one of which is used in the resulting data set) and ambiguous mapping between elements in different domains~\cite{kohlbacher2014multivariate}.
@@ -392,7 +393,7 @@ Thus, for biological pathway visualization in particular, integration of attribu
 \paragraph*{Existing Approaches and Techniques}
 
 Most applications provide access to the attributes through simple interactions (e.g.~mouseover and click).
-In many cases the attribute information is simply read from an input file, however more recent tools such as \textit{SBGNViz} \cite{SBGNViz2015} and \textit{ChiBE}\cite{Babur2010chibe} query online database to provide a range of important attribute information.
+In many cases the attribute information is simply read from an input file, however more recent tools such as \textit{SBGNViz} \cite{SBGNViz2015} and \textit{ChiBE}\cite{Babur2010chibe} query online databases to provide a range of important attribute information.
 
 In their 2011 survey Gleicher et al. \cite{Gleicher2011} describe three primary types classifications of comparative visualization.
 These are juxtaposition, superposition, and explicit encoding of differences, and these classifications can also be combined.
@@ -408,9 +409,9 @@ For supposition, the matter is not so simple as the addition of a new graph may 
 The RenoDoI application\cite{Vehlow2015} initially lays out the largest data set, then adds the addition data sets, adjusting previous layout , without resetting it.
 Nodes which are included in both data sets only appear once.
 
-Explicit encoding of difference means that differences between the two datasets are explicitly highlighted, and this approach is often in addition to the previous two.
-Once specific case where implicit encoding is not mixed is when when a graph is dynamic and the changes are between time slices.
-This can be seen in Rugfiange and McGuffins's DiffAni application \cite{Rufiange2013}.
+Explicit encoding of difference means that differences between the two datasets are explicitly highlighted, and this approach is often in addition to the previous two. For example an edge which appears in one data set but not the other may be highlighted by color.
+Once specific case where implicit encoding is not mixed with other approaches is when when a graph is dynamic and the changes are between time slices.
+This can be seen in Rugfiange and McGuffins's DiffAni application \cite{Rufiange2013} for visualizing dynamic graphs.
 
 \subsection*{Data Modification and Curation}
 
@@ -424,7 +425,7 @@ Two others expressed a need to create ``personalized'' pathways that only includ
 Ideally, visualization tools will seamlessly integrate these curation and maintenance needs.
 
 \paragraph*{Existing Approaches and Techniques}
-
+Most desktop pathway visualization applications allow for data files to be edited and exported in standardized formats e.g. celldesigner\cite{funahashi2008celldesigner} allows files to be modified and curated and exported in the SBML standard.
 \hl{to do}
 
 \subsection*{Discussion}
