@@ -369,15 +369,13 @@ This approach has been used by the cerebral application for showing cascades of 
 Archambault and Purchase's work also shows that layout has an impact on the visualization of attribute cascades.
 Experiment participants performed better when a hierarchical layout was used, however it should be noted that the hierarchical layout was consistent with the direction of the cascade.
 
-\todo[inline, author=FMG]{I think it would be a good idea to differentiate this taxonomy from Ahn's taxonomy in this section. He does look at causal tasks and repetition, which are related to feedback loops , but not the same....}
-
 \subsubsection*{Feedback Loops}
 
 \paragraph*{Description}
 
 In tandem with the problem of identifying cascading effects is the problem of reasoning with feedback.
 Feedback loops are common within metabolic activation networks, and they play a key role in processes related to uncontrolled cellular growth in cancerous cells.
-\todo[inline, author=FMG]{I really thing feed back loops should be merges in as a special case of attirbute cascades}
+\todo[inline, author=FMG]{I really thing feed back loops should be merged in as a special case of attribute cascades}
 
 
 \paragraph*{Existing Approaches and Techniques}
@@ -449,10 +447,24 @@ The ability to disseminate biological pathway visualizations easily amongst mult
 
 \subsection*{Discussion}
 
+Previous taxonomies only touch on the notion of causality of attribute changes in passing.
+Lee et al. do describe a set of attribute based tasks in their taxonomy, but there is not aspect of causality or any sort of attribute cascade, only tasks related to static attribute values. 
+Ahn et al.~\cite{Ahn2014} in their task taxonomy for network evolution analysis do describe the notion of attribute stability as part of the shape of changes in their taxonomy, and describes tasks that iterate and enable each other, but there is no classification of causality or cascades at the attribute level .
+Moody et al. in their overview of dynamic network visualization~\cite{moody2005dynamic} do mention cascades, but only in the context of the formation of relationships, not the changing of attributes.
+Attribute cascades and feedback loops are a very important aspect of biological pathway visualization.
+The development of a domain specific task taxonomy, means that this aspect of biological pathways, which is still an open problem in information visualization, is properly highlighted as an important feature of a visualization system for this domain.
+
+\todo[inline, author=FMG]{Please correct or change anything in the proceeding paragraph if you do not agree with it. It needs to be integrated into a wider discussion about this taxonomy.} 
+
+
+\todo[inline, author=FMG]{Paul: Discuss the importance of contextualization here.... and any other justification for the taxonomy} 
 \subsection*{Directions for Future Research}
 
 \subsubsection*{Visualizing Uncertainty}
 
 Especially considering our feedback from domain experts, tools generally do not attempt to visualize the ``uncertainty'' behind a connection in a pathway, as expressed by the first domain expert. This is a challenging task, as even the definition of ``uncertainty'' may be difficult to operationalize. However, data formats such as \emph{BioPAX} do have robust support for citations, allowing published references to be connected to entities and relationships within a pathway. A tool that could effectively encode ``uncertainty data'' into a visualization may be very valuable to systems researchers who work with the results of hundreds or thousands of separate publications.
+
+
+\subsubsection*{Attribute Cascades}
 
 \section*{Conclusions}
