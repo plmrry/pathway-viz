@@ -268,7 +268,7 @@ The visual encoding of these complex and multivariate relationships is one of th
 \paragraph*{Existing Approaches and Techniques}
 
 Pretorius and van Wijk's \cite{pretorius2008} system for visual inspection of multivariate graphs places relationship type (referred to as edge labels) at the core of their system.
-They do not use traditional graph layout techniques.
+They do not use traditional graph layout techniques, and their resulting visualization resembles the parallel coordinates style of multivariate data visualization.
 The edges are grouped by label in the center of the display, nodes are duplicated on either side, with the attributes reflected by an icicle plot (see figure \ref{fig:MultivariateViz}).
 This approach can handle a large number of edge types, and cases where a node is involved in multiple relationships of different types.
 
@@ -355,15 +355,19 @@ Thus, determining the set of entities that are ``responsible'' for the increase 
 We characterize this problem as one of identifying \textit{cascading effects}, where many upstream entities have directed relationships with many mediating entities, which in turn affect the output of many downstream entities.
 
 \paragraph*{Existing Approaches and Techniques}
+Causality and cascading effects depend on the both the structure of the graph, which determines the changes, and the attributes associated with the graph entities, which are what actual changes, e.g. a change in gene expression level from being up-regulated to down-regulated.
+The structure of the graphs is self does not change, only the attributes (which Ahn \textit{et al.} refer to as the domain properties).
+Archambault \textit{et al.}, in their definition of Temporal Multivariate networks ~\cite{archambault2014temporal} describe these changes in attributes as the behavior of the graph. Showing the full range of behaviours (attribute value changes) in a traditional biological pathway netwrok visualization  can be difficult as there are few visual which can indicate attribute values (e.g. color, shape, texture etc.). 
+Archambault \textit{et al.}~\cite{archambault2014temporal}, specify that high attribute dimensionality is  still an open problem.
+The approach of Pretorius and van Wijk \cite{pretorius2008} (see figure~\ref{fig:MultivariateViz}) allows for a large number of attributes to be displayed, but differs hugely from traditional biological pathway visualization approaches in that it shows little overall structure.
+However this approach, or one influenced by it might be beneficial if used in conjunction with another view of the pathway which clearly shows the structure which propagates the changes.
 
-Archambault and Purchase \cite{Archambault2016} have performed a empirical evaluation of different techniques for showing attribute cascades.
+With respect to cascading changes of attributes, Archambault and Purchase \cite{Archambault2016} have performed a empirical evaluation of different techniques .
 They found that visually small multiples was the best approach to convey the dynamic attribute changes that cascade through a network.
 The small multiples approach is a form of comparative juxtaposition where multiple views of the network at different time points are displayed in a matrix.
 This approach has been used by the cerebral application for showing cascades of data.
 Archambault and Purchase's work also shows that layout has an impact on the visualization of attribute cascades.
-Experiment participants performed better when a hierarchical layout was used, however it should be noted that the hierarchical layout was consistent with the direction of the layout.
-
-\todo[inline, author=FMG]{I think it would be a good idea to differentiate this taxonomy from Ahn's taxonomy in this section. He does look at causal tasks and repetition, which are related to feedback loops , but not the same....}
+Experiment participants performed better when a hierarchical layout was used, however it should be noted that the hierarchical layout was consistent with the direction of the cascade.
 
 \subsubsection*{Feedback Loops}
 
@@ -371,6 +375,8 @@ Experiment participants performed better when a hierarchical layout was used, ho
 
 In tandem with the problem of identifying cascading effects is the problem of reasoning with feedback.
 Feedback loops are common within metabolic activation networks, and they play a key role in processes related to uncontrolled cellular growth in cancerous cells.
+\todo[inline, author=FMG]{I really thing feed back loops should be merged in as a special case of attribute cascades}
+
 
 \paragraph*{Existing Approaches and Techniques}
 
@@ -436,7 +442,18 @@ Ideally, visualization tools will seamlessly integrate these curation and mainte
 
 \paragraph*{Existing Approaches and Techniques}
 Most desktop pathway visualization applications allow for data files to be edited and exported in standardized formats e.g. celldesigner\cite{funahashi2008celldesigner} allows files to be modified and curated and exported in the SBML standard.
-\hl{to do}
+Saving a  personalized version of a pathway is basic functionality but curating a large data set may take the input of many experts.
+Web based technologies provide a platform on which multiple experts can collaboratively curate pathways.
+Collaborative web browsing has been established for quite some time e.g.\cite{esenther2002instant}, while
+modern web visualization technologies such as D3.js~\cite{bostock2011d3} allow for web based visualization functionality.
+Collaborative web based visualizations such as POLYCHROME\cite{badam2014polychrome} allow a synchronized viewing of a web based visualization across multiple users (and across multiple devices).
+Collaborative web based visualizations offers an opportunity for researchers to share their personally curated pathways and data sets for generally dissemination or for support in debugging possibly flawed pathways. 
+The ability to disseminate biological pathway visualizations easily amongst multiple curators would allow for a more thorough validation of proposed pathways.
+
+
+
+
+
 
 \subsubsection*{Creating Personalized Pathways}
 
@@ -454,6 +471,17 @@ Most desktop pathway visualization applications allow for data files to be edite
 
 \subsection*{Discussion}
 
+Previous taxonomies only touch on the notion of causality of attribute changes in passing.
+Lee et al. do describe a set of attribute based tasks in their taxonomy, but there is not aspect of causality or any sort of attribute cascade, only tasks related to static attribute values. 
+Ahn et al.~\cite{Ahn2014} in their task taxonomy for network evolution analysis do describe the notion of attribute stability as part of the shape of changes in their taxonomy, and describes tasks that iterate and enable each other, but there is no classification of causality or cascades at the attribute level .
+Moody et al. in their overview of dynamic network visualization~\cite{moody2005dynamic} do mention cascades, but only in the context of the formation of relationships, not the changing of attributes.
+Attribute cascades and feedback loops are a very important aspect of biological pathway visualization.
+The development of a domain specific task taxonomy, means that this aspect of biological pathways, which is still an open problem in information visualization, is properly highlighted as an important feature of a visualization system for this domain.
+
+\todo[inline, author=FMG]{Please correct or change anything in the proceeding paragraph if you do not agree with it. It needs to be integrated into a wider discussion about this taxonomy.} 
+
+
+\todo[inline, author=FMG]{Paul: Discuss the importance of contextualization here.... and any other justification for the taxonomy} 
 \subsection*{Directions for Future Research}
 
 \hl{uncertainty}
@@ -469,5 +497,8 @@ Most desktop pathway visualization applications allow for data files to be edite
 \subsubsection*{Visualizing Uncertainty}
 
 Especially considering our feedback from domain experts, tools generally do not attempt to visualize the ``uncertainty'' behind a connection in a pathway, as expressed by the first domain expert. This is a challenging task, as even the definition of ``uncertainty'' may be difficult to operationalize. However, data formats such as \emph{BioPAX} do have robust support for citations, allowing published references to be connected to entities and relationships within a pathway. A tool that could effectively encode ``uncertainty data'' into a visualization may be very valuable to systems researchers who work with the results of hundreds or thousands of separate publications.
+
+
+\subsubsection*{Attribute Cascades}
 
 \section*{Conclusions}
