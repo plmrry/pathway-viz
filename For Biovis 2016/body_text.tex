@@ -179,27 +179,14 @@ This multivariate data can also apply to relationships between entities, such as
 
 \paragraph*{Existing Approaches and Techniques}
 
-<<<<<<< HEAD
 Multivariate network visualization is a highly active field of visualization, in which the life sciences in general are a frequent application domain, and many more recent biological network visualizations include attribute information.
 CHiBE \textit{ChiBE}\cite{Babur2010chibe} provides the ability to load biological entity regulation data mappings from an external source and apply them to a pathway visualization.
-The most prominent data format for supporting this is the SIF format, which is defined as part of the Cytoscape application \cite{Shannon2003cytoscape}.
+The most prominent data format that supporting this is the SIF format, which is defined as part of the Cytoscape application \cite{Shannon2003cytoscape}.
 The \textit{RenoDoI} application \cite{Vehlow2015}, a plug-in for \textit{Cytoscape} for visualizing knowledge networks of biological data, uses \emph{Degree of Interest} functions to highlight nodes based on attribute values.
 Such functionality could easily be extended to biological pathway visualizations.
 The general purpose visualization system, \textit{Candid} \cite{Shadoan2013}, also uses attribute information as part of a hypergraph query system which allows users to perform complex queries on entities of different types.
 Node and edge attributes are also used for graph querying and filtering as can be seen in \textit{facet} based visualizations, an approach that allows for graphs to be filtered by subsets of attributes.
 The \textit{Cerebral} application \cite{Barsky2008cerebral} uses attribute information as an aid to layout, where the graph layout space is divided into layers and nodes are positioned in the layers based on sub-cellular localization metadata.
-=======
-Multivariate network visualization is a highly active field of visualization, in which the life sciences in general are frequent application domain, see \cite{} for a recent state of the art survey.
-Many more recent biological network visualizations include attribute information.
-CHiBE \textit{ChiBE}\cite{Babur2010chibe} provides the ability to load in biological entity regulation data mappings from an external source and apply them to a pathway visualization.
-The most prominent data format for supporting this is the SIF format defined as part of the Cytoscape application \cite{Shannon2003cytoscape}.
-The \textit{RenoDoI} application \cite{Vehlow2015}, a plug-in for \textit{Cytoscape} for visualizing biological data knowledge networks, uses Degree of Interest functions to highlight nodes based on attribute values.
-Such functionality could easily be extend to biological pathway visualizations.
-The general purpose visualization system, \textit{Candid} \cite{Shadoan2013}, also uses attribute information as part of hyper graph query system which allows users to perform complex queries on entities of different types.
-Node and edge attributes are also used for graph querying and filtering as can be seen in, \textit{facet} based visualization, an approach allows for graphs to be filtered by subsets of attributes.
-The \textit{Cerebral} application \cite{Barsky2008cerebral} uses attribute information as an aid to layout.
-The graph layout space is divided into layers and nodes are positioned in the layers based on sub-cellular localization annotation, essentially an attribute of the node.
->>>>>>> 6080a5f5d1395e24114565c66a0d6b5263948939
 
 \subsubsection*{Identifying Provenance}
 
@@ -219,27 +206,19 @@ Thus, the provenance information related to a given biological entity can be see
 
 \paragraph*{Existing Approaches and Techniques}
 
-<<<<<<< HEAD
 While \textit{SBGNViz} \cite{SBGNViz2015} and \textit{ChiBE}\cite{Babur2010chibe} and other applications allow connectivity to external sources, such as UNitProt or TBA, there are few biological visualization tools that visualize provenance information directly.
-STRING \cite{STRING2005}, a protein interaction database, provides provenance information described with respect to a source (e.g. experimental results or a curated database) which is encoded by coloring nodes within the database's visualization component.
-=======
-While \textit{SBGNViz} \cite{SBGNViz2015} and \textit{ChiBE}\cite{Babur2010chibe} and other applications allow connectivity to external sources, such as UNitProt or PubMed, provenance information is not visualized directly.
 
 \begin{figure}[htb]
   \centering
   \includegraphics[width=0.95\columnwidth]{figures/reactome2}
   \caption{\label{fig:reactome} Screen shot taken from the Reactome pathway browser \cite{croft2014reactome}. Permission to be obtained. The publications related to the selected items are listed in the window at the bottom of the screen. Hyper-links are provided directly to the referenced documents.}
-\end{figure} 
-
+\end{figure}
 
 Most online biology databases do provide this information but do not integrate it into the data visualization itself.
 For example, the Reactome ~\cite{croft2014reactome} database  displays a list of publications which are related to the selected item, see figure ref{fig:reactome}, but as a simple list in a separate window adjacent to the visualization.
 
-STRING \cite{STRING2005}, a protein interaction database, provides provenance information and encodes it as part of the visualization. 
+STRING \cite{STRING2005}, a protein interaction database, provides provenance information and encodes it as part of the visualization.
 The provenance is described with respect to source (i.e. experiment results, a curated database) is encoded by color within the database's visualization component.
-
-
->>>>>>> 6080a5f5d1395e24114565c66a0d6b5263948939
 
 \subsubsection*{Identifying Uncertainty}
 
@@ -263,17 +242,11 @@ Visualizing uncertainty and ambiguity is still a challenge in visualization in g
 There are many different types of uncertainty\cite{skeels2010uncertainty}.
 In biological visualization uncertainty may be caused by measurement errors, missing data, algorithms providing multiple solutions (only one of which is used in the resulting data set) and ambiguous mapping between elements in different domains~\cite{kohlbacher2014multivariate}.
 
-<<<<<<< HEAD
 One characteristic of uncertainty within an analysis is that it can build over time.
-As an researcher filters and adds external data to a biological pathway visualization the amount of uncertainty present in the visualization as a whole will change.
+As a researcher filters and adds external data to a biological pathway visualization the amount of uncertainty present in the visualization as a whole will change.
 An approach similar the the uncertainty flows of Wu et al.\cite{wu2012uncertainty} could be used to help researcher comprehend the impact of their decisions on overall uncertainty levels when creating a biological pathway visualization.
 %The uncertainty flows of Wu et al. visualize the flow of uncertainty  through out analytical processes.
-=======
-One characteristic of uncertainty within an analysis is that it can build over time. 
-As an researcher filters and adds external data to a biological pathway visualization the amount of uncertainty present in the visualization as a whole will change. 
-An approach similar the the uncertainty flows of Wu et al.\cite{wu2012uncertainty} could be used to help researcher comprehend the impact of their decisions on overall uncertainty levels when creating a biological pathway visualization. 
-%The uncertainty flows of Wu et al. visualize the flow of uncertainty  through out analytical processes. 
->>>>>>> 6080a5f5d1395e24114565c66a0d6b5263948939
+
 %Such an approach could also be used to help researcher comprehend the impact of their decisions in visualizing a biological pathway.
 
 Visualizing uncertainty within a graph visualization is an ongoing challenge in the domain of visualization, with few practical examples available.
@@ -282,11 +255,7 @@ While their approach visualizes potential ambiguity in visual interpretation rat
 
 \subsection*{Relationship Tasks}
 
-<<<<<<< HEAD
-Bioinformatics is essentially the study of relationships between biological entities, and understanding relationships within a biological pathway graph is one the most essential tasks that a systems biologist will perform.
-=======
 Within bioinformatics,  understanding relationships within a biological pathway graph is one the most essential tasks that a systems biologist will perform.
->>>>>>> 6080a5f5d1395e24114565c66a0d6b5263948939
 All of the researchers we interviewed stressed the importance of understanding how pathway entities within a biological network are connected.
 Here, we discuss some of the complex types of relationships found within biological datasets.
 We emphasize that the challenge of visualization is not only that these different categories of relationship exist, but that they exist as combinations and compositions of each other.
@@ -497,19 +466,17 @@ modern web visualization technologies such as D3.js~\cite{bostock2011d3} allow f
 Collaborative web based visualizations such as POLYCHROME\cite{badam2014polychrome} allow a synchronized viewing of a web based visualization across multiple users (and across multiple devices).
 Collaborative web based visualizations offers an opportunity for researchers to share their personally curated pathways and data sets for generally dissemination or for support in debugging possibly flawed pathways.
 The ability to disseminate biological pathway visualizations easily amongst multiple curators would allow for a more thorough validation of proposed pathways.
-<<<<<<< HEAD
 
 \subsubsection*{Creating Personalized Pathways}
 
 % - filtering
 
 \subsubsection*{Annotation}
-=======
+
 The approach of using web tools to disseminates approach is already very evident in many modern online biological data resources.
 Reactome~\cite{croft2014reactome} and String~\cite{STRING2005} are two online resources which feature highly interactive web based visualization interfaces.
 The fact that the data in the Reactome database is curated and peer reviewed is considered  a key selling point of the system.
 Most online publicly available pathway databases do allow users to provide feedback on potential errors, updated research or areas for improvement.
->>>>>>> 6080a5f5d1395e24114565c66a0d6b5263948939
 
 % - debugging
 % - commenting
