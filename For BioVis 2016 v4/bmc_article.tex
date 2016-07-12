@@ -258,11 +258,11 @@ The \emph{BioPax} schema is itself a reflection of the complexity of information
 
 Participants in a pathway -- genes, proteins, and other molecules within a cell -- can act as inputs or outputs to multiple interactions, and the set of relationships between biochemical interactions inherently includes feedback loops and other complex relationships.
 Importantly, reactions and other interactions can have a ``cascading'' effect, where one interaction will inhibit or promote the effect of another.
-Molecular activation pathways also have an inherently dynamic quality, which can limit the utility of static (i.e., non-interactive) graph representations~\cite{kitano2002systems}.
+Molecular activation pathways also have an inherently dynamic quality, which can limit the utility of static (i.e. non-interactive) graph representations~\cite{kitano2002systems}.
 Understanding these complex and dynamic relationships while also enabling researchers to see higher order patterns is a significant challenge to modern bioinformatics research~\cite{saraiya2005visualizing}.
 
 Pathway diagrams are used in two contexts: for the presentation of results, and as an active (and interactive) part of the process of data analysis.
-In the presentational sense, pathway diagrams can contextualize a set of biological processes within a cell, and in these contexts will often show the location of cellular membranes and other large cellular structures to help provide a frame of reference for the viewer.
+In the presentational sense, pathway diagrams can contextualize a set of biological processes within a cell, and in these contexts will often show the location of cellular membranes and other large cellular structures to help to provide a frame of reference for the viewer.
 Ideally, a pathway diagram --~when used in a presentational context -- allows a viewer to efficiently understand a complex set of biological relationships.
 While pathway diagrams may be useful for presenting and contextualizing a set of results in a research or educational context, they are also an important part of \emph{in situ} analyses.
 
@@ -278,14 +278,14 @@ The complexity and amount of information that needs to be incorporated in given 
 Thus, modern applications in these domains employ a wide variety of interactive visualization techniques to allow a user to effectively explore and analyze pathway data.
 
 Developing and designing effective visual analytics applications requires a detailed understanding of the visual analysis tasks that will be performed by a user, and the ``user'' in this case is a biological researcher in the midst of some analysis relevant to their domain.
-User tasks can thus be designed and understood best through a in-depth understanding of the nature of information needed by the researcher in the course of their analyses.
+User tasks can thus be designed and understood best through an in-depth understanding of the nature of information needed by the researcher in the course of their analyses.
 Some of these tasks may not be known \emph{a priori} and may be exploratory in nature, where an ideal visualization of pathway data could reveal important new insights to a researcher.
 A comprehensive understanding of tasks performed by domain researchers in a typical analysis is essential to the design and implementation of an effective visual analytics application.
 
 In this work, we present a description and analysis of tasks related to the analysis of biological pathway data.
 Tasks were derived from interviews with several domain experts in biology.
 After an introduction to the structure and content of pathway data, we describe the task taxonomy that was constructed from these interviews.
-We also review visual representations of pathway data in the context of our, along with a brief discussion of existing tools which implement those visual representations.
+We also review visual representations of pathway data in the context of our taxonomy, along with a brief discussion of existing tools which implement those visual representations.
 Finally, avenues of future research are considered, along with a brief summary of lessons learned from domain experts.
 
 \subsection*{Biological Pathway Visualization}
@@ -331,7 +331,7 @@ More recent taxonomies tend to focus on more narrow categories and domains relev
 For instance, Valiati et al.~\cite{Valiati2006} provide a taxonomy focused specifically on multidimensional visualizations.
 They build on~\cite{Wehrend1990}, but focus on tasks uniquely related to multidimensional visualizations (such as parallel coordinates).
 Like previous authors, their goal is to guide the choices of visualization and interaction techniques, and also to help support usability testing.
-Lee at al~\cite{Lee2006} define a taxonomy of graph visualization tasks that are frequently encountered when analyzing graph data.
+Lee et al~\cite{Lee2006} define a taxonomy of graph visualization tasks that are frequently encountered when analyzing graph data.
 The stated goal of this work was to improve the evaluation of graph visualization systems by creating a set of common benchmark tasks (which could be used in conjunction with benchmark data sets).
 Their taxonomy covers tasks for the analysis of graphs in general, and was inspired by example tasks from several different domains that make regular use of graph data.
 The authors build on Amar and Stasko's~\cite{Amar2005} list of visual analytic tasks by composing existing low-level tasks into higher-level task compositions, while also proposing additional tasks that are not captured by low-level tasks presented in existing taxonomies.
@@ -345,7 +345,7 @@ Their work builds on the work of both Lee at al~\cite{Lee2006} and of Valiati et
 While these recently-published task taxonomies have focused on particular data structures (or datasets with particular characteristics), to our knowledge the present work is the first taxonomy of tasks written in the context of the domain of biological pathway analysis.
 
 Biological Pathway visualization is a complex application domain that poses many specific analytic challenges that are not encountered in pre-existing task taxonomies.
-The data structures underlying biological pathways are dynamic multivariate hyper-graphs, and are more complex than any of those described in previous taxonomies.
+The data structures underlying biological pathways are dynamic multivariate hyper-graphs, and are more complex than any of those described in the previous taxonomies.
 The tasks to be completed by biologists are also highly complex, involving many different entity and relationship types, and are not fully covered by the existing taxonomies.
 
 \section*{Methods}
@@ -359,7 +359,8 @@ Each researcher also presented their views on the utility of pathway data and of
 We have developed a taxonomy based on these interviews.
 In addition, we describe examples of how each task category is addressed by current biological visualization applications and techniques.
 
-A summary of interviews is described in Table~\ref{table:interviews}. The researchers are engaged in a wide variety of research within the general domain of biology and bioinformatics research. This variety allowed for a rich examination of tasks related to biological datasets.
+A summary of interviews is described in table~\ref{table:interviews}.
+The researchers are engaged in a wide variety of research within the general domain of biology and bioinformatics research. This variety allowed for a rich examination of tasks related to biological datasets.
 
 \begin{table*}[!ht]
 %% Table captions on top in journal version
@@ -411,7 +412,7 @@ A summary of the taxonomy can be seen in table \ref{tab:taxonomy}.
 \subsection*{Attribute Tasks}
 
 The low-level identification of nodes, edges, and their attributes is an essential component of the visual analysis of any graph representation.
-In the context of biology, the attributes of a node or edge can itself be a complex object.
+In the context of biology, the attributes of a node or edge can themselves be complex objects.
 Here, we highlight three forms of attribute data that are particularly relevant to biological contexts: multivariate data from experimental results, provenance data, and measures of uncertainty.
 We also discuss the need for the integration of external data sources.
 
@@ -428,8 +429,8 @@ This multivariate data can also apply to relationships between entities, such as
 \paragraph*{Existing Approaches and Techniques}
 
 Multivariate network visualization is a highly active field of visualization, in which the life sciences in general are a frequent application domain, and many more recent biological network visualizations include attribute information.
-CHiBE \textit{ChiBE}~\cite{Babur2010chibe} provides the ability to load biological entity regulation data mappings from an external source and apply them to a pathway visualization.
-The most prominent data format that supporting this is the SIF format, which is defined as part of the Cytoscape application~\cite{Shannon2003cytoscape}.
+\textit{ChiBE}~\cite{Babur2010chibe} provides the ability to load biological entity regulation data mappings from an external source and apply them to a pathway visualization.
+The most prominent data format supporting this is the SIF format, which is defined as part of the Cytoscape application~\cite{Shannon2003cytoscape}.
 The \textit{RenoDoI} application~\cite{Vehlow2015}, a plug-in for \textit{Cytoscape} for visualizing knowledge networks of biological data, uses \emph{Degree of Interest} functions to highlight nodes based on attribute values.
 Such functionality could easily be extended to biological pathway visualizations.
 The general purpose visualization system, \textit{Candid}~\cite{Shadoan2013}, also uses attribute information as part of a hypergraph query system which allows users to perform complex queries on entities of different types.
@@ -470,7 +471,7 @@ The \textit{Cerebral} application~\cite{Barsky2008cerebral} uses attribute infor
 \paragraph*{Description}
 
 Especially important to researchers in the field of bioinformatics is the concept of \textit{data provenance}, which refers to the history of original sources tied to a particular entity.
-The provenance can refer to the type of source, e.g. peer review publication, experimental results, textual analysis.
+The provenance can refer to the type of source, e.g., peer review publication, experimental results, textual analysis.
 Much of the data in the field of bioinformatics is gathered and integrated from a wide range of publications, data stores, and other products of research.
 Information related to a single entity can be based on potentially dozens of different publications that have been produced across a wide range of time.
 For example, each relationship within a BioPAX file is usually associated with a publication that provides evidence for its existence.
@@ -494,7 +495,7 @@ Most online biology databases do provide this information but do not integrate i
 For example, the Reactome~\cite{croft2014reactome} displays a list of publications which are related to the selected item, see Fig.~\ref{fig:reactome}, but as a simple list in a separate window adjacent to the visualization.
 
 STRING~\cite{STRING2005}, a protein interaction database, provides provenance information and encodes it as part of the visualization.
-The provenance is described with respect to source (i.e. experiment results, a curated database) is encoded by color within the database's visualization component.
+The provenance is described with respect to source (i.e. experiment results, a curated database) and is encoded by color within the database's visualization component.
 
 \subsubsection*{Identifying Uncertainty}
 
@@ -520,7 +521,7 @@ In biological visualization uncertainty may be caused by measurement errors, mis
 
 One characteristic of uncertainty within an analysis is that it can build over time.
 As a researcher filters and adds external data to a biological pathway visualization the amount of uncertainty present in the visualization as a whole will change.
-An approach similar the the uncertainty flows of Wu et al.~\cite{wu2012uncertainty} could be used to help researcher comprehend the impact of their decisions on overall uncertainty levels when creating a biological pathway visualization.
+An approach similar to the uncertainty flows of Wu et al.~\cite{wu2012uncertainty} could be used to help researcher comprehend the impact of their decisions on overall uncertainty levels when creating a biological pathway visualization.
 %The uncertainty flows of Wu et al. visualize the flow of uncertainty  through out analytical processes.
 
 %Such an approach could also be used to help researcher comprehend the impact of their decisions in visualizing a biological pathway.
@@ -605,7 +606,7 @@ Hierarchical relationships can also represent physical interactions between bioc
 A common of example of this is in bio-molecular complexes, which are themselves composed of other complexes or biomolecules.
 
 It is important to note that hierarchy and ``structure'' often co-exist with other types of relationships.
-In most cases, pathway data includes relationships of hierarchy (i.e., when one vertex is contained within another) \textit{in parallel} with other, non-hierarchical relationships, such as the relationship between one gene product that activates or inhibits another.
+In most cases, pathway data includes relationships of hierarchy (i.e, when one vertex is contained within another) \textit{in parallel} with other, non-hierarchical relationships, such as the relationship between one gene product that activates or inhibits another.
 Also, note that while non-hierarchical relationships can take a variety of forms, the only form of hierarchical relationship is one of \textit{containment}, from parent to child, and is undirected.
 
 Hierarchial relationships also include the concept of \textit{compound} nodes.
@@ -630,7 +631,7 @@ Numerous tree based graph layouts position nodes to emphasize the hierarchical n
 The RenoDoI~\cite{Vehlow2015} application allows for multiple data sources to be included in a single diagram.
 This containment relationship may include data from different pathways.
 In this system, the node for each data source forms a set, which may or may not overlap with other sets.
-This is visualized using by drawing a bounded contour around the nodes in the set, where different border colors indicate different sets.
+This is visualized by drawing a bounded contour around the nodes in the set, where different border colors indicate different sets.
 This type of encoding of set membership is the \textit{Bubble Sets}~\cite{Collins2009} approach, which was shown to be the most effective way of displaying group information on a node link diagram by Jianu et al.~\cite{Jianu2014}.
 
 %\todo[inline]{consider moving previous paragraph to compound Relationships section}
@@ -652,8 +653,8 @@ Understanding these upstream and downstream relationships is particularly import
 In most cases, a directed relationship is meant to represent a biochemical reaction, where one entity is consumed as a reactant and another is produced as a product.
 Thus, an upstream entity may be connected to a downstream entity through a chain of several directed links, and a researcher may be interested in understanding the path of reactions (or other relationships) that connects two entities.
 However, most cellular processes are inherently complex, and involve many competing sets of directed interactions.
-Any given gene is often \textit{mediated} by many different reactants, some which increase activity, and others which decrease activity.
-For instance, a causal network helps reveal the likely regulators of a set of genes that are observed to be up-regulated or down-regulated in a particular setting~\cite{felciano2013predictive, Kramer2013ipa-causal}.
+Any given gene is often \textit{mediated} by many different reactants, some of which increase activity, and others which decrease activity.
+For instance, a causal network helps to reveal the likely regulators of a set of genes that are observed to be up-regulated or down-regulated in a particular setting~\cite{felciano2013predictive, Kramer2013ipa-causal}.
 
 Thus, determining the set of entities that are ``responsible'' for the increase or decrease in the expression of a particular gene is a challenging task that involves a complex array of directed relationships between many upstream entities.
 We characterize this problem as one of identifying \textit{cascading effects}, where many upstream entities have directed relationships with many mediating entities, which in turn affect the output of many downstream entities.
@@ -663,10 +664,10 @@ Feedback loops are common within metabolic activation networks, and they play a 
 
 \paragraph*{Existing Approaches and Techniques}
 
-Causality and cascading effects depend on the both the structure of the graph, which determines the global propagation of change, and the attributes associated with individual graph entities, e.g. a change in a particular gene expression level from being up-regulated to down-regulated.
+Causality and cascading effects depend on the both the structure of the graph, which determines the global propagation of change, and the attributes associated with individual graph entities, e.g., a change in a particular gene expression level from being up-regulated to down-regulated.
 In this case, the structure of the graph does not change, only entity attributes (which Ahn et al.~\cite{Ahn2014} refer to as the domain properties).
 Archambault et al., in their definition of Temporal Multivariate networks~\cite{archambault2014temporal}, describe these changes in attributes as the behavior of the graph.
-Showing the full range of behaviors (attribute value changes) in a traditional biological pathway network visualization  can be difficult as there are few visual which can indicate attribute values (e.g. color, shape, texture etc.).
+Showing the full range of behaviors (attribute value changes) in a traditional biological pathway network visualization  can be difficult as there are few visual encodings which can indicate attribute values (e.g., color, shape, texture etc.).
 The authors also specify that high attribute dimensionality is still an open problem.
 The approach of Pretorius and van Wijk~\cite{pretorius2008} allows for a large number of attributes to be displayed, but differs hugely from traditional biological pathway visualization approaches in that it shows little overall structure.
 However this approach, or one influenced by it, might be beneficial if used in conjunction with another view of the pathway which clearly shows the structure which propagates the changes.
@@ -700,7 +701,7 @@ Thus, for biological pathway visualization in particular, integration of attribu
 
 \paragraph*{Existing Approaches and Techniques}
 
-Most applications provide access to the attributes through simple interactions (e.g.~mouseover and click).
+Most applications provide access to the attributes through simple interactions (e.g.,~mouseover and click).
 In many cases the attribute information is simply read from an input file, however more recent tools such as \textit{SBGNViz}~\cite{SBGNViz2015} and \textit{ChiBE}~\cite{Babur2010chibe} query online databases to provide a range of important attribute information.
 
 In their 2011 survey, Gleicher et al.~\cite{Gleicher2011} describe three primary types classifications of comparative visualization.
@@ -709,9 +710,9 @@ A juxtaposition refers to visualizations that are displayed side-by-side in orde
 This is functionality is available by default in Cytoscape (and hence all of the associated plug-ins) via simply arranging the windows which display the networks.
 Cerebral uses a juxtaposition approach to display changes in attributes associated with the graph.
 
-Superposition is when is when data sets are displayed as part of the same visualization.
+Superposition is when data sets are displayed as part of the same visualization.
 Within Cytoscape there are several ways to map graphical attributes to data, to allow for data from different data sets to be visualized differently.
-The RenoDoI plugin uses superposition as a comparison technique, allowing multiple networks to be visualized in the one image. Bounding isocountours are used to distinguish graphs differences, and to clearly indicate where the graphs overlap.
+The RenoDoI plugin uses superposition as a comparison technique, allowing multiple networks to be visualized in a single image. Bounding isocountours are used to distinguish graphs differences, and to clearly indicate where the graphs overlap.
 Graph layout is and important aspect of both juxtaposition and superposition based comparative visualizations.
 Juxtaposition involves comparing two or more graphs using similar layouts in order to aid comparison.
 For superposition, the matter is not so simple as the addition of a new graph may destroy the existing layout.
@@ -719,7 +720,7 @@ The RenoDoI application~\cite{Vehlow2015} initially lays out the largest data se
 Nodes which are included in both data sets only appear once.
 
 Explicit encoding of difference means that differences between the two datasets are explicitly highlighted, and this approach is often in addition to the previous two. For example an edge which appears in one data set but not the other may be highlighted by color.
-One specific case where implicit encoding is not mixed with other approaches is when when a graph is dynamic and the changes are between time slices.
+One specific case where implicit encoding is not mixed with other approaches is when a graph is dynamic and the changes are between time slices.
 This can be seen in Rugfiange and McGuffins's DiffAni application~\cite{Rufiange2013} for visualizing dynamic graphs.
 
 \subsection*{Data Modification and Curation}
@@ -734,10 +735,10 @@ Two others expressed a need to create ``personalized'' pathways that only includ
 Ideally, visualization tools will seamlessly integrate these curation and maintenance needs.
 
 \paragraph*{Existing Approaches and Techniques}
-Most desktop pathway visualization applications allow for data files to be edited and exported in standardized formats e.g. celldesigner~\cite{funahashi2008celldesigner} allows files to be modified and curated and exported in the SBML standard.
+Most desktop pathway visualization applications allow for data files to be edited and exported in standardized formats, e.g., celldesigner~\cite{funahashi2008celldesigner} allows files to be modified and curated and exported in the SBML standard.
 Saving a  personalized version of a pathway is basic functionality but curating a large data set may take the input of many experts.
 Web based technologies provide a platform on which multiple experts can collaboratively curate pathways.
-Collaborative web browsing has been established for quite some time e.g.~\cite{esenther2002instant}, while
+Collaborative web browsing has been established for quite some time ,e.g.,~\cite{esenther2002instant}, while
 modern web visualization technologies such as D3.js~\cite{bostock2011d3} allow for web based visualization functionality.
 Collaborative web based visualizations such as \textit{Polychrome}~\cite{badam2014polychrome} allow a synchronized viewing of a web based visualization across multiple users (and across multiple devices).
 Collaborative web based visualizations also offer an opportunity for researchers to share their personally curated pathways and data sets for generally dissemination or for support in debugging possibly flawed pathways.
@@ -749,7 +750,7 @@ The ability to disseminate biological pathway visualizations easily amongst mult
 
 \subsubsection*{Annotation}
 
-The approach of using web tools to disseminates approach is already very evident in many modern online biological data resources.
+The approach of using web tools to disseminates knowledge is already very evident in many modern online biological data resources.
 Reactome~\cite{croft2014reactome} and STRING~\cite{STRING2005} are two online resources which feature highly interactive web based visualization interfaces.
 The fact that the data in the Reactome database is curated and peer reviewed is considered an important feature of the system.
 Most online publicly available pathway databases do allow users to provide feedback on potential errors, updated research or areas for improvement.
@@ -773,7 +774,7 @@ From this taxonomy can identify several tasks that are important to domain resea
 
 Previous taxonomies only touch on the notion of causality of attribute changes in passing.
 Lee et al.~\cite{Lee2006} describe a set of attribute-based tasks in their taxonomy, but they do not consider causal or cascading relationships, only tasks related to static attribute values.
-Ahn et al.~\cite{Ahn2014} in their task taxonomy for network evolution analysis do describe the notion of attribute stability as part of the shape of changes in their taxonomy, and describes tasks that iterate and enable each other, but there is no classification of causality or cascades at the attribute level.
+Ahn et al.~\cite{Ahn2014} in their task taxonomy for network evolution analysis do describe the notion of attribute stability as part of the shape of changes in their taxonomy, and describe tasks that iterate and enable each other, but there is no classification of causality or cascades at the attribute level.
 Moody et al. in their overview of dynamic network visualization~\cite{moody2005dynamic} do mention cascades, but only in the context of the formation of relationships, not the changing of attributes.
 Attribute cascades and feedback loops are a very important aspect of biological pathway visualization.
 The development of a domain specific task taxonomy, means that this aspect of biological pathways, which is still an open problem in information visualization, is properly highlighted as an important feature of a visualization system for this domain.
