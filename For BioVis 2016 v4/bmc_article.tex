@@ -238,18 +238,12 @@ Understanding complicated networks of biomolecular entities and interactions is 
 Networks of bio-molecular interactions are represented as graph models referred to as \emph{pathways}.
 Pathways are curated subsets of a theoretical graph of all known biomolecular entities and events that occur on the cellular level, and a given pathway usually represents a particular biological process, such as mitosis, that is relevant within a given research context.
 
-Pathways are modeled as labeled graphs of entities, relationships, and meta-data. For example, Fig.~\ref{fig:kvik} shows a typical representation of a pathway as a human curated node-link diagram, where nodes are biological entities and edges represent interactions between them.
+Pathways are modeled as labeled graphs of entities, relationships, and meta-data.
 An entity is a component of a pathway such as a gene, a gene product (such as a protein), a complex of proteins, a small biomolecule, or even another pathway.
 Edges between vertices in this graph can be directed or undirected, can involve multiple entities in one relationship, and can represent a wide range of biological relationships.
 Meta-data can include external information such as experimental data, as well as the \emph{provenance} of the information related to a particular entity or relationship.
 Provenance is typically a list of records, such as publications, that reflects the collective history of research related to a given entity or relationship.
 Provenance is essential to the field of bioinformatics, as the ``ground truth'' related to any given entity is not immutable, and can be derived from a potentially large and evolving history of research.
-
-% \begin{figure}[htb]
-%   \centering
-%   \includegraphics[width=\linewidth]{figures/kegg2}
-%   \caption{\label{fig:kvik} A view of a typical KEGG diagram. From~\cite{Fjukstad2014kvik}.}
-% \end{figure}
 
 Researchers who work with pathway data are confronted with a number of challenges.
 Pathway files may contain hundreds or thousands of entities that are connected by a wide variety of relationship types.
@@ -492,15 +486,8 @@ Thus, the provenance information related to a given biological entity can be see
 
 \paragraph*{Existing Approaches and Techniques} While \textit{SBGNViz}~\cite{SBGNViz2015} and \textit{ChiBE}~\cite{Babur2010chibe} and other applications allow connectivity to external sources, such as UNitProt or PubMed, there are few biological visualization tools that visualize provenance information directly.
 
-% \begin{figure}[htb]
-%   \centering
-%   \includegraphics[width=0.95\columnwidth]{figures/reactome2}
-%   \caption{Screen shot taken from the Reactome pathway browser~\cite{croft2014reactome}. Permission to be obtained. The publications related to the selected items are listed in the window at the bottom of the screen. Hyper-links are provided directly to the referenced documents.}
-%   \label{fig:reactome}
-% \end{figure}
-
 Most online biology databases do provide this information but do not integrate it into the data visualization itself.
-For example, the Reactome~\cite{croft2014reactome} displays a list of publications which are related to the selected item, see Fig.~\ref{fig:reactome}, but as a simple list in a separate window adjacent to the visualization.
+For example, the Reactome~\cite{croft2014reactome} displays a list of publications which are related to the selected item as a simple list in a separate window adjacent to the visualization.
 
 STRING~\cite{STRING2005}, a protein interaction database, provides provenance information and encodes it as part of the visualization.
 The provenance is described with respect to source (i.e. experiment results, a curated database) and is encoded by color within the database's visualization component.
@@ -557,19 +544,13 @@ Changes in gene expression are directional --- one compound can either \textit{i
 A translocation event will typically specify \textit{from} and \textit{to} locations.
 Thus, not only are there many different types of relationship (and generally more than can be effectively encoded using color alone), but each relationship type has its own set of potential specifications, some of which can be quite detailed.
 
-% \begin{figure}[htb]
-%   \centering
-%   \includegraphics[width=0.95\columnwidth]{figures/MultivariateViz}
-%   \caption{\label{fig:MultivariateViz} Screen shot taken from Pretorius and Van Wijk's~\cite{pretorius2008} multivariate graph visualization application. Permission to be obtained. }
-% \end{figure}
-
 \paragraph*{Existing Approaches and Techniques}
 
 The visual encoding of these complex and multivariate relationships is one of the more prominent challenges in the design of visual analytic platforms for biological pathway analysis.
 
 Pretorius and van Wijk's~\cite{pretorius2008} system for visual inspection of multivariate graphs places relationship type (referred to as edge labels) at the core of their system.
 They do not use traditional graph layout techniques, and their resulting visualization resembles the parallel coordinates style of multivariate data visualization.
-The edges are grouped by label in the center of the display, nodes are duplicated on either side, with the attributes reflected by an icicle plot (see Fig.~\ref{fig:MultivariateViz}).
+The edges are grouped by label in the center of the display, nodes are duplicated on either side, with the attributes reflected by an icicle plot.
 This approach can handle a large number of edge types, and cases where a node is involved in multiple relationships of different types.
 
 Ghani et al~\cite{Ghani2013} developed a techniques called Parallel Node-Link Bands (PNLBs) for exploring graphs with multiple edge types.
@@ -587,18 +568,12 @@ Several researchers that we interviewed stressed the importance of understanding
 Depending on the type of relationship in question, edges may be \textit{bi-directional}, which is distinct from an \textit{undirected} edge.
 A visual coding that indicates direction must also be able to account for cases in which there are two directional edges between the same two nodes.
 
-% \begin{figure}[htb]
-%   \centering
-%   \includegraphics[width=0.8\columnwidth]{figures/tapered_edges}
-%   \caption{\label{fig:tapered_edges} The tapered directional edges, taken from~\cite{Holten2009}. Permission to be obtained. The narrow end of the edge indicates the target.}
-% \end{figure}
-
 \paragraph*{Existing Approaches and Techniques}
 
 Many visualization applications use the more traditional approach of arrowheads to indicate edge directions, however work by Holten and van Wijk~\cite{Holten2009} shows that tapered edges perform more effectively in conveying edge direction.
 The graphs used in Holten and van Wijk's were simple directed graphs.
 Biological pathways are usually modeled as hyper-graphs, with many different types of edges and hyperedges.
-Visual encodings such as SBGN and KEGG (see Fig.~\ref{fig:kvik}) contain many different visual representations for edges, so applying the tapered edge visualization style to complex biological pathways is not trivial and would require an empirical evaluation.
+Visual encodings such as SBGN and KEGG contain many different visual representations for edges, so applying the tapered edge visualization style to complex biological pathways is not trivial and would require an empirical evaluation.
 However, the results of Holten and van Wijk's work suggest that investigating such an approach may be worthwhile.
 
 \subsubsection*{Identifying Hierarchical Relationships}
@@ -626,12 +601,6 @@ This relationship is clearly not the same as a biochemical reaction being connec
 This example also demonstrates the distinction between a compound relationship and a hierarchical relationship.
 A connection from a node to a compound node does not imply a relationship of ownership or containment.
 
-% \begin{figure}[htb]
-%   \centering
-%   \includegraphics[width=0.5\columnwidth]{figures/Hierarchical_edge_bundles}
-%   \caption{\label{fig:Hierarchical_edge_bundles} Hierarchical edge bundles, taken from~\cite{Holten2006}. Permission to be obtained. The bundles not only reduce clutter but also more clearly define the hierarchy.}
-% \end{figure}
-%
 \paragraph*{Existing Approaches and Techniques}
 
 There are a variety of visualization techniques for the display of hierarchical data.
@@ -642,12 +611,6 @@ In this system, the node for each data source forms a set, which may or may not 
 This is visualized by drawing a bounded contour around the nodes in the set, where different border colors indicate different sets.
 This type of encoding of set membership is the \textit{Bubble Sets}~\cite{Collins2009} approach, which was shown to be the most effective way of displaying group information on a node link diagram by Jianu et al.~\cite{Jianu2014}.
 
-%\todo[inline]{consider moving previous paragraph to compound Relationships section}
-
-In many cases, hierarchies within pathways are not very deep and edges do not traverse multiple levels of the hierarchy.
-However in cases where edges do traverse multiple hierarchical levels they may cause clutter.
-Hierarchical Edge Bundling~\cite{Holten2006} is a clutter reduction technique which also emphasizes the hierarchical nature of relationships, see Fig.~\ref{fig:Hierarchical_edge_bundles}.
-There are many edge bundling techniques in general, however most do not respect hierarchical information during routing.
 
 \subsubsection*{Identifying Causality and Cascading Effects}
 
