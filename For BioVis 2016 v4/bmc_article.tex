@@ -256,17 +256,17 @@ Pathway files may contain hundreds or thousands of entities that are connected b
 For instance, the \emph{BioPax} specification \footnote{http://www.biopax.org/release/biopax-level3-documentation.pdf} contains a ``Transport'' class, which is one of four types of ``Conversion'', which in turn is one of five different types of ``Interaction'', which, finally, is one of four types of ``Entity''.
 The \emph{BioPax} schema is itself a reflection of the complexity of information that can exist within bio-chemical pathway datasets.
 
-Participants in a pathway -- genes, proteins, and other molecules within a cell -- can act as inputs or outputs to multiple interactions, and the set of relationships between biochemical interactions inherently includes feedback loops and other complex relationships.
+Participants in a pathway --- genes, proteins, and other molecules within a cell --- can act as inputs or outputs to multiple interactions, and the set of relationships between biochemical interactions inherently includes feedback loops and other complex relationships.
 Importantly, reactions and other interactions can have a ``cascading'' effect, where one interaction will inhibit or promote the effect of another.
 Molecular activation pathways also have an inherently dynamic quality, which can limit the utility of static (i.e. non-interactive) graph representations~\cite{kitano2002systems}.
 Understanding these complex and dynamic relationships while also enabling researchers to see higher order patterns is a significant challenge to modern bioinformatics research~\cite{saraiya2005visualizing}.
 
 Pathway diagrams are used in two contexts: for the presentation of results, and as an active (and interactive) part of the process of data analysis.
 In the presentational sense, pathway diagrams can contextualize a set of biological processes within a cell, and in these contexts will often show the location of cellular membranes and other large cellular structures to help to provide a frame of reference for the viewer.
-Ideally, a pathway diagram --~when used in a presentational context -- allows a viewer to efficiently understand a complex set of biological relationships.
+Ideally, a pathway diagram --- when used in a presentational context --- allows a viewer to efficiently understand a complex set of biological relationships.
 While pathway diagrams may be useful for presenting and contextualizing a set of results in a research or educational context, they are also an important part of \emph{in situ} analyses.
 
-For example, metabolic activation networks are of critical importance to cancer researchers, who hope to understand -- and potentially disrupt -- malignant cycles of uncontrolled cellular growth, replication, and mediated cell death~\cite{cairns2011regulation}.
+For example, metabolic activation networks are of critical importance to cancer researchers, who hope to understand --- and potentially disrupt --- malignant cycles of uncontrolled cellular growth, replication, and mediated cell death~\cite{cairns2011regulation}.
 Effective cancer drug development involves determining how proteins and complexes that are affected by a drug in turn affect important cellular pathways.
 In this domain, the ``downstream'' consequences of a particular drug effect are especially important~\cite{luo2003targeting}.
 Stem-cell researchers can also use pathways as an active part of their research, where the goal is generally to precipitate a desired cellular differentiation into specific cell types~\cite{reya2001stem}.
@@ -338,7 +338,7 @@ The authors build on Amar and Stasko's~\cite{Amar2005} list of visual analytic t
 
 Several recent taxonomies focus on aspects of graph visualization that extend the work of Lee et al~\cite{Lee2006}.
 For instance, Ahn et al.~\cite{Ahn2014} provide a task taxonomy for the analysis of networks that evolve over time, also known as dynamic graphs.
-The complex nature of dynamic graph data yields a similarly complex set of analysis tasks, and many of these tasks were not covered by the general graph taxonomy of Lee et al.~\cite{Lee2006} -- thus, new tasks needed to be specified.
+The complex nature of dynamic graph data yields a similarly complex set of analysis tasks, and many of these tasks were not covered by the general graph taxonomy of Lee et al.~\cite{Lee2006} --- thus, new tasks needed to be specified.
 Pretorius et al~\cite{Pretorius2014} focus on multivariate graph visualization (where graph elements contain multiple attributes).
 Their work builds on the work of both Lee et al.~\cite{Lee2006} and of Valiati et al.~\cite{Valiati2006}, as multivariate networks can be considered a multidimensional dataset.
 
@@ -513,7 +513,7 @@ Related to the task of identifying data provenance is the task of being able to 
 Biology is different from many other application domains of visualization, as the data is often ambiguous or not certain~\cite{kohlbacher2014multivariate}.
 The uncertainty can be related to the values of specific attributes or to the existence of a relationship.
 The importance of understanding uncertainty was emphasized by several of the researchers we interviewed.
-Uncertainty may relate directly to the provenance history discussed above -- biological entities that are related to more recent research may have a limited set of one or two publications which corroborate their functionality, while other genes and gene products may have a rich history of robust empirical evidence from dozens or hundreds of publications.
+Uncertainty may relate directly to the provenance history discussed above --- biological entities that are related to more recent research may have a limited set of one or two publications which corroborate their functionality, while other genes and gene products may have a rich history of robust empirical evidence from dozens or hundreds of publications.
 An even more fine-grained approach to uncertainty visualization could incorporate the uncertainty or error tied to individual empirical findings and experimental results.
 The empirical support behind any individual entity or relationship within a pathway can vary widely, and the question of how these varying levels of confidence can be incorporated into a pathway visualization has been rarely addressed.
 
@@ -553,7 +553,7 @@ One of the most obvious challenges for biological network visualization is the f
 For instance, an interaction between two entities could take many forms, including: the binding of proteins and molecules into complexes, the translocation of an entity from one cellular location to another, a change in gene expression activity, or the modification of existing compounds, to name a few.
 Each of these events can be further specified.
 For example, a modification can take many forms, such as \textit{ubiquitination} or \textit{phosphorylation}, and the \textit{site} at which these modifications occur can also be specified.
-Changes in gene expression are directional -- one compound can either \textit{increase} or \textit{decrease} the activity of another.
+Changes in gene expression are directional --- one compound can either \textit{increase} or \textit{decrease} the activity of another.
 A translocation event will typically specify \textit{from} and \textit{to} locations.
 Thus, not only are there many different types of relationship (and generally more than can be effectively encoded using color alone), but each relationship type has its own set of potential specifications, some of which can be quite detailed.
 
