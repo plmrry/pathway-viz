@@ -352,11 +352,16 @@ Interviews were conducted with seven domain experts in biology, each of whom wor
 Those interviewed included one tenured professor, three assistant professors, one researcher at a cancer research institution, one postdoctoral research associate, and one masters student in bioinformatics.
 Interviews were loosely structured, but interview questions were designed to elicit a detailed understanding of the tasks performed by the researcher in the course of a typical analysis, as well as an understanding of the type and structure of data that each researcher worked with.
 Each researcher also presented their views on the utility of pathway data and of pathway diagrams in general.
-We have developed a taxonomy based on these interviews.
-In addition, we describe examples of how each task category is addressed by current biological visualization applications and techniques.
 
 A summary of the interviews is described in table~\ref{table:interviews}.
-The researchers are engaged in a wide variety of research within the general domain of biology and bioinformatics research. This variety allowed for a rich examination of tasks related to biological datasets.
+While our selection of domain experts was somewhat limited by their availability, the researchers are engaged in a wide variety of research within the general domain of biology and bioinformatics research, but all of which have some relationship to pathway data.
+This variety allowed for a rich examination of tasks related to biological datasets.
+
+The interviews were free-form discussions aimed at understanding the research process of each domain expert, with specific attention given to the structure and content of the data used in their published research.
+Researchers were prompted for any existing tools used for analysis, as well as for the types of behaviors that they think they would find useful in a pathway analysis framework.
+Our interviews were intentionlay open-ended, and were designed to capture a variety of tasks that are seen as important to domain experts.
+
+We have developed a taxonomy of domain-specific visualization tasks based on these interviews. For each task category, we describe examples of how each task is addressed by current biological visualization applications and techniques.
 
 \newcommand\T{\rule{0pt}{2.6ex}}
 \newcommand\B{\rule[-1.2ex]{0pt}{0pt}}
@@ -743,7 +748,7 @@ In the process of creating a domain-specific task taxonomy that is based on inte
 While tools exist which support these tasks, existing approaches tend to be ad hoc and may lack features that would be revealed by more user-centered design methodologies.
 However, we do not mean to suggest that future research should be constrained to these tasks alone, but that they should be given more focused attention in the field of pathway visualization research.
 
-\subsection*{Directions for Future Research}
+\subsubsection*{Directions for Future Research}
 
 \paragraph{Visualizing Causality and Cascading Effects}
 
@@ -766,7 +771,17 @@ Visualizing provenance and uncertainty is a challenging task, as even the defini
 However, data formats such as \emph{BioPAX} do have robust support for citations, allowing published references to be connected to entities and relationships within a pathway.
 A tool that could effectively encode data related to uncertainty and provenance into a visualization would be very valuable to systems researchers who work with the results of hundreds or thousands of publications and experimental datasets.
 
-\subsection*{Conclusion}
+\subsubsection*{Limitations and Continued Research}
+
+As mentioned earlier, our interviews with domain experts were intentionally open-ended and a structured interview process (such as grounded theory) was not used.
+This format was used in order to encourage a diverse assortment of feedback from researchers who engage in a wide variety of research within biology and bioinformatics.
+As a result of this free-form structure, our tasks identified in this taxonomy are by no means meant to be an exhaustive list of all possible visualization tasks --- it is certainly possible for this taxonomy to be refined and extended, and additional contributions and suggestions are welcome.
+In addition, a second round of explicitly structured interviews would be a valuable next step in the continued refinement of this taxonomy.
+We would also greatly benefit from continued feedback from domain experts on the tasks that we have highlighted here.
+Our interviews have created a valuable base of user feedback that has guided the identification of tasks that are of particular importance to domain experts.
+A further round of interviews is an obvious next step.
+
+\subsubsection*{Conclusion}
 
 While a wide variety of pathway visualization tools exist, there is still plenty of room for innovative platform development.
 Many tools tend to greatly overlap each other with respect to the analytical tasks available, and attempts to directly address the most challenging aspects of pathway data analysis are few and far between.
