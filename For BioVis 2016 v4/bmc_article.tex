@@ -458,7 +458,7 @@ Van den Elzen and van Wijk’s \cite{van2014multivariate} system for multivariat
 \multicolumn{2}{|l|}{Relationships} \\ \cline{1-3}
 \multirow{5}{*} {} & Multivariate &	Find all translocations of entities in a given biological pathway \\ \cline{2-3}
 &Direction & Find the products or output of a biochemical reaction \\ \cline{2-3}
-&Hierarchical &Expand a module entity to include all child-entities in the visualization \\ \cline{2-3}
+&Grouping &Expand a module entity to include all child-entities in the visualization \\ \cline{2-3}
 &\makecell[l]{Causality} & Find all genes downstream of the currently selected entity, which may be affected by a change in regulation \\  \cline{2-3}
 &Feedback & Identify potential feedback loops in gene regulation\\ \cline{1-3}
 \multicolumn{2}{|l|}{Comparison} \\ \cline{1-3}
@@ -587,34 +587,34 @@ Biological pathways are usually modeled as hyper-graphs, with many different typ
 Visual encodings such as SBGN and KEGG contain many different visual representations for edges, so applying the tapered edge visualization style to complex biological pathways is not trivial and would require an empirical evaluation.
 However, the results of Holten and van Wijk's work suggest that investigating such an approach may be worthwhile.
 
-\subsubsection*{Identifying Hierarchical Relationships}
+\subsubsection*{Identifying Grouping and Hierarchical Relationships}
 
 \paragraph*{Description}
 
-Pathway data is inherently hierarchical.
-Hierarchical relationships describe relationships of containment, and these relationships can be abstract or based on real biochemical interactions within a cell.
+Pathway data is inherently hierarchical, and there are many ways in which nodes can be grouped into collections of elements that are related in an explicit biochemical sense (e.g., complex proteins) or in a more implicit informational sense (e.g., the biochemical reactions related to a higher-order biological process).
+Grouping relationships describe relationships of containment, and these relationships can be abstract or based on real biochemical interactions within a cell.
 For example, a pathway (itself an abstraction) can be nested within other pathways.
 These nested pathways generally encapsulate some commonly-understood hierarchy of biological processes that take place within a cell, such as cellular replication.
 Other representations include the more general notion of a module of connected components, such as gene products.
-Hierarchical relationships can also represent physical interactions between biochemical participants.
+Grouping relationships can also represent physical interactions between biochemical participants.
 A common of example of this is in biomolecular complexes, which are themselves composed of other complexes or biomolecules.
 
 It is important to note that hierarchy and ``structure'' often co-exist with other types of relationships.
 In most cases, pathway data includes relationships of hierarchy (i.e., when one vertex is contained within another) \textit{in parallel} with other, non-hierarchical relationships, such as the relationship between one gene product that activates or inhibits another.
 Also, note that while non-hierarchical relationships can take a variety of forms, the only form of hierarchical relationship is one of \textit{containment}, from parent to child, and is undirected.
 
-Hierarchial relationships also include the concept of \textit{compound} nodes.
+Grouping relationships also include the concept of \textit{compound} nodes.
 A vertex that contains other entities can be represented as a \textit{compound node}, which is equivalent to a parent vertex or in some contexts a ``module.''
 It is important to note that a one-to-one relationship between an entity and a parent is \textit{not} the same as a one-to-many relationship between an entity and all of that parent's children.
 For instance, the \textit{BioPax} format allows for the abstract \emph{NextStep} relationship, which defines, as the name suggests, an arbitrary notion of the next step of some biological process.
 A biochemical reaction could be connected, via a \textit{single} \emph{NextStep} relationship, to an entire pathway, which could potentially contain thousands of nodes.
 This relationship is clearly not the same as a biochemical reaction being connected to every entity within a pathway.
-This example also demonstrates the distinction between a compound relationship and a hierarchical relationship.
+This example also demonstrates the distinction between a compound relationship and a hierarchial relationship (which are two types of grouping relationships).
 A connection from a node to a compound node does not imply a relationship of ownership or containment.
 
 \paragraph*{Existing Approaches and Techniques}
 
-There are a variety of visualization techniques for the display of hierarchical data.
+There are a variety of visualization techniques for the display of ``grouped'' nodes and hierarchical data.
 Numerous tree based graph layouts position nodes to emphasize the hierarchical nature of data, however these are often not suitable for biological pathway layout as the constrains on position in a layout affect the readability of the lowest level of information.
 The RenoDoI~\cite{Vehlow2015} application allows for multiple data sources to be included in a single diagram.
 This containment relationship may include data from different pathways.
@@ -659,7 +659,7 @@ They found that the use of \emph{small multiples} seems to be the best approach 
 The small multiples approach is a form of comparative juxtaposition where multiple views of the network at different time points are displayed in a matrix.
 This approach has been used by the \textit{Cerebral}~\cite{Barsky2008cerebral} application for showing cascades of data.
 Archambault and Purchase's work also shows that layout has an impact on the visualization of attribute cascades.
-Experiment participants performed better when a hierarchical layout was used, however it should be noted that the hierarchical layout was consistent with the direction of the cascade.
+Participants in the experiment performed better when a hierarchical layout was used, however it should be noted that the hierarchical layout was consistent with the direction of the cascade.
 
 \subsubsection*{Comparison and Contextualization Tasks}
 
