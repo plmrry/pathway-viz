@@ -341,7 +341,7 @@ While these recently-published task taxonomies have focused on particular data s
 The nearest existing work is that of Saraiya et al~\cite{saraiya2005visualizing}, who provides a list of requirements for pathway visualization systems and and associate tasks with those requirements.
 In this work we focus more on the tasks themselves and look not only at existing biological visualization applications, but at general visualizations and techniques which may be useful in supporting the tasks.
 Biological Pathway visualization is a complex application domain that poses many specific analytic challenges that are not encountered in pre-existing task taxonomies.
-The data structures underlying biological pathways are dynamic multivariate hyper-graphs, and are more complex than any of those described in the previous taxonomies.
+The data structures underlying biological pathways are dynamic multivariate hyper-graphs, and are more complex than any of those described in previously-published taxonomies.
 The tasks to be completed by biologists are also highly complex, involving many different entity and relationship types, and are not fully covered by the existing taxonomies.
 
 \section*{Methods}
@@ -426,7 +426,7 @@ This multivariate data can also apply to relationships between entities, such as
 
 Multivariate network visualization is a highly active field of visualization, in which the life sciences in general are a frequent application domain, and many more recent biological network visualizations include attribute information.
 \textit{ChiBE}~\cite{Babur2010chibe} provides the ability to load biological entity regulation data mappings from an external source and apply them to a pathway visualization.
-The most prominent data format supporting this is the SIF format, which is defined as part of the Cytoscape application~\cite{Shannon2003cytoscape}.
+The SIF data format, which is defined as part of the Cytoscape application~\cite{Shannon2003cytoscape}, supports these additional data mappings by design.
 The \textit{RenoDoI} application~\cite{Vehlow2015}, a plug-in for \textit{Cytoscape} for visualizing knowledge networks of biological data, uses \emph{Degree of Interest} functions to highlight nodes based on attribute values.
 Such functionality could easily be extended to biological pathway visualizations.
 The general purpose visualization system, \textit{Candid}~\cite{Shadoan2013}, also uses attribute information as part of a hypergraph query system which allows users to perform complex queries on entities of different types.
@@ -496,7 +496,7 @@ Most online biology databases do provide this information but do not integrate i
 For example, the Reactome~\cite{croft2014reactome} displays a list of publications which are related to the selected item as a simple list in a separate window adjacent to the visualization.
 
 STRING~\cite{STRING2005}, a protein interaction database, provides provenance information and encodes it as part of the visualization.
-The provenance is described with respect to source (i.e., experiment results, a curated database) and is encoded by color within the database's visualization component.
+The provenance is described with respect to its source (e.g., experimental results or a curated database) and is encoded by color within the database's visualization component.
 
 \subsubsection*{Identifying Uncertainty}
 
