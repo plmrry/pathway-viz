@@ -456,10 +456,10 @@ Van den Elzen and van Wijk’s \cite{van2014multivariate} system for multivariat
 \multicolumn{2}{|l|}{\textbf{Category}} & \textbf{Example Task}\\
 \hline
 \multicolumn{2}{|l|}{Attribute Tasks} \\ \cline{1-3}
-\multicolumn{1}{l|}{} & \textbf{(A1)} Multivariate & Find all up-regulated genes in a biological pathway.\\ \cline{2-3}
-& \textbf{(A2)} Provenance & Determine which studies provides the evidence for a link between two genes.\\ \cline{2-3}
-& \textbf{(A3)} Uncertainty & Understand which pathway components have the strongest empirical evidence relationships.\\ \cline{2-3}
-& \textbf{(A4)} Comparison & Compare a biological pathway to a pathway with the same functionality in a reference species.\\ \cline{1-3}
+\multicolumn{1}{l|}{} & \textbf{(A1)} Multivariate & Find all up-regulated genes in a biological pathway. Integrate results of a laboratory experiment into existing protein-protein interaction networks, extracted from StringDB. \\ \cline{2-3}
+& \textbf{(A2)} Comparison & Compare a biological pathway to a pathway with the same functionality in a reference species.\\ \cline{2-3}
+& \textbf{(A3)} Provenance & Determine which studies provides the evidence for a link between two genes.\\ \cline{2-3}
+& \textbf{(A4)} Uncertainty & Understand which pathway components have the strongest empirical evidence relationships.\\ \cline{1-3}
 \multicolumn{2}{|l|}{Relationship Tasks} \\ \cline{1-3}
 \multirow{5}{*} {} & \textbf{(R1)} Multivariate &	Find all translocations of entities in a given biological pathway. \\ \cline{2-3}
 & \textbf{(R2)} Direction & Find the products or output of a biochemical reaction. \\ \cline{2-3}
@@ -470,10 +470,8 @@ Van den Elzen and van Wijk’s \cite{van2014multivariate} system for multivariat
 %& Compare Data Sets & Compare a biological pathway to a pathway with the same functionality in a reference species. \\ \cline{2-3}
 %& Integrate Knowledge & Integrate results of a laboratory experiment into existing protein-protein interaction networks, extracted from StringDB. \\ \cline{1-3}
 \multicolumn{2}{|l|}{Modification Tasks} \\ \cline{1-3}
-& \textbf{(M1)} Annotate   & A researcher may wish to update out-of date-information in a pathway data set. \\ \cline{2-3}
-& \textbf{(M2)} Personalize & A researcher  may like to create a personalized pathway based on their own specialized research topic. \\ \cline{2-3}
-& \textbf{(M3)} Integrate & Integrate results of a laboratory experiment into existing protein-protein interaction networks, extracted from StringDB. \\ \cline{2-3}
-
+& \textbf{(M1)} Annotate   & A researcher may wish to update out-of date-information in a pathway data set, or create a personalized pathway based on their own specialized research topic. \\ \cline{2-3}
+& \textbf{(M2)} Curate & Identify errors and update historical data \\ \cline{2-3}
 \end{tabular}
 \centering
 \\
@@ -486,7 +484,7 @@ Van den Elzen and van Wijk’s \cite{van2014multivariate} system for multivariat
 %  and Curation
 
 \ \\ \
-\noindent{\textbf{(A2, A3)} \underline{Compare Attributes}}
+\noindent{\textbf{(A2)} \underline{Compare Attributes}}
 
 \paragraph*{Description}
 
@@ -527,7 +525,7 @@ This can be seen in Rugfiange and McGuffins's DiffAni application~\cite{Rufiange
 
 
 \ \\ \
-\noindent{\textbf{(A2, A3)} \underline{Identify Provenance and Uncertainty}}
+\noindent{\textbf{(A3, A4)} \underline{Identify Provenance and Uncertainty}}
 %\subsubsection*{Identifying Provenance and Uncertainty}
 
 \paragraph*{Description}
@@ -718,7 +716,7 @@ Participants in the experiment performed better when a hierarchical layout was u
 \subsection*{Data Modification}
 
 \ \\ \
-\noindent{\textbf{(M1, M2)} \underline{Compare Data and Integrate Knowledge}}
+\noindent{\textbf{(M1, M2)} \underline{Annotate and Curate}}
 \paragraph*{Description}
 
 While most of the tasks in this taxonomy are directly related to visual analysis, the size and complexity of biological datasets makes data curation an essential part of modern research platforms.
