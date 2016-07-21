@@ -236,7 +236,7 @@
 \section*{Background}
 
 Understanding complicated networks of biomolecular entities and interactions is essential to solving contemporary problems in modern biology, especially in computational domains such as systems biology~\cite{hanahan2011hallmarks}.
-Networks of bio-molecular interactions are represented as graph models referred to as \emph{pathways}.
+Networks of biomolecular interactions are represented as graph models referred to as \emph{pathways}.
 Pathways are curated subsets of a theoretical graph of all known biomolecular entities and events that occur on the cellular level, and a given pathway usually represents a particular biological process, such as mitosis, that is relevant within a given research context.
 
 Pathways are modeled as labeled graphs of entities, relationships, and meta-data.
@@ -592,7 +592,7 @@ For example, a pathway (itself an abstraction) can be nested within other pathwa
 These nested pathways generally encapsulate some commonly-understood hierarchy of biological processes that take place within a cell, such as cellular replication.
 Other representations include the more general notion of a module of connected components, such as gene products.
 Hierarchical relationships can also represent physical interactions between biochemical participants.
-A common of example of this is in bio-molecular complexes, which are themselves composed of other complexes or biomolecules.
+A common of example of this is in biomolecular complexes, which are themselves composed of other complexes or biomolecules.
 
 It is important to note that hierarchy and ``structure'' often co-exist with other types of relationships.
 In most cases, pathway data includes relationships of hierarchy (i.e., when one vertex is contained within another) \textit{in parallel} with other, non-hierarchical relationships, such as the relationship between one gene product that activates or inhibits another.
@@ -622,7 +622,7 @@ This type of encoding of set membership is the \textit{Bubble Sets}~\cite{Collin
 
 \paragraph*{Description}
 
-A category of tasks inherent to a variety of work in bioinformatics is the identification of \textit{causal relationships} that exist between bio-molecular entities, and \emph{causal networks} are of particular importance to the analysis of large-scale gene expression data.
+A category of tasks inherent to a variety of work in bioinformatics is the identification of \textit{causal relationships} that exist between biomolecular entities, and \emph{causal networks} are of particular importance to the analysis of large-scale gene expression data.
 
 When discussing directed paths between entities, one entity is said to be \emph{upstream} or \emph{downstream} of another.
 For example, one gene product can increase the activity of other gene products that are \emph{downstream} of it.
@@ -644,7 +644,7 @@ Feedback loops are common within metabolic activation networks, and they play a 
 Causality and cascading effects depend on the both the structure of the graph, which determines the global propagation of change, and the attributes associated with individual graph entities, e.g., a change in a particular gene expression level from being up-regulated to down-regulated.
 In this case, the structure of the graph does not change, only entity attributes (which Ahn et al.~\cite{Ahn2014} refer to as the domain properties).
 Archambault et al., in their definition of Temporal Multivariate networks~\cite{archambault2014temporal}, describe these changes in attributes as the behavior of the graph.
-Showing the full range of behaviors (attribute value changes) in a traditional biological pathway network visualization can be difficult as there are few visual encodings which can indicate attribute values (e.g., color, shape, texture etc.).
+Showing the full range of behaviors (attribute value changes) in a traditional biological pathway network visualization can be difficult as there are relatively few visual encodings which can indicate attribute values (e.g., color, shape, texture etc.).
 The authors also specify that high attribute dimensionality is still an open problem.
 The approach of Pretorius and van Wijk~\cite{pretorius2008} allows for a large number of attributes to be displayed, but differs hugely from traditional biological pathway visualization approaches in that it shows little overall structure.
 However this approach, or one influenced by it, might be beneficial if used in conjunction with another view of the pathway which clearly shows the structure which propagates the changes.
