@@ -479,7 +479,7 @@ Van den Elzen and van Wijk’s \cite{van2014multivariate} system for multivariat
 %  and Curation
 
 
-\subsubsection*{Identifying Provenance}
+\subsubsection*{Identifying Provenance and Uncertainty}
 
 \paragraph*{Description}
 
@@ -494,19 +494,6 @@ Second, the biological context under which a particular entity is studied often 
 The individual studies related to a given gene or gene product might have incorporated cells taken from a variety of tissues, organs, and species.
 Thus, the provenance information related to a given biological entity can be seen as a temporal network of provenance data, with each publication being tied to earlier works in a variety of ways.
 
-
-\paragraph*{Existing Approaches and Techniques} While \textit{SBGNViz}~\cite{SBGNViz2015} and \textit{ChiBE}~\cite{Babur2010chibe} and other applications allow connectivity to external sources, such as UNitProt or PubMed, there are few biological visualization tools that visualize provenance information directly.
-
-Most online biology databases do provide this information but do not integrate it into the data visualization itself.
-For example, the Reactome~\cite{croft2014reactome} displays a list of publications which are related to the selected item as a simple list in a separate window adjacent to the visualization.
-
-STRING~\cite{STRING2005}, a protein interaction database, provides provenance information and encodes it as part of the visualization.
-The provenance is described with respect to its source (e.g., experimental results or a curated database) and is encoded by color within the database's visualization component.
-
-\subsubsection*{Identifying Uncertainty}
-
-\paragraph*{Description}
-
 Related to the task of identifying data provenance is the task of being able to understand degrees of \textit{uncertainty} with regards to the underlying data related to entities and their relationships.
 Biology is different from many other application domains of visualization, as the data is often ambiguous or not certain~\cite{kohlbacher2014multivariate}.
 The uncertainty can be related to the values of specific attributes or to the existence of a relationship.
@@ -516,6 +503,14 @@ An even more fine-grained approach to uncertainty visualization could incorporat
 The empirical support behind any individual entity or relationship within a pathway can vary widely, and the question of how these varying levels of confidence can be incorporated into a pathway visualization has been rarely addressed.
 
 \paragraph*{Existing Approaches and Techniques}
+
+While \textit{SBGNViz}~\cite{SBGNViz2015} and \textit{ChiBE}~\cite{Babur2010chibe} and other applications allow connectivity to external sources, such as UNitProt or PubMed, there are few biological visualization tools that visualize provenance information directly.
+
+Most online biology databases do provide this information but do not integrate it into the data visualization itself.
+For example, the Reactome~\cite{croft2014reactome} displays a list of publications which are related to the selected item as a simple list in a separate window adjacent to the visualization.
+
+STRING~\cite{STRING2005}, a protein interaction database, provides provenance information and encodes it as part of the visualization.
+The provenance is described with respect to its source (e.g., experimental results or a curated database) and is encoded by color within the database's visualization component.
 
 Some databases such as STRING~\cite{STRING2005} provide quality scores with their results.
 This quality score can be seen as a form of uncertainty as it relates to the amount of information available concerning a relationship or entity.
@@ -528,9 +523,6 @@ In biological visualization uncertainty may be caused by measurement errors, mis
 One characteristic of uncertainty within an analysis is that it can build over time.
 As a researcher filters and adds external data to a biological pathway visualization the amount of uncertainty present in the visualization as a whole will change.
 An approach similar to the uncertainty flows of Wu et al.~\cite{wu2012uncertainty} could be used to help researchers comprehend the impact of their decisions on overall uncertainty levels when creating a biological pathway visualization.
-%The uncertainty flows of Wu et al. visualize the flow of uncertainty  through out analytical processes.
-
-%Such an approach could also be used to help researcher comprehend the impact of their decisions in visualizing a biological pathway.
 
 Visualizing uncertainty within a graph visualization is an ongoing challenge in the domain of visualization, with few practical examples available.
 Wang et al.~\cite{wang2016ambiguityvis} use a variant of a heat map visualization to show where visual ambiguity occurs in a graph visualization.
