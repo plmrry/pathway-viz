@@ -481,9 +481,49 @@ Van den Elzen and van Wijk’s \cite{van2014multivariate} system for multivariat
 %  and Contextualization
 %  and Curation
 
+\ \\ \
+\noindent{\textbf{(A2, A3)} \underline{Comparing Attributes}}
+
+\paragraph*{Description}
+
+Related to the issue of multivariate attributes is the need to compare related pathways or sets of entities, or to compare a given pathway across a number of states.
+For instance, one of the researchers we interviewed described their use of microarray measurements, which are often used to measure gene expression levels for a control group and an experimental group over several time steps.
+The goal of this research is to discover significant empirical differences between groups and across time, and the visual comparison of these groups is an essential part of an analysis.
+
+In addition, analysts often want to reason about the same entity (e.g., the same protein, gene, or drug) across multiple pathways.
+In other words, the role or behavior of a biological entity in multiple different contexts is often important.
+
+Visualizations of comparative differences can also be closely coupled with common bioinformatic algorithms.
+For example, the algorithmic task of discovering subsets of a pathway dataset that are differentially regulated in a given biological context is an important computational problem, and is inherently a comparison task.
+
+The topic of contextualization includes a very important component of modern biology, which is the incorporation of multiple external datasets.
+Biological pathway data is inherently large, complex, and subject to ongoing contributions from contemporary research.
+Thus, for biological pathway visualization in particular, integration of attribute data from external data sources is essential.
+
+\paragraph*{Existing Approaches and Techniques}
+
+In their 2011 survey, Gleicher et al.~\cite{Gleicher2011} describe three primary types classifications of comparative visualization.
+These are juxtaposition, superposition, and explicit encoding of differences, and these classifications can also be combined.
+A juxtaposition refers to visualizations that are displayed side-by-side in order to facilitate comparison.
+This is functionality is available by default in Cytoscape (and hence all of the associated plug-ins) via simply arranging the windows which display the networks.
+\textit{Cerebral}~\cite{Barsky2008cerebral} uses a juxtaposition approach to display changes in attributes associated with the graph.
+
+Superposition is a technique that involves the display of multiple datasets as part of the same visualization.
+Within Cytoscape there are several ways to map graphical attributes to data, to allow for data from different data sets to be visualized differently.
+The RenoDoI plugin uses superposition as a comparison technique, allowing multiple networks to be visualized in a single image. Bounding isocountours are used to distinguish graphs differences, and to clearly indicate where the graphs overlap.
+Graph layout is and important aspect of both juxtaposition and superposition based comparative visualizations.
+Juxtaposition involves comparing two or more graphs using similar layouts in order to aid comparison.
+For superposition, the matter is not so simple as the addition of a new graph may destroy the existing layout.
+The RenoDoI application~\cite{Vehlow2015} initially lays out the largest data set, then adds the additional data sets, adjusting previous layout , without resetting it.
+Nodes which are included in both data sets only appear once.
+
+Explicit encoding of difference means that differences between the two datasets are explicitly highlighted, and this approach is often in addition to the previous two. For example an edge which appears in one data set but not the other may be highlighted by color.
+One specific case where implicit encoding is not mixed with other approaches is seen when a graph is dynamic and the changes are between time slices.
+This can be seen in Rugfiange and McGuffins's DiffAni application~\cite{Rufiange2013} for visualizing dynamic graphs.
+
 
 \ \\ \
-\noindent{\textbf{(A2, A3)} \underline{Identifying Provenance and Uncertainty}}
+\noindent{\textbf{(A4)} \underline{Identifying Provenance and Uncertainty}}
 %\subsubsection*{Identifying Provenance and Uncertainty}
 
 \paragraph*{Description}
@@ -533,39 +573,6 @@ An approach similar to the uncertainty flows of Wu et al.~\cite{wu2012uncertaint
 Visualizing uncertainty within a graph visualization is an ongoing challenge in the domain of visualization, with few practical examples available.
 Wang et al.~\cite{wang2016ambiguityvis} use a variant of a heat map visualization to show where visual ambiguity occurs in a graph visualization.
 While their approach visualizes potential ambiguity in visual interpretation rather than the underlying data set, a similar approach could be taken to visualize uncertainty in biological networks.
-
-\ \\ \
-\noindent{\textbf{(A2, A3)} \underline{Comparing Datasets}}
-
-\paragraph*{Description}
-
-Related to the issue of multivariate attributes is the need to compare related pathways or sets of entities, or to compare a given pathway across a number of states.
-For instance, one of the researchers we interviewed described their use of microarray measurements, which are often used to measure gene expression levels for a control group and an experimental group over several time steps.
-The goal of this research is to discover significant empirical differences between groups and across time, and the visual comparison of these groups is an essential part of an analysis.
-
-In addition, analysts often want to reason about the same entity (e.g., the same protein, gene, or drug) across multiple pathways.
-In other words, the role or behavior of a biological entity in multiple different contexts is often important.
-
-\paragraph*{Existing Approaches and Techniques}
-
-In their 2011 survey, Gleicher et al.~\cite{Gleicher2011} describe three primary types classifications of comparative visualization.
-These are juxtaposition, superposition, and explicit encoding of differences, and these classifications can also be combined.
-A juxtaposition refers to visualizations that are displayed side-by-side in order to facilitate comparison.
-This is functionality is available by default in Cytoscape (and hence all of the associated plug-ins) via simply arranging the windows which display the networks.
-\textit{Cerebral}~\cite{Barsky2008cerebral} uses a juxtaposition approach to display changes in attributes associated with the graph.
-
-Superposition is a technique that involves the display of multiple datasets as part of the same visualization.
-Within Cytoscape there are several ways to map graphical attributes to data, to allow for data from different data sets to be visualized differently.
-The RenoDoI plugin uses superposition as a comparison technique, allowing multiple networks to be visualized in a single image. Bounding isocountours are used to distinguish graphs differences, and to clearly indicate where the graphs overlap.
-Graph layout is and important aspect of both juxtaposition and superposition based comparative visualizations.
-Juxtaposition involves comparing two or more graphs using similar layouts in order to aid comparison.
-For superposition, the matter is not so simple as the addition of a new graph may destroy the existing layout.
-The RenoDoI application~\cite{Vehlow2015} initially lays out the largest data set, then adds the additional data sets, adjusting previous layout , without resetting it.
-Nodes which are included in both data sets only appear once.
-
-Explicit encoding of difference means that differences between the two datasets are explicitly highlighted, and this approach is often in addition to the previous two. For example an edge which appears in one data set but not the other may be highlighted by color.
-One specific case where implicit encoding is not mixed with other approaches is seen when a graph is dynamic and the changes are between time slices.
-This can be seen in Rugfiange and McGuffins's DiffAni application~\cite{Rufiange2013} for visualizing dynamic graphs.
 
 \subsection*{Relationship Tasks}
 
@@ -703,31 +710,7 @@ This approach has been used by the \textit{Cerebral}~\cite{Barsky2008cerebral} a
 Archambault and Purchase's work also shows that layout has an impact on the visualization of attribute cascades.
 Participants in the experiment performed better when a hierarchical layout was used, however it should be noted that the hierarchical layout was consistent with the direction of the cascade.
 
-
-\subsection*{Comparison Tasks}
-\ \\ \
-\noindent{\textbf{(C1, C2)} \underline{Compare Data and Integrate Knowledge}}
-%\subsubsection*{Comparison and Contextualization Tasks}
-
-\paragraph*{Description}
-
-
-
-
-
-% \hl{both an issue of performance and in integrating with external community resources}
-
-% \hl{comparison to a reference genome}
-
-% \hl{break down into subtasks}
-
-% \hl{existing knowledge, experimental data, etc.}
-
-\paragraph*{Existing Approaches and Techniques}
-
-
-
-\subsection*{Data Modification and Curation}
+\subsection*{Data Modification}
 \ \\ \
 \noindent{\textbf{(D1, D2)} \underline{Annotate Data and Personalize Pathways}}
 \paragraph*{Description}
@@ -735,9 +718,7 @@ Participants in the experiment performed better when a hierarchical layout was u
 While most of the tasks in this taxonomy are directly related to visual analysis, the size and complexity of biological datasets makes data curation an essential part of modern research platforms.
 Several of the researchers we interviewed mentioned certain tasks related to the curation, maintenance, and understanding of pathway data.
 For instance, one researcher mentioned the importance of being able to \emph{debug} potentially flawed data.
-Two others expressed a need to create ``personalized'' pathways that only include a user-determined subset of entities and relationships.
-
-Ideally, visualization tools will seamlessly integrate these curation and maintenance needs.
+Two others expressed a need to create ``personalized'' pathways that only include a user-determined subset of entities and relationships.Ideally, visualization tools will seamlessly integrate these curation and maintenance needs.
 
 \paragraph*{Existing Approaches and Techniques}
 Most desktop pathway visualization applications allow for data files to be edited and exported in standardized formats, e.g., celldesigner~\cite{funahashi2008celldesigner} allows files to be modified and curated and exported in the SBML standard.
@@ -746,34 +727,10 @@ Collaborative online visualizations such as \textit{Polychrome}~\cite{badam2014p
 Collaborative web-based visualizations also offer an opportunity for researchers to share their personally curated pathways and data sets for generally dissemination or for support in debugging possibly flawed pathways.
 The ability to disseminate biological pathway visualizations easily amongst multiple curators would allow for a more thorough validation of proposed pathways.
 
-% \subsubsection*{Creating Personalized Pathways}
-
-% - filtering
-
-% \subsubsection*{Annotation}
-
 The approach of using web tools to disseminates knowledge is already very evident in many modern online biological data resources.
 Reactome~\cite{croft2014reactome} and STRING~\cite{STRING2005} are two online resources which feature highly interactive web based visualization interfaces.
 The fact that the data in the Reactome database is curated and peer reviewed is considered an important feature of the system.
 Most online publicly available pathway databases do allow users to provide feedback on potential errors, updated research or areas for improvement.
-
-\ \\ \
-\noindent{\textbf{(D1, D2)} \underline{Annotate Data and Personalize Pathways}}
-
-Visualizations of comparative differences can also be closely coupled with common bioinformatic algorithms.
-For example, the algorithmic task of discovering subsets of a pathway dataset that are differentially regulated in a given biological context is an important computational problem, and is inherently a comparison task.
-
-The topic of contextualization includes a very important component of modern biology, which is the incorporation of multiple external datasets.
-Biological pathway data is inherently large, complex, and subject to ongoing contributions from contemporary research.
-Thus, for biological pathway visualization in particular, integration of attribute data from external data sources is essential.
-
-% - debugging
-% - commenting
-
-% \subsubsection*{Sharing Pathways}
-
-% does this fall under contextualization
-% collaborative visualization
 
 \subsection*{Discussion}
 
