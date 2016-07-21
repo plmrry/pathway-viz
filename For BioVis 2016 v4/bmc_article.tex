@@ -39,6 +39,7 @@
 %\usepackage[latin1]{inputenc} %UNIX support if unicode package fails
 \usepackage{graphicx}
 \usepackage{multirow}
+\usepackage{makecell}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                                             %%
@@ -439,31 +440,38 @@ Van den Elzen and van Wijk’s \cite{van2014multivariate} system for multivariat
 
 \renewcommand{\arraystretch}{1.5}
 \setlength\abovecaptionskip{5pt}
-\begin{table*}[!ht]
+\begin{table}[!ht]
 \centering
-\begin{tabular} { |l|l|p{7cm}| }
+\begin{tabular} { p{0.1cm}|p{2cm}|p{4.4cm}| }
 \hline
-\textbf{Grouping} & \textbf{Category} & \textbf{Example Task}\\
+\multicolumn{2}{|l|}{\textbf{Category}} & \textbf{Example Task}\\
 \hline
-\hline
-\multirow{3}{*} {Attributes} &Multivariate & Find all up-regulated genes in a biological pathway.\\ \cline{2-3}
+\multicolumn{2}{|l|}{Attributes} \\ \cline{1-3}
+\multicolumn{1}{l|}{} & Multivariate & Find all up-regulated genes in a biological pathway.\\ \cline{2-3}
 & Provenance & Determine which studies provides the evidence for a link between two genes.\\ \cline{2-3}
-& Uncertainty & Understand which pathway components have the strongest empirical evidence relationships\\ \hline
-\multirow{5}{*} {Relationships} &Multivariate &	Find all translocations of entities in a given biological pathway \\ \cline{2-3}
+& Uncertainty & Understand which pathway components have the strongest empirical evidence relationships\\ \cline{1-3}
+\multicolumn{2}{|l|}{Relationships} \\ \cline{1-3}
+\multirow{5}{*} {} & Multivariate &	Find all translocations of entities in a given biological pathway \\ \cline{2-3}
 &Direction & Find the products or output of a biochemical reaction \\ \cline{2-3}
 &Hierarchical &Expand a module entity to include all child-entities in the visualization \\ \cline{2-3}
-&Causality and Cascading effects & Find all genes downstream of the currently selected entity, which may be affected by a change in regulation \\  \cline{2-3}
-&Feedback & Identify potential feedback loops in gene regulation\\ \hline
-\multirow{2}{*} {Comparison and Contextualization} &Compare Data Sets  & Compare a biological pathway to a pathway with the same functionality in a reference species \\ \cline{2-3}
-&Integrate Existing Knowledge & Integrate results of a laboratory experiment into existing protein-protein interaction networks, extracted from StringDB. \\ \hline
-\multirow{2}{*} {Data Modification and Curation} & Annotate Existing Data  & A researcher may wish to update out-of date-information in a pathway data set \\ \cline{2-3}
-&Personalise Pathways& A researcher  may like to create a personalized pathway based on their own specialized research topic \\ \hline
+&\makecell[l]{Causality} & Find all genes downstream of the currently selected entity, which may be affected by a change in regulation \\  \cline{2-3}
+&Feedback & Identify potential feedback loops in gene regulation\\ \cline{1-3}
+\multicolumn{2}{|l|}{Comparison} \\ \cline{1-3}
+& Compare Data Sets & Compare a biological pathway to a pathway with the same functionality in a reference species \\ \cline{2-3}
+& Integrate Knowledge & Integrate results of a laboratory experiment into existing protein-protein interaction networks, extracted from StringDB. \\ \cline{1-3}
+\multicolumn{2}{|l|}{Data Modification} \\ \cline{1-3}
+& Annotate Data  & A researcher may wish to update out-of date-information in a pathway data set \\ \cline{2-3}
+&Personalise Pathways& A researcher  may like to create a personalized pathway based on their own specialized research topic \\ \cline{2-3}
 \end{tabular}
 \centering
 \\
 \caption{A summary of the biological pathway visualization task taxonomy}
 \label{table:taxonomy}
-\end{table*}
+\end{table}
+
+%  and Cascading Effects \T
+%  and Contextualization
+%  and Curation
 
 
 \subsubsection*{Identifying Provenance}
