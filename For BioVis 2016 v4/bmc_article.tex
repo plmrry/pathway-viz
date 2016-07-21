@@ -281,7 +281,7 @@ However, this paper is not intended to be a complete survey of biological visual
 Existing techniques included in this paper include the following: \textit{ChiBe}~\cite{Babur2010chibe}, \textit{Entourage}~\cite{Lex2013entourage}, \textit{Reactome Pathway Browser}~\cite{croft2014reactome}, \textit{VisAnt}~\cite{hu2004visant}, \textit{MetaViz}~\cite{bourqui2007metabolic}, \textit{VitaPad}~\cite{holford2005vitapad}, and \textit{BioFabric}~\cite{Longabaugh2012biofabric}.
 
 Node-link diagrams are the nearly-universal choice of visual representation used in existing applications (exceptions to this rule include BioFabric~\cite{Longabaugh2012biofabric}).
-Cytoscape~\cite{cytoscape} is a popular graph visualization application which was originally designed for biological data, and offers many sophisticated plug-ins that have been developed by the research community, including \textit{Cerebral}~\cite{Barsky2008cerebral} and RenoDoI~\cite{Vehlow2015}.
+Cytoscape~\cite{Shannon2003cytoscape} is a popular graph visualization application which was originally designed for biological data, and offers many sophisticated plug-ins that have been developed by the research community, including \textit{Cerebral}~\cite{Barsky2008cerebral} and RenoDoI~\cite{Vehlow2015}.
 However, node-link representations are one of several ways to visualize graph data, and there are alternative visualization techniques which can be applied to pathway data.
 For instance, research has shown that matrix visualization techniques outperform node-link diagrams for higher level group based tasks~\cite{Ghoniem2004,Henry2007}.
 While these matrix techniques are not as effective for certain tasks (such as path-tracing), linked views and hybrid techniques exist, such as NodeTrix~\cite{NodeTrix2007}, which combine node-link and matrix representations.
@@ -323,13 +323,22 @@ For instance, Ahn et al.~\cite{Ahn2014} provide a task taxonomy for the analysis
 The complex nature of dynamic graph data yields a similarly complex set of analysis tasks, and many of these tasks were not covered by the general graph taxonomy of Lee et al.~\cite{Lee2006} --- thus, new tasks needed to be specified.
 Pretorius et al.~\cite{Pretorius2014} focus on multivariate graph visualization (where graph elements contain multiple attributes).
 Their work builds on the work of both Lee et al.~\cite{Lee2006} and of Valiati et al.~\cite{Valiati2006}, as multivariate networks can be considered a multidimensional dataset.
+The authors of \textit{enRoute}~\cite{partl2012enroute} include a brief discussion of requirements related to their application.
+Their requirements are somewhat similar to a subset of our tasks, but were created in order to address the technical challenges involved in building \textit{enRoute}, which is specifically used for the analysis of experimental data.
 
 Aside from explicit task taxonomies, several contemporary surveys and state-of-the-art reports are worth mentioning.
 Hadlak et al.~\cite{hadlak2015survey} provide a survey of faceted graph visualization techniques, categorizing visualizations based on how the data is faceted, e.g. by attribute, time, or space, and Vehlow et al.~\cite{vehlow2015state} survey a variety of techniques for representing groups in graph structures.
 
 While these recently-published task taxonomies have focused on particular data structures (or datasets with particular characteristics), to our knowledge the present work is the first taxonomy of tasks written in the context of the domain of biological pathway analysis.
 
-The nearest existing work is that of Saraiya et al~\cite{saraiya2005visualizing}, who provides a list of requirements for pathway visualization systems and and associates tasks with those requirements. While Saraiya's~\cite{saraiya2005visualizing} objectives are similar to ours, their focus  are building off of previous work of Sariya et al’s from 2005, incorporating new developments in visualization and bioinformatics, and specifically, approaching task/req analysis for a user-persepective
+The nearest existing work is that of Saraiya et al.~\cite{saraiya2005visualizing}, which builds off of previous work by Saraiya et al.~\cite{saraiya2005insight}, and which involves feedback from domain experts, who evaluate existing pathway evaluation systems.
+While Saraiya's~\cite{saraiya2005visualizing} objectives are similar to ours,
+their work differs in several important ways.
+They approach the taxonomy from the systems perspective, where existing pathway analysis applications are evaluated by domain experts.
+Here, we focus first on the needs of the domain experts in the context of their real-world research, independently of any specific application or existing visualization system.
+Finally, the tools evaluated by Saraiya et al.~\cite{saraiya2005visualizing} are now over a decade old, and the landscape of visualization tools and techniques has evolved considerably, which justifies a renewed evaluation of pathway analysis tasks.
+
+
 In this work we focus more on the tasks themselves and look not only at existing biological visualization applications, but at general visualizations and techniques which may be useful in supporting the tasks.
 Biological Pathway visualization is a complex application domain that poses many specific analytic challenges that are not encountered in pre-existing task taxonomies.
 The data structures underlying biological pathways are dynamic multivariate hyper-graphs, and are more complex than any of those described in previously-published taxonomies.
@@ -344,7 +353,7 @@ Those interviewed included one tenured professor, three assistant professors, on
 Interviews were loosely structured, but interview questions were designed to elicit a detailed understanding of the tasks performed by the researcher in the course of a typical analysis, as well as an understanding of the type and structure of data that each researcher worked with.
 Each researcher also presented their views on the utility of pathway data and of pathway diagrams in general.
 
-A summary of the interviews is described in table~\ref{table:interviews}.
+A summary of the interviews is described in Table~\ref{table:interviews}.
 While our selection of domain experts was somewhat limited by their availability, the researchers are engaged in a wide variety of research within the general domain of biology and bioinformatics research, but all of which have some relationship to pathway data.
 This variety allowed for a rich examination of tasks related to biological datasets.
 
@@ -399,7 +408,7 @@ We have developed a taxonomy of domain-specific visualization tasks based on the
 Biological pathways are represented as weighted, directed, labeled graphs which can include hyper-edges and compound nodes.
 While existing task taxonomies describe tasks related to the visual analysis of graphs in general~\cite{Ahn2014, Pretorius2014}, the analysis of pathways in the context of biology reveals several important graph-analytic tasks that other works have not described in detail.
 This taxonomy refines and extends the existing set of tasks associated with the visual analysis of network data in general.
-A summary of the taxonomy can be seen in table~\ref{table:taxonomy}.
+A summary of the taxonomy can be seen in Table~\ref{table:taxonomy}.
 
 \subsection*{Attribute Tasks}
 
@@ -488,6 +497,7 @@ Thus, the provenance information related to a given biological entity can be see
 Related to the task of identifying data provenance is the task of being able to understand degrees of \textit{uncertainty} with regards to the underlying data related to entities and their relationships.
 Biology is different from many other application domains of visualization, as the data is often ambiguous or not certain~\cite{kohlbacher2014multivariate}.
 The uncertainty can be related to the values of specific attributes or to the existence of a relationship.
+In their state-of-the-art report on the visualization of group structures in graphs, Vehlow et al.~\cite{vehlow2015state} mention uncertainty as one of several ``Research Challenges.''
 The importance of understanding uncertainty was emphasized by several of the researchers we interviewed.
 Uncertainty may relate directly to the provenance history discussed above --- biological entities that are related to more recent research may have a limited set of one or two publications which corroborate their functionality, while other genes and gene products may have a rich history of robust empirical evidence from dozens or hundreds of publications.
 An even more fine-grained approach to uncertainty visualization could incorporate the uncertainty or error tied to individual empirical findings and experimental results.
@@ -495,10 +505,10 @@ The empirical support behind any individual entity or relationship within a path
 
 \paragraph*{Existing Approaches and Techniques}
 
-While \textit{SBGNViz}~\cite{SBGNViz2015} and \textit{ChiBE}~\cite{Babur2010chibe} and other applications allow connectivity to external sources, such as UNitProt or PubMed, there are few biological visualization tools that visualize provenance information directly.
+While \textit{SBGNViz}~\cite{SBGNViz2015} and \textit{ChiBE}~\cite{Babur2010chibe} and other applications allow connectivity to external sources, such as UniProt or PubMed, there are few biological visualization tools that visualize provenance information directly.
 
 Most online biology databases do provide this information but do not integrate it into the data visualization itself.
-For example, the Reactome~\cite{croft2014reactome} displays a list of publications which are related to the selected item as a simple list in a separate window adjacent to the visualization.
+For example, Reactome~\cite{croft2014reactome} displays a list of publications which are related to the selected item as a simple list in a separate window adjacent to the visualization.
 
 STRING~\cite{STRING2005}, a protein interaction database, provides provenance information and encodes it as part of the visualization.
 The provenance is described with respect to its source (e.g., experimental results or a curated database) and is encoded by color within the database's visualization component.
