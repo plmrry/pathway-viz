@@ -614,7 +614,6 @@ In this system, the node for each data source forms a set, which may or may not 
 This is visualized by drawing a bounded contour around the nodes in the set, where different border colors indicate different sets.
 This type of encoding of set membership is the \textit{Bubble Sets}~\cite{Collins2009} approach, which was shown to be the most effective way of displaying group information on a node link diagram by Jianu et al.~\cite{Jianu2014}.
 
-
 \subsubsection*{Identifying Causality and Cascading Effects}
 
 \paragraph*{Description}
@@ -636,11 +635,13 @@ We characterize this problem as one of identifying \textit{cascading effects}, w
 In tandem with the problem of identifying cascading effects is the problem of reasoning about feedback.
 Feedback loops are common within metabolic activation networks, and they play a key role in processes related to uncontrolled cellular growth in cancerous cells~\cite{cairns2011regulation}.
 
-\paragraph*{Existing Approaches and Techniques}
-
 Causality and cascading effects depend on the both the structure of the graph, which determines the global propagation of change, and the attributes associated with individual graph entities, e.g., a change in a particular gene expression level from being up-regulated to down-regulated.
 In this case, the structure of the graph does not change, only entity attributes (which Ahn et al.~\cite{Ahn2014} refer to as the domain properties).
 Archambault et al., in their definition of Temporal Multivariate networks~\cite{archambault2014temporal}, describe these changes in attributes as the behavior of the graph.
+Causality can be closely coupled with network topology, and the these two concerns will often need to be analyzed jointly, as discussed by the authors of \textit{enRoute}~\cite{Partl2012enroute}.
+
+\paragraph*{Existing Approaches and Techniques}
+
 Showing the full range of behaviors (attribute value changes) in a traditional biological pathway network visualization can be difficult as there are relatively few visual encodings which can indicate attribute values (e.g., color, shape, texture etc.).
 The authors also specify that high attribute dimensionality is still an open problem.
 The approach of Pretorius and van Wijk~\cite{pretorius2008} allows for a large number of attributes to be displayed, but differs hugely from traditional biological pathway visualization approaches in that it shows little overall structure.
