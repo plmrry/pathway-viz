@@ -40,7 +40,7 @@
 \usepackage{graphicx}
 \usepackage{multirow}
 \usepackage{makecell}
-
+\usepackage{url}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                                             %%
 %%  If you wish to display your graphics for   %%
@@ -91,42 +91,29 @@
 %%                                          %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \author[
-     addressref={aff1},
-  % noteref={n2},
-   email={anonymous@gmail.com}
-]{\inits{AA}\fnm{Anonymous} \snm{Author1}}
+addressref={aff1},
+email={pmurra5@uic.edu}
+]{\inits{PM}\fnm{Paul} \snm{Murray}}
 \author[
-   addressref={aff1},                   % id's of addresses, e.g. {aff1,aff2}
-   %corref={aff1},                       % id of corresponding address, if any
-   %noteref={n1},                        % id's of article notes, if any
-  email={alsoanonymous@gmail.com}   % email address
-]{\inits{AA2}\fnm{Anonymous} \snm{Author2}}
+addressref={aff2},
+email={fintan.mcgee@list.lu}
+]{\inits{FM}\fnm{Fintan} \snm{McGee}}
 \author[
-     addressref={aff3},
-  % noteref={n2},
-   email={anonymous@gmail.com}
-]{\inits{AA3}\fnm{Anonymous} \snm{Author3}}
+addressref={aff1},
+email={aforbes@uic.edu}
+]{\inits{AGF}\fnm{Angus G.} \snm{Forbes}}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%                                          %%
-%% Enter the authors' addresses here        %%
-%%                                          %%
-%% Repeat \address commands as much as      %%
-%% required.                                %%
-%%                                          %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\address[id=aff1]{
+  \orgname{Electronic Visualization Laboratory, University of Illinois at Chicago, Chicago, IL, USA}
+  %M/C 152, University of Illinois at Chicago, 851 S. Morgan, Room 1120, Chicago 60607-7053, IL, USA
+}
+\address[id=aff2]{
+  \orgname{eScience Group,
+Luxembourg Institute of Science and Technology, Esch-sur-Alzette, LUX}
+}
 
-\address[id=aff1]{%                           % unique id
-  \orgname{Anonymous}, % university, etc                                   % country
-}
-\address[id=aff2]{%                           % unique id
-  \orgname{Anonymous}, % university, etc
-%  \street{210 South Bouquet},                     %                                   % country
-}
-\address[id=aff3]{%                           % unique id
-  \orgname{Anonymous}, % university, etc
-%  \street{210 South Bouquet},                     %                                   % country
-}
+%\address[id=aff3]{\orgname{\url{http://creativecoding.evl.uic.edu}}}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -248,7 +235,7 @@ Provenance is essential to the field of bioinformatics, as the ``ground truth'' 
 
 Researchers who work with pathway data are confronted with a number of challenges.
 Pathway files may contain hundreds or thousands of entities that are connected by a wide variety of relationship types.
-For instance, the \emph{BioPax} specification \footnote{http://www.biopax.org/release/biopax-level3-documentation.pdf} contains a ``Transport'' class, which is one of four types of ``Conversion'', which in turn is one of five different types of ``Interaction'', which, finally, is one of four types of ``Entity''.
+For instance, the \emph{BioPax} specification\footnote{http://www.biopax.org/release/biopax-level3-documentation.pdf} contains a ``Transport'' class, which is one of four types of ``Conversion'', which in turn is one of five different types of ``Interaction'', which, finally, is one of four types of ``Entity''.
 The \emph{BioPax} schema is itself a reflection of the complexity of information that can exist within bio-chemical pathway datasets.
 
 Participants in a pathway --- genes, proteins, and other molecules within a cell --- can act as inputs or outputs to multiple interactions, and the set of relationships between biochemical interactions inherently includes feedback loops and other complex relationships.
@@ -334,11 +321,15 @@ The authors build on Amar and Stasko's~\cite{Amar2005} list of visual analytic t
 Several recent taxonomies focus on aspects of graph visualization that extend the work of Lee et al~\cite{Lee2006}.
 For instance, Ahn et al.~\cite{Ahn2014} provide a task taxonomy for the analysis of networks that evolve over time, also known as dynamic graphs.
 The complex nature of dynamic graph data yields a similarly complex set of analysis tasks, and many of these tasks were not covered by the general graph taxonomy of Lee et al.~\cite{Lee2006} --- thus, new tasks needed to be specified.
-Pretorius et al~\cite{Pretorius2014} focus on multivariate graph visualization (where graph elements contain multiple attributes).
+Pretorius et al.~\cite{Pretorius2014} focus on multivariate graph visualization (where graph elements contain multiple attributes).
 Their work builds on the work of both Lee et al.~\cite{Lee2006} and of Valiati et al.~\cite{Valiati2006}, as multivariate networks can be considered a multidimensional dataset.
 
+Aside from explicit task taxonomies, several contemporary surveys and state-of-the-art reports are worth mentioning.
+Hadlak et al.~\cite{hadlak2015survey} provide a survey of faceted graph visualization techniques, categorizing visualizations based on how the data is faceted, e.g. by attribute, time, or space, and Vehlow et al.~\cite{vehlow2015state} survey a variety of techniques for representing groups in graph structures.
+
 While these recently-published task taxonomies have focused on particular data structures (or datasets with particular characteristics), to our knowledge the present work is the first taxonomy of tasks written in the context of the domain of biological pathway analysis.
-The nearest existing work is that of Saraiya et al~\cite{saraiya2005visualizing}, who provides a list of requirements for pathway visualization systems and and associate tasks with those requirements.
+
+The nearest existing work is that of Saraiya et al~\cite{saraiya2005visualizing}, who provides a list of requirements for pathway visualization systems and and associates tasks with those requirements. While Saraiya's~\cite{saraiya2005visualizing} objectives are similar to ours, their focus  are building off of previous work of Sariya et al’s from 2005, incorporating new developments in visualization and bioinformatics, and specifically, approaching task/req analysis for a user-persepective
 In this work we focus more on the tasks themselves and look not only at existing biological visualization applications, but at general visualizations and techniques which may be useful in supporting the tasks.
 Biological Pathway visualization is a complex application domain that poses many specific analytic challenges that are not encountered in pre-existing task taxonomies.
 The data structures underlying biological pathways are dynamic multivariate hyper-graphs, and are more complex than any of those described in previously-published taxonomies.
@@ -811,8 +802,18 @@ The continued refinement and understanding of tasks related to pathway data in b
 % cerevisiae triosephosphate isomerase}, dTIM: \textit{defective triosephosphate
 % isomerase}, PDB: \textit{protein data bank}.
 
+
+
+%\section*{Acknowledgments}
+%We thank the domain experts who shared their expertise by participating in interviews and discussions during the development of this work.
+
+
 \section*{Competing interests}
 The authors declare that they have no competing interests.
+
+
+\section*{Declarations}
+This publication is based on work supported by the DARPA \emph{Big Mechanism} Program under ARO contract WF911NF-14-1-0395.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
