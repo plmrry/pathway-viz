@@ -40,7 +40,7 @@
 \usepackage{graphicx}
 \usepackage{multirow}
 \usepackage{makecell}
-
+\usepackage{url}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                                             %%
 %%  If you wish to display your graphics for   %%
@@ -91,42 +91,29 @@
 %%                                          %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \author[
-     addressref={aff1},
-  % noteref={n2},
-   email={anonymous@gmail.com}
-]{\inits{AA}\fnm{Anonymous} \snm{Author1}}
+addressref={aff1},
+email={pmurra5@uic.edu}
+]{\inits{PM}\fnm{Paul} \snm{Murray}}
 \author[
-   addressref={aff1},                   % id's of addresses, e.g. {aff1,aff2}
-   %corref={aff1},                       % id of corresponding address, if any
-   %noteref={n1},                        % id's of article notes, if any
-  email={alsoanonymous@gmail.com}   % email address
-]{\inits{AA2}\fnm{Anonymous} \snm{Author2}}
+addressref={aff2},
+email={fintan.mcgee@list.lu}   
+]{\inits{FM}\fnm{Fintan} \snm{McGee}}
 \author[
-     addressref={aff3},
-  % noteref={n2},
-   email={anonymous@gmail.com}
-]{\inits{AA3}\fnm{Anonymous} \snm{Author3}}
+addressref={aff1},
+email={aforbes@uic.edu}
+]{\inits{AGF}\fnm{Angus G.} \snm{Forbes}}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%                                          %%
-%% Enter the authors' addresses here        %%
-%%                                          %%
-%% Repeat \address commands as much as      %%
-%% required.                                %%
-%%                                          %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\address[id=aff1]{
+  \orgname{Electronic Visualization Laboratory, University of Illinois at Chicago} 
+  %M/C 152, University of Illinois at Chicago, 851 S. Morgan, Room 1120, Chicago 60607-7053, IL, USA
+}
+\address[id=aff2]{
+  \orgname{eScience Group,
+Luxembourg Institute of Science and Technology} 
+}
 
-\address[id=aff1]{%                           % unique id
-  \orgname{Anonymous}, % university, etc                                   % country
-}
-\address[id=aff2]{%                           % unique id
-  \orgname{Anonymous}, % university, etc
-%  \street{210 South Bouquet},                     %                                   % country
-}
-\address[id=aff3]{%                           % unique id
-  \orgname{Anonymous}, % university, etc
-%  \street{210 South Bouquet},                     %                                   % country
-}
+%\address[id=aff3]{\orgname{\url{http://creativecoding.evl.uic.edu}}}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -797,8 +784,18 @@ The continued refinement and understanding of tasks related to pathway data in b
 % cerevisiae triosephosphate isomerase}, dTIM: \textit{defective triosephosphate
 % isomerase}, PDB: \textit{protein data bank}.
 
+
+
+%\section*{Acknowledgments}
+%We thank the domain experts who shared their expertise by participating in interviews and discussions during the development of this work. 
+
+
 \section*{Competing interests}
 The authors declare that they have no competing interests.
+
+
+\section*{Declarations}
+This publication is based on work supported by the DARPA \emph{Big Mechanism} Program under ARO contract WF911NF-14-1-0395. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
