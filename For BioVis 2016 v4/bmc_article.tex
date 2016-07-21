@@ -740,43 +740,31 @@ Most online publicly available pathway databases do allow users to provide feedb
 \subsection*{Discussion}
 
 In the process of creating a domain-specific task taxonomy that is based on interviews with domain experts, we have revealed several tasks that are important to domain researchers but which merit further attention and more focused scrutiny from the visualization community.
-While tools exist which support these tasks, existing approaches tend to be ad hoc and may lack features that would be revealed by more user-centered design methodologies. 
+While tools exist which support these tasks, existing approaches tend to be ad hoc and may lack features that would be revealed by more user-centered design methodologies.
 However, we do not mean to suggest that future research should be constrained to these tasks alone, but that they should be given more focused attention in the field of pathway visualization research.
 
 \subsection*{Directions for Future Research}
 
 \paragraph{Visualizing Causality and Cascading Effects}
 
-Previous taxonomies only touch on the notion of causality of attribute changes in passing.
+Previous taxonomies only touch on the notion of network-level causality and cascading effects in passing.
 Lee et al.~\cite{Lee2006} describe a set of attribute-based tasks in their taxonomy, but they do not consider causal or cascading relationships, only tasks related to static attribute values.
 Ahn et al.~\cite{Ahn2014} in their task taxonomy for network evolution analysis do describe the notion of attribute stability as part of the shape of changes in their taxonomy, and describe tasks that iterate and enable each other, but there is no classification of causality or cascades at the attribute level.
 Moody et al. in their overview of dynamic network visualization~\cite{moody2005dynamic} do mention cascades, but only in the context of the formation of relationships, not the changing of attributes.
-Attribute cascades and feedback loops are a very important aspect of biological pathway visualization.
-The development of a domain specific task taxonomy, means that this aspect of biological pathways, which is still an open problem in information visualization, is properly highlighted as an important feature of a visualization system for this domain.
+Attribute cascades and feedback loops are a very important aspect of biological pathway visualization, and merit further attention.
+The problem of visualizing dynamism and causality in networks in an open problem in information visualization, and is of particular importance to researchers in bioinformatics.
+A careful study of techniques for visualizing causality in the context of complex biological datasets would be a valuable contribution to the visualization literature.
+% The development of a domain specific task taxonomy means that this aspect of biological pathways, which is still an open problem in information visualization, is properly highlighted as an important feature of a visualization system for this domain.
 
-% \hl{uncertainty}
-
-% \hl{provenance}
-
-% \hl{the role of contextualization}
-
-% \hl{justify why we have a taxonomy in a domain}
-
-% \hl{you could follow stasko's taxonomy and you would miss out}
-
-\paragraph{Visualizing Uncertainty}
+\paragraph{Visualizing Uncertainty and Provenance}
 
 Many visualization tools generally do not attempt to visualize the uncertainty behind a connection in a pathway, which was particularly important to many of the domain experts we interviewed.
-This is a challenging task, as even the definition of uncertainty may be difficult to operationalize.
+``Uncertainty'' may exist as a result of experimental measures (i.e., statistical uncertainty) or as a result of varying provenance.
+In bioinformatics, provenance is an important and complex layer of metadata that accompanies any dataset.
+Furthermore, data provenance was mentioned as a particularly important concern by most of the domain researchers we interviewed, but there are relatively few examples of visual analytics tools which explore provenance visualization in a direct and robust way.
+Visualizing provenance and uncertainty is a challenging task, as even the definition of uncertainty may be difficult to operationalize, and each datum in a given pathway could be associated with a potentially large and complex hierarchy of research.
 However, data formats such as \emph{BioPAX} do have robust support for citations, allowing published references to be connected to entities and relationships within a pathway.
-A tool that could effectively encode data related to uncertainty into a visualization may be very valuable to systems researchers who work with the results of hundreds or thousands of separate publications.
-
-\paragraph*{Visualizing Provenance}
-
-Data provenance was mentioned as an important concern by most of the domain researchers we interviewed but is rarely addressed in modern visualization applications.
-Visualizing provenance is not trivial, as every datum in a given pathway could be associated with a potentially large and complex hierarchy of research.
-However, there are relatively few examples of visual analytics tools which explore provenance visualization.
-A careful study and implementation of provenance visualization would be a valuable line of research in the domain of visual analytics.
+A tool that could effectively encode data related to uncertainty and provenance into a visualization would be very valuable to systems researchers who work with the results of hundreds or thousands of publications and experimental datasets.
 
 \subsection*{Conclusion}
 
