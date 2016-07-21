@@ -41,6 +41,7 @@
 \usepackage{multirow}
 \usepackage{makecell}
 \usepackage{url}
+\usepackage{verbatim}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                                             %%
 %%  If you wish to display your graphics for   %%
@@ -281,7 +282,7 @@ However, this paper is not intended to be a complete survey of biological visual
 Existing techniques included in this paper include the following: \textit{ChiBe}~\cite{Babur2010chibe}, \textit{Entourage}~\cite{Lex2013entourage}, \textit{Reactome Pathway Browser}~\cite{croft2014reactome}, \textit{VisAnt}~\cite{hu2004visant}, \textit{MetaViz}~\cite{bourqui2007metabolic}, \textit{VitaPad}~\cite{holford2005vitapad}, and \textit{BioFabric}~\cite{Longabaugh2012biofabric}.
 
 Node-link diagrams are the nearly-universal choice of visual representation used in existing applications (exceptions to this rule include BioFabric~\cite{Longabaugh2012biofabric}).
-Cytoscape~\cite{Shannon2003cytoscape} is a popular graph visualization application which was originally designed for biological data, and offers many sophisticated plug-ins that have been developed by the research community, including \textit{Cerebral}~\cite{Barsky2008cerebral} and RenoDoI~\cite{Vehlow2015}.
+\textit{Cytoscape}~\cite{Shannon2003cytoscape} is a popular graph visualization application which was originally designed for biological data, and offers many sophisticated plug-ins that have been developed by the research community, including \textit{Cerebral}~\cite{Barsky2008cerebral} and \textit{RenoDoI}~\cite{Vehlow2015}.
 However, node-link representations are one of several ways to visualize graph data, and there are alternative visualization techniques which can be applied to pathway data.
 For instance, research has shown that matrix visualization techniques outperform node-link diagrams for higher level group based tasks~\cite{Ghoniem2004,Henry2007}.
 While these matrix techniques are not as effective for certain tasks (such as path-tracing), linked views and hybrid techniques exist, such as NodeTrix~\cite{NodeTrix2007}, which combine node-link and matrix representations.
@@ -418,7 +419,7 @@ Here, we highlight three forms of attribute data that are particularly relevant 
 We also discuss the need for the integration of external data sources.
 
 \ \\ \
-\noindent{\textbf{(A1)} \underline{Identifying Multivariate Attributes}}
+\noindent{\textbf{(A1)} \underline{Identify Multivariate Attributes}}
 \paragraph*{Description}
 
 The entities within a biological pathway can contain many attributes that reflect the state of that entity in a given context, such as an experimental condition.
@@ -431,7 +432,7 @@ This multivariate data can also apply to relationships between entities, such as
 
 Multivariate network visualization is a highly active field of visualization, in which the life sciences in general are a frequent application domain, and many more recent biological network visualizations include attribute information.
 \textit{ChiBE}~\cite{Babur2010chibe} provides the ability to load biological entity regulation data mappings from an external source and apply them to a pathway visualization.
-The SIF data format, which is defined as part of the Cytoscape application~\cite{Shannon2003cytoscape}, supports these additional data mappings by design.
+The SIF data format, which is defined as part of the \textit{Cytoscape} application~\cite{Shannon2003cytoscape}, supports these additional data mappings by design.
 The \textit{RenoDoI} application~\cite{Vehlow2015}, a plug-in for \textit{Cytoscape} for visualizing knowledge networks of biological data, uses \emph{Degree of Interest} functions to highlight nodes based on attribute values.
 Such functionality could easily be extended to biological pathway visualizations.
 The general purpose visualization system, \textit{Candid}~\cite{Shadoan2013}, also uses attribute information as part of a hypergraph query system which allows users to perform complex queries on entities of different types.
@@ -447,26 +448,29 @@ Van den Elzen and van Wijk’s \cite{van2014multivariate} system for multivariat
 \setlength\abovecaptionskip{5pt}
 \begin{table}[!ht]
 \centering
-\begin{tabular} { p{0.1cm}|p{2cm}|p{4.4cm}| }
+\begin{tabular} { p{0.1cm}|p{2.3cm}|p{4.4cm}| }
 \hline
 \multicolumn{2}{|l|}{\textbf{Category}} & \textbf{Example Task}\\
 \hline
-\multicolumn{2}{|l|}{Attributes} \\ \cline{1-3}
+\multicolumn{2}{|l|}{Attribute Tasks} \\ \cline{1-3}
 \multicolumn{1}{l|}{} & \textbf{(A1)} Multivariate & Find all up-regulated genes in a biological pathway.\\ \cline{2-3}
 & \textbf{(A2)} Provenance & Determine which studies provides the evidence for a link between two genes.\\ \cline{2-3}
-& \textbf{(A3)} Uncertainty & Understand which pathway components have the strongest empirical evidence relationships\\ \cline{1-3}
-\multicolumn{2}{|l|}{Relationships} \\ \cline{1-3}
-\multirow{5}{*} {} & Multivariate &	Find all translocations of entities in a given biological pathway \\ \cline{2-3}
-&Direction & Find the products or output of a biochemical reaction \\ \cline{2-3}
-&Grouping &Expand a module entity to include all child-entities in the visualization \\ \cline{2-3}
-&\makecell[l]{Causality} & Find all genes downstream of the currently selected entity, which may be affected by a change in regulation \\  \cline{2-3}
-&Feedback & Identify potential feedback loops in gene regulation\\ \cline{1-3}
-\multicolumn{2}{|l|}{Comparison} \\ \cline{1-3}
-& Compare Data Sets & Compare a biological pathway to a pathway with the same functionality in a reference species \\ \cline{2-3}
-& Integrate Knowledge & Integrate results of a laboratory experiment into existing protein-protein interaction networks, extracted from StringDB. \\ \cline{1-3}
-\multicolumn{2}{|l|}{Data Modification} \\ \cline{1-3}
-& Annotate Data  & A researcher may wish to update out-of date-information in a pathway data set \\ \cline{2-3}
-&Personalize Pathways& A researcher  may like to create a personalized pathway based on their own specialized research topic \\ \cline{2-3}
+& \textbf{(A3)} Uncertainty & Understand which pathway components have the strongest empirical evidence relationships.\\ \cline{2-3}
+& \textbf{(A4)} Comparison & Compare a biological pathway to a pathway with the same functionality in a reference species.\\ \cline{1-3}
+\multicolumn{2}{|l|}{Relationship Tasks} \\ \cline{1-3}
+\multirow{5}{*} {} & \textbf{(R1)} Multivariate &	Find all translocations of entities in a given biological pathway. \\ \cline{2-3}
+& \textbf{(R2)} Direction & Find the products or output of a biochemical reaction. \\ \cline{2-3}
+& \textbf{(R3)} Grouping &Expand a module entity to include all child-entities in the visualization. \\ \cline{2-3}
+&\makecell[l]{\textbf{(R4)} Causality} & Find all genes downstream of the currently selected entity, which may be affected by a change in regulation. \\  \cline{2-3}
+& \textbf{(R5)} Feedback & Identify potential feedback loops in gene regulation.\\ \cline{1-3}
+%\multicolumn{2}{|l|}{Comparison} \\ \cline{1-3}
+%& Compare Data Sets & Compare a biological pathway to a pathway with the same functionality in a reference species. \\ \cline{2-3}
+%& Integrate Knowledge & Integrate results of a laboratory experiment into existing protein-protein interaction networks, extracted from StringDB. \\ \cline{1-3}
+\multicolumn{2}{|l|}{Modification Tasks} \\ \cline{1-3}
+& \textbf{(M1)} Annotate   & A researcher may wish to update out-of date-information in a pathway data set. \\ \cline{2-3}
+& \textbf{(M2)} Personalize & A researcher  may like to create a personalized pathway based on their own specialized research topic. \\ \cline{2-3}
+& \textbf{(M3)} Integrate & Integrate results of a laboratory experiment into existing protein-protein interaction networks, extracted from StringDB. \\ \cline{2-3}
+
 \end{tabular}
 \centering
 \\
@@ -480,7 +484,7 @@ Van den Elzen and van Wijk’s \cite{van2014multivariate} system for multivariat
 
 
 \ \\ \
-\noindent{\textbf{(A2, A3)} \underline{Identifying Provenance and Uncertainty}}
+\noindent{\textbf{(A2, A3)} \underline{Identify Provenance and Uncertainty}}
 %\subsubsection*{Identifying Provenance and Uncertainty}
 
 \paragraph*{Description}
@@ -532,6 +536,47 @@ Wang et al.~\cite{wang2016ambiguityvis} use a variant of a heat map visualizatio
 While their approach visualizes potential ambiguity in visual interpretation rather than the underlying data set, a similar approach could be taken to visualize uncertainty in biological networks.
 
 
+\ \\ \
+\noindent{\textbf{(A4)} \underline{Compare Data Sets}}
+%\subsubsection*{Comparison and Contextualization Tasks}
+
+\paragraph*{Description}
+
+Related to the issue of multivariate attributes is the need to compare related pathways or sets of entities, or to compare a given pathway across a number of states.
+For instance, one of the researchers we interviewed described their use of microarray measurements, which are often used to measure gene expression levels for a control group and an experimental group over several time steps.
+The goal of this research is to discover significant empirical differences between groups and across time, and the visual comparison of these groups is an essential part of an analysis.
+
+In addition, analysts often want to reason about the same entity (e.g., the same protein, gene, or drug) across multiple pathways.
+In other words, the role or behavior of a biological entity in multiple different contexts is often important.
+
+Visualizations of comparative differences can also be closely coupled with common bioinformatic algorithms.
+For example, the algorithmic task of discovering subsets of a pathway dataset that are differentially regulated in a given biological context is an important computational problem, and is inherently a comparison task.
+
+
+\paragraph*{Existing Approaches and Techniques}
+
+Most applications provide access to the attributes through simple interactions (e.g.,~mouseover and click).
+In many cases the attribute information is simply read from an input file, however more recent tools such as \textit{SBGNViz}~\cite{SBGNViz2015} and \textit{ChiBE}~\cite{Babur2010chibe} query online databases to provide a range of important attribute information.
+
+In their 2011 survey, Gleicher et al.~\cite{Gleicher2011} describe three primary types classifications of comparative visualization.
+These are juxtaposition, superposition, and explicit encoding of differences, and these classifications can also be combined.
+A juxtaposition refers to visualizations that are displayed side-by-side in order to facilitate comparison.
+This is functionality is available by default in \textit{Cytoscape} (and hence all of the associated plug-ins) via simply arranging the windows which display the networks.
+\textit{Cerebral}~\cite{Barsky2008cerebral} uses a juxtaposition approach to display changes in attributes associated with the graph.
+
+Superposition is a technique that involves the display of multiple datasets as part of the same visualization.
+Within \textit{Cytoscape} there are several ways to map graphical attributes to data, to allow for data from different data sets to be visualized differently.
+The \textit{RenoDoI} plugin uses superposition as a comparison technique, allowing multiple networks to be visualized in a single image. Bounding isocountours are used to distinguish graphs differences, and to clearly indicate where the graphs overlap.
+Graph layout is and important aspect of both juxtaposition and superposition based comparative visualizations.
+Juxtaposition involves comparing two or more graphs using similar layouts in order to aid comparison.
+For superposition, the matter is not so simple as the addition of a new graph may destroy the existing layout.
+The \textit{RenoDoI} application~\cite{Vehlow2015} initially lays out the largest data set, then adds the additional data sets, adjusting previous layout , without resetting it.
+Nodes which are included in both data sets only appear once.
+
+Explicit encoding of difference means that differences between the two datasets are explicitly highlighted, and this approach is often in addition to the previous two. For example an edge which appears in one data set but not the other may be highlighted by color.
+One specific case where implicit encoding is not mixed with other approaches is seen when a graph is dynamic and the changes are between time slices.
+This can be seen in Rugfiange and McGuffins's DiffAni application~\cite{Rufiange2013} for visualizing dynamic graphs.
+
 \subsection*{Relationship Tasks}
 
 Within bioinformatics,  understanding relationships within a biological pathway graph is one the most essential tasks that a systems biologist will perform.
@@ -540,7 +585,7 @@ Here, we discuss some of the complex types of relationships found within biologi
 We emphasize that the challenge of visualization is not only that these different categories of relationship exist, but that they exist as combinations and compositions of each other.
 
 \ \\ \
-\noindent{\textbf{(R1)} \underline{Identifying Multivariate Relationships}}
+\noindent{\textbf{(R1)} \underline{Identify Multivariate Relationships}}
 %\subsubsection*{Identifying Multivariate Relationships}
 
 \paragraph*{Description}
@@ -570,7 +615,7 @@ It is an effective visualization, but is generally limited to smaller data sets 
 
 
 \ \\ \
-\noindent{\textbf{(R2)} \underline{Identifying Directed Relationships}}
+\noindent{\textbf{(R2)} \underline{Identify Directed Relationships}}
 %\subsubsection*{Identifying Directed Relationships}
 
 \paragraph*{Description}
@@ -590,7 +635,7 @@ However, the results of Holten and van Wijk's work suggest that investigating su
 
 
 \ \\ \
-\noindent{\textbf{(R3)} \underline{Identifying Grouping Relationships}}
+\noindent{\textbf{(R3)} \underline{Identify Grouping / Hierarchical Relationships}}
 %\subsubsection*{Identifying Grouping and Hierarchical Relationships}
 
 \paragraph*{Description}
@@ -620,14 +665,14 @@ A connection from a node to a compound node does not imply a relationship of own
 
 There are a variety of visualization techniques for the display of ``grouped'' nodes and hierarchical data.
 Numerous tree based graph layouts position nodes to emphasize the hierarchical nature of data, however these are often not suitable for biological pathway layout as the constrains on position in a layout affect the readability of the lowest level of information.
-The RenoDoI~\cite{Vehlow2015} application allows for multiple data sources to be included in a single diagram.
+The \textit{RenoDoI}~\cite{Vehlow2015} application allows for multiple data sources to be included in a single diagram.
 This containment relationship may include data from different pathways.
 In this system, the node for each data source forms a set, which may or may not overlap with other sets.
 This is visualized by drawing a bounded contour around the nodes in the set, where different border colors indicate different sets.
 This type of encoding of set membership is the \textit{Bubble Sets}~\cite{Collins2009} approach, which was shown to be the most effective way of displaying group information on a node link diagram by Jianu et al.~\cite{Jianu2014}.
 
 \ \\ \
-\noindent{\textbf{(R4, R5)} \underline{Identifying Causality and Cascading Effects}}
+\noindent{\textbf{(R4, R5)} \underline{Identify Causality and Cascading Effects}}
 %\subsubsection*{Identifying Causality and Cascading Effects}
 
 \paragraph*{Description}
@@ -652,7 +697,7 @@ Feedback loops are common within metabolic activation networks, and they play a 
 Causality and cascading effects depend on the both the structure of the graph, which determines the global propagation of change, and the attributes associated with individual graph entities, e.g., a change in a particular gene expression level from being up-regulated to down-regulated.
 In this case, the structure of the graph does not change, only entity attributes (which Ahn et al.~\cite{Ahn2014} refer to as the domain properties).
 Archambault et al., in their definition of Temporal Multivariate networks~\cite{archambault2014temporal}, describe these changes in attributes as the behavior of the graph.
-Causality can be closely coupled with network topology, and the these two concerns will often need to be analyzed jointly, as discussed by the authors of \textit{enRoute}~\cite{Partl2012enroute}.
+Causality can be closely coupled with network topology, and the these two concerns will often need to be analyzed jointly, as discussed by the authors of \textit{enRoute}~\cite{partl2012enroute}.
 
 \paragraph*{Existing Approaches and Techniques}
 
@@ -668,6 +713,8 @@ This approach has been used by the \textit{Cerebral}~\cite{Barsky2008cerebral} a
 Archambault and Purchase's work also shows that layout has an impact on the visualization of attribute cascades.
 Participants in the experiment performed better when a hierarchical layout was used, however it should be noted that the hierarchical layout was consistent with the direction of the cascade.
 
+\begin{comment}
+	
 
 \subsection*{Comparison Tasks}
 \ \\ \
@@ -698,41 +745,18 @@ Thus, for biological pathway visualization in particular, integration of attribu
 
 % \hl{existing knowledge, experimental data, etc.}
 
-\paragraph*{Existing Approaches and Techniques}
+\end{comment}
 
-Most applications provide access to the attributes through simple interactions (e.g.,~mouseover and click).
-In many cases the attribute information is simply read from an input file, however more recent tools such as \textit{SBGNViz}~\cite{SBGNViz2015} and \textit{ChiBE}~\cite{Babur2010chibe} query online databases to provide a range of important attribute information.
-
-In their 2011 survey, Gleicher et al.~\cite{Gleicher2011} describe three primary types classifications of comparative visualization.
-These are juxtaposition, superposition, and explicit encoding of differences, and these classifications can also be combined.
-A juxtaposition refers to visualizations that are displayed side-by-side in order to facilitate comparison.
-This is functionality is available by default in Cytoscape (and hence all of the associated plug-ins) via simply arranging the windows which display the networks.
-\textit{Cerebral}~\cite{Barsky2008cerebral} uses a juxtaposition approach to display changes in attributes associated with the graph.
-
-Superposition is a technique that involves the display of multiple datasets as part of the same visualization.
-Within Cytoscape there are several ways to map graphical attributes to data, to allow for data from different data sets to be visualized differently.
-The RenoDoI plugin uses superposition as a comparison technique, allowing multiple networks to be visualized in a single image. Bounding isocountours are used to distinguish graphs differences, and to clearly indicate where the graphs overlap.
-Graph layout is and important aspect of both juxtaposition and superposition based comparative visualizations.
-Juxtaposition involves comparing two or more graphs using similar layouts in order to aid comparison.
-For superposition, the matter is not so simple as the addition of a new graph may destroy the existing layout.
-The RenoDoI application~\cite{Vehlow2015} initially lays out the largest data set, then adds the additional data sets, adjusting previous layout , without resetting it.
-Nodes which are included in both data sets only appear once.
-
-Explicit encoding of difference means that differences between the two datasets are explicitly highlighted, and this approach is often in addition to the previous two. For example an edge which appears in one data set but not the other may be highlighted by color.
-One specific case where implicit encoding is not mixed with other approaches is seen when a graph is dynamic and the changes are between time slices.
-This can be seen in Rugfiange and McGuffins's DiffAni application~\cite{Rufiange2013} for visualizing dynamic graphs.
 
 \subsection*{Data Modification and Curation}
 \ \\ \
-\noindent{\textbf{(D1, D2)} \underline{Annotate Data and Personalize Pathways}}
+\noindent{\textbf{(M1, M2)} \underline{Annotate Data and Personalize Pathways}}
 \paragraph*{Description}
 
 While most of the tasks in this taxonomy are directly related to visual analysis, the size and complexity of biological datasets makes data curation an essential part of modern research platforms.
 Several of the researchers we interviewed mentioned certain tasks related to the curation, maintenance, and understanding of pathway data.
 For instance, one researcher mentioned the importance of being able to \emph{debug} potentially flawed data.
-Two others expressed a need to create ``personalized'' pathways that only include a user-determined subset of entities and relationships.
-
-Ideally, visualization tools will seamlessly integrate these curation and maintenance needs.
+Two others expressed a need to create ``personalized'' pathways that only include a user-determined subset of entities and relationships. Ideally, visualization tools will seamlessly integrate these curation and maintenance needs.
 
 \paragraph*{Existing Approaches and Techniques}
 Most desktop pathway visualization applications allow for data files to be edited and exported in standardized formats, e.g., celldesigner~\cite{funahashi2008celldesigner} allows files to be modified and curated and exported in the SBML standard.
@@ -751,6 +775,19 @@ The approach of using web tools to disseminates knowledge is already very eviden
 Reactome~\cite{croft2014reactome} and STRING~\cite{STRING2005} are two online resources which feature highly interactive web based visualization interfaces.
 The fact that the data in the Reactome database is curated and peer reviewed is considered an important feature of the system.
 Most online publicly available pathway databases do allow users to provide feedback on potential errors, updated research or areas for improvement.
+
+\ \\ \
+\noindent{\textbf{(M3)} \underline{Integrate Knowledge}}
+
+\paragraph*{Description}
+
+The topic of contextualization includes a very important component of modern biology, which is the incorporation of multiple external datasets.
+Biological pathway data is inherently large, complex, and subject to ongoing contributions from contemporary research.
+Thus, for biological pathway visualization in particular, integration of attribute data from external data sources is essential.
+
+
+
+\paragraph*{Existing Approaches and Techniques}
 
 % - debugging
 % - commenting
