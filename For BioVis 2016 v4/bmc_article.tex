@@ -417,8 +417,8 @@ In the context of biology, the attributes of a node or edge can themselves be co
 Here, we highlight three forms of attribute data that are particularly relevant to biological contexts: multivariate data from experimental results, provenance data, and measures of uncertainty.
 We also discuss the need for the integration of external data sources.
 
-\subsubsection*{Identifying Multivariate Attributes}
-
+\ \\ \
+\noindent{\textbf{(A1)} \underline{Identifying Multivariate Attributes}}
 \paragraph*{Description}
 
 The entities within a biological pathway can contain many attributes that reflect the state of that entity in a given context, such as an experimental condition.
@@ -452,9 +452,9 @@ Van den Elzen and van Wijk’s \cite{van2014multivariate} system for multivariat
 \multicolumn{2}{|l|}{\textbf{Category}} & \textbf{Example Task}\\
 \hline
 \multicolumn{2}{|l|}{Attributes} \\ \cline{1-3}
-\multicolumn{1}{l|}{} & Multivariate & Find all up-regulated genes in a biological pathway.\\ \cline{2-3}
-& Provenance & Determine which studies provides the evidence for a link between two genes.\\ \cline{2-3}
-& Uncertainty & Understand which pathway components have the strongest empirical evidence relationships\\ \cline{1-3}
+\multicolumn{1}{l|}{} & \textbf{(A1)} Multivariate & Find all up-regulated genes in a biological pathway.\\ \cline{2-3}
+& \textbf{(A2)} Provenance & Determine which studies provides the evidence for a link between two genes.\\ \cline{2-3}
+& \textbf{(A3)} Uncertainty & Understand which pathway components have the strongest empirical evidence relationships\\ \cline{1-3}
 \multicolumn{2}{|l|}{Relationships} \\ \cline{1-3}
 \multirow{5}{*} {} & Multivariate &	Find all translocations of entities in a given biological pathway \\ \cline{2-3}
 &Direction & Find the products or output of a biochemical reaction \\ \cline{2-3}
@@ -466,7 +466,7 @@ Van den Elzen and van Wijk’s \cite{van2014multivariate} system for multivariat
 & Integrate Knowledge & Integrate results of a laboratory experiment into existing protein-protein interaction networks, extracted from StringDB. \\ \cline{1-3}
 \multicolumn{2}{|l|}{Data Modification} \\ \cline{1-3}
 & Annotate Data  & A researcher may wish to update out-of date-information in a pathway data set \\ \cline{2-3}
-&Personalise Pathways& A researcher  may like to create a personalized pathway based on their own specialized research topic \\ \cline{2-3}
+&Personalize Pathways& A researcher  may like to create a personalized pathway based on their own specialized research topic \\ \cline{2-3}
 \end{tabular}
 \centering
 \\
@@ -479,7 +479,9 @@ Van den Elzen and van Wijk’s \cite{van2014multivariate} system for multivariat
 %  and Curation
 
 
-\subsubsection*{Identifying Provenance and Uncertainty}
+\ \\ \
+\noindent{\textbf{(A2, A3)} \underline{Identifying Provenance and Uncertainty}}
+%\subsubsection*{Identifying Provenance and Uncertainty}
 
 \paragraph*{Description}
 
@@ -529,6 +531,7 @@ Visualizing uncertainty within a graph visualization is an ongoing challenge in 
 Wang et al.~\cite{wang2016ambiguityvis} use a variant of a heat map visualization to show where visual ambiguity occurs in a graph visualization.
 While their approach visualizes potential ambiguity in visual interpretation rather than the underlying data set, a similar approach could be taken to visualize uncertainty in biological networks.
 
+
 \subsection*{Relationship Tasks}
 
 Within bioinformatics,  understanding relationships within a biological pathway graph is one the most essential tasks that a systems biologist will perform.
@@ -536,7 +539,9 @@ All of the researchers we interviewed stressed the importance of understanding h
 Here, we discuss some of the complex types of relationships found within biological datasets.
 We emphasize that the challenge of visualization is not only that these different categories of relationship exist, but that they exist as combinations and compositions of each other.
 
-\subsubsection*{Identifying Multivariate Relationships}
+\ \\ \
+\noindent{\textbf{(R1)} \underline{Identifying Multivariate Relationships}}
+%\subsubsection*{Identifying Multivariate Relationships}
 
 \paragraph*{Description}
 
@@ -563,7 +568,10 @@ Nodes are listed in vertical columns with the edges connecting only between neig
 This technique is similar to Pretorious and van Wijk's approach except that there are multiple columns of nodes and there is only ever one type of edge between two columns.
 It is an effective visualization, but is generally limited to smaller data sets and those in which the relationship types are multiple bimodal relationships (as there are no edges drawn between non-adjacent columns).
 
-\subsubsection*{Identifying Directed Relationships}
+
+\ \\ \
+\noindent{\textbf{(R2)} \underline{Identifying Directed Relationships}}
+%\subsubsection*{Identifying Directed Relationships}
 
 \paragraph*{Description}
 
@@ -580,7 +588,10 @@ Biological pathways are usually modeled as hyper-graphs, with many different typ
 Visual encodings such as SBGN and KEGG contain many different visual representations for edges, so applying the tapered edge visualization style to complex biological pathways is not trivial and would require an empirical evaluation.
 However, the results of Holten and van Wijk's work suggest that investigating such an approach may be worthwhile.
 
-\subsubsection*{Identifying Grouping and Hierarchical Relationships}
+
+\ \\ \
+\noindent{\textbf{(R3)} \underline{Identifying Grouping Relationships}}
+%\subsubsection*{Identifying Grouping and Hierarchical Relationships}
 
 \paragraph*{Description}
 
@@ -615,7 +626,9 @@ In this system, the node for each data source forms a set, which may or may not 
 This is visualized by drawing a bounded contour around the nodes in the set, where different border colors indicate different sets.
 This type of encoding of set membership is the \textit{Bubble Sets}~\cite{Collins2009} approach, which was shown to be the most effective way of displaying group information on a node link diagram by Jianu et al.~\cite{Jianu2014}.
 
-\subsubsection*{Identifying Causality and Cascading Effects}
+\ \\ \
+\noindent{\textbf{(R4, R5)} \underline{Identifying Causality and Cascading Effects}}
+%\subsubsection*{Identifying Causality and Cascading Effects}
 
 \paragraph*{Description}
 
@@ -655,7 +668,11 @@ This approach has been used by the \textit{Cerebral}~\cite{Barsky2008cerebral} a
 Archambault and Purchase's work also shows that layout has an impact on the visualization of attribute cascades.
 Participants in the experiment performed better when a hierarchical layout was used, however it should be noted that the hierarchical layout was consistent with the direction of the cascade.
 
-\subsubsection*{Comparison and Contextualization Tasks}
+
+\subsection*{Comparison Tasks}
+\ \\ \
+\noindent{\textbf{(C1, C2)} \underline{Compare Data and Integrate Knowledge}}
+%\subsubsection*{Comparison and Contextualization Tasks}
 
 \paragraph*{Description}
 
@@ -706,7 +723,8 @@ One specific case where implicit encoding is not mixed with other approaches is 
 This can be seen in Rugfiange and McGuffins's DiffAni application~\cite{Rufiange2013} for visualizing dynamic graphs.
 
 \subsection*{Data Modification and Curation}
-
+\ \\ \
+\noindent{\textbf{(D1, D2)} \underline{Annotate Data and Personalize Pathways}}
 \paragraph*{Description}
 
 While most of the tasks in this taxonomy are directly related to visual analysis, the size and complexity of biological datasets makes data curation an essential part of modern research platforms.
@@ -746,9 +764,9 @@ Most online publicly available pathway databases do allow users to provide feedb
 
 In the process of creating a domain-specific task taxonomy that is based on interviews with domain experts, we have revealed several tasks that are important to domain researchers but which merit further attention and more focused scrutiny from the visualization community.
 While tools exist which support these tasks, existing approaches tend to be ad hoc and may lack features that would be revealed by more user-centered design methodologies.
-However, we do not mean to suggest that future research should be constrained to these tasks alone, but that they should be given more focused attention in the field of pathway visualization research.
+However, we do not mean to suggest that future research should be constrained to these tasks alone, but that they should be given more focused attention in the field of pathway visualization research. Below we outline some directions for future research.
 
-\subsubsection*{Directions for Future Research}
+%\subsubsection*{Directions for Future Research}
 
 \paragraph{Visualizing Causality and Cascading Effects}
 
