@@ -360,7 +360,7 @@ This variety allowed for a rich examination of tasks related to biological datas
 
 The interviews were free-form discussions aimed at understanding the research process of each domain expert, with specific attention given to the structure and content of the data used in their published research.
 Researchers were prompted for any existing tools used for analysis, as well as for the types of behaviors that they think they would find useful in a pathway analysis framework.
-Our interviews were intentionlay open-ended, and were designed to capture a variety of tasks that are seen as important to domain experts.
+Our interviews were intentionally open-ended, and were designed to capture a variety of tasks that are seen as important to domain experts.
 
 We have developed a taxonomy of domain-specific visualization tasks based on these interviews. For each task category, we describe examples of how each task is addressed by current biological visualization applications and techniques.
 
@@ -425,7 +425,11 @@ We also discuss the need for the integration of external data sources.
 The entities within a biological pathway can contain many attributes that reflect the state of that entity in a given context, such as an experimental condition.
 In interviews, researchers stressed the importance of being able to visualize potentially complex experimental data while viewing a pathway.
 For example, each entity in a pathway can be associated with gene expression levels across several different experimental conditions, and each of these conditions can include an additional temporal dimension~\cite{Barsky2008cerebral}, meaning that each node (in this example) would be associated with at least three additional dimensions (experimental condition, expression level, and time).
+
 This multivariate data can also apply to relationships between entities, such as when one gene is up-regulated or down-regulated by another gene under different experimental conditions.
+Indeed, the identification (and comparison) of attributes is closely coupled with the identification (and comparison) of overall topological structure~\cite{partl2012enroute}.
+
+An additional concern with biological attribute data is the biological \emph{context} of an entity (e.g., a tissue, organ, or species), especially when datasets can contain similar entity types that were measured across a variety of different contexts.
 
 
 \paragraph*{Existing Approaches and Techniques}
@@ -461,7 +465,7 @@ Van den Elzen and van Wijk’s \cite{van2014multivariate} system for multivariat
 & \textbf{(A3)} Provenance & Determine which studies provides the evidence for a link between two genes.\\ \cline{2-3}
 & \textbf{(A4)} Uncertainty & Understand which pathway components have the strongest empirical evidence relationships.\\ \cline{1-3}
 \multicolumn{2}{|l|}{Relationship Tasks} \\ \cline{1-3}
-\multirow{5}{*} {} & \textbf{(R1)} Multivariate &	Find all translocations of entities in a given biological pathway. \\ \cline{2-3}
+\multirow{5}{*} {} & \textbf{(R1)} Attributes &	Find all translocations of entities in a given biological pathway. \\ \cline{2-3}
 & \textbf{(R2)} Direction & Find the products or output of a biochemical reaction. \\ \cline{2-3}
 & \textbf{(R3)} Grouping &Expand a module entity to include all child-entities in the visualization. \\ \cline{2-3}
 &\makecell[l]{\textbf{(R4)} Causality} & Find all genes downstream of the currently selected entity, which may be affected by a change in regulation. \\  \cline{2-3}
